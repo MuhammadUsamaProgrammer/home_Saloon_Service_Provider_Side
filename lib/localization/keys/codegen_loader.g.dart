@@ -1,0 +1,65 @@
+// DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
+
+abstract class  LocaleKeys {
+  static const I_am_Usama = 'I_am_Usama';
+  static const I_am_Developer = 'I_am_Developer';
+  static const Onboarding_Screen_heading = 'Onboarding_Screen_heading';
+  static const Onboarding_Screen_paragraph = 'Onboarding_Screen_paragraph';
+  static const next_button_text = 'next_button_text';
+  static const Continue_with_shortcode = 'Continue_with_shortcode';
+  static const shortcode = 'shortcode';
+  static const enter_your_shortcode = 'enter_your_shortcode';
+  static const Stay_logged_in = 'Stay_logged_in';
+  static const login = 'login';
+  static const enter_OTP = 'enter_OTP';
+  static const send = 'send';
+  static const Search_here = 'Search_here';
+  static const Filter = 'Filter';
+  static const Your_Stats_are_Good_Keep_it_up = 'Your_Stats_are_Good_Keep_it_up';
+  static const Total_Orders = 'Total_Orders';
+  static const Order_Completion = 'Order_Completion';
+  static const On_Time_Delivery = 'On_Time_Delivery';
+  static const Positive_Rating = 'Positive_Rating';
+  static const Earning_Status = 'Earning_Status';
+  static const Total_Earnings = 'Total_Earnings';
+  static const Active_Orders = 'Active_Orders';
+  static const Earnings_in_November = 'Earnings_in_November';
+  static const Completed_Order = 'Completed_Order';
+  static const See_All = 'See_All';
+  static const In_Progress = 'In_Progress';
+  static const Home = 'Home';
+  static const Orders = 'Orders';
+  static const Profile = 'Profile';
+  static const Manage_Orders = 'Manage_Orders';
+  static const Active = 'Active';
+  static const Pending = 'Pending';
+  static const Declined = 'Declined';
+  static const Completed = 'Completed';
+  static const Location = 'Location';
+  static const Edit_Profile = 'Edit_Profile';
+  static const My_Wallet = 'My_Wallet';
+  static const Settings = 'Settings';
+  static const Logout = 'Logout';
+  static const Change_Language = 'Change_Language';
+  static const About_us = 'About_us';
+  static const Privacy_Policy = 'Privacy_Policy';
+  static const Contact_us = 'Contact_us';
+  static const Delete_Account = 'Delete_Account';
+  static const Update_Profile = 'Update_Profile';
+  static const Available_Balance = 'Available_Balance';
+  static const Recent_Payments = 'Recent_Payments';
+  static const Feedback = 'Feedback';
+  static const Select_a_Option = 'Select_a_Option';
+  static const Write_a_message = 'Write_a_message';
+  static const Type_your_message = 'Type_your_message';
+  static const Submit = 'Submit';
+  static const Who_we_are = 'Who_we_are';
+  static const Who_we_are_paragraph = 'Who_we_are_paragraph';
+  static const Our_Vision = 'Our_Vision';
+  static const Our_Vision_paragraph = 'Our_Vision_paragraph';
+  static const Terms_and_Condition = 'Terms_and_Condition';
+  static const Terms_and_Condition_paragraph = 'Terms_and_Condition_paragraph';
+  static const Privacy_Policy_Paragraph = 'Privacy_Policy_Paragraph';
+  static const My_Services = 'My_Services';
+
+}
