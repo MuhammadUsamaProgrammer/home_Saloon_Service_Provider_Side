@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:home_saloon/app/routes/app_route_const.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -14,7 +12,7 @@ class Profile extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
             onPressed: () {
-              context.goNamed(MyRoutes.contact);
+              // context.goNamed(MyRoutes.contact);
             },
             child: Container(
               height: 150,

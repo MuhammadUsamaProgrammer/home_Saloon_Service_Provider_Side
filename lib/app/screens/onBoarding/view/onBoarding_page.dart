@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:get/get.dart';
-import 'package:shoperrs/app/common/buttons/textButton.dart';
-import 'package:shoperrs/app/routs/routs.dart';
+import '../../../common/buttons/textButton.dart';
 import '../../../common/vibrate/vibrate.dart';
-import '../intro_Screens/intro_screen1.dart';
-import '../intro_Screens/intro_screen2.dart';
-import '../intro_Screens/intro_screen3.dart';
+import '../onBoarding_Screens/intro_screen1.dart';
+import '../onBoarding_Screens/intro_screen2.dart';
+import '../onBoarding_Screens/intro_screen3.dart';
 import 'package:provider/provider.dart';
-import '../provider/introPageProvider.dart';
+import '../provider/ionBoarding_Provider.dart';
 
-class IntroPage extends StatelessWidget {
+class OnBoardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // final model = Provider.of<IntroPageModel>(context);
-
     return Scaffold(
         body: Stack(
           children: [
             // pages
-            Consumer<IntroPageModel>(
+            Consumer<OnBoardingProvider>(
               builder: (context, value, child) {
                 return Container(
                   padding: EdgeInsets.only(bottom: 80),
@@ -37,7 +33,7 @@ class IntroPage extends StatelessWidget {
             ),
 
             // dot indicator
-            Consumer<IntroPageModel>(
+            Consumer<OnBoardingProvider>(
               builder: (context, value, child) {
                 return Container(
                   alignment: Alignment(0, 0.75),
@@ -63,7 +59,7 @@ class IntroPage extends StatelessWidget {
             )
           ],
         ),
-        bottomSheet: Consumer<IntroPageModel>(
+        bottomSheet: Consumer<OnBoardingProvider>(
           builder: (context, value, child) {
             return value.isLastPage
                 ? Padding(
@@ -73,7 +69,7 @@ class IntroPage extends StatelessWidget {
                       text: 'Get Started',
                       onTap: () {
                         vibrate();
-                        Get.toNamed(RouteName.signInPage);
+                        // Get.toNamed(RouteName.signInPage);
                       },
                     ),
                   )

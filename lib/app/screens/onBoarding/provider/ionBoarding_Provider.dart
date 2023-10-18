@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class IntroPageModel with ChangeNotifier {
+class OnBoardingProvider with ChangeNotifier {
   PageController _controller = PageController();
   bool _isLastPage = false;
 

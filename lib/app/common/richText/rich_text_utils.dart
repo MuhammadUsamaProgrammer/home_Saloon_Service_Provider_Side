@@ -2,7 +2,8 @@ import 'package:flutter/animation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:shoperrs/app/common/vibrate/vibrate.dart';
+
+import '../vibrate/vibrate.dart';
 
 TextSpan buildClickableTextSpan(String text, {required VoidCallback onTap}) {
   return TextSpan(

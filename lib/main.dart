@@ -1,7 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/routes/app_route_config.dart';
-import 'localization/codegen_loader.g.dart';
+import 'package:home_saloon/utils/routes/app_route_config.dart';
+import 'package:provider/provider.dart';
+import 'app/screens/onBoarding/provider/ionBoarding_Provider.dart';
+import 'utils/localization/codegen_loader.g.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,19 +25,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      supportedLocales: context.supportedLocales,
-      localizationsDelegates: context.localizationDelegates,
-      locale: context.locale,
-      routerConfig: router,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => OnBoardingProvider()),
+        // ChangeNotifierProvider(create: (_) => RememberMeProvider()),
+      ],
+      child: MaterialApp.router(
+        supportedLocales: context.supportedLocales,
+        localizationsDelegates: context.localizationDelegates,
+        locale: context.locale,
+        routerConfig: router,
+      ),
     );
   }
 }
-// MultiProvider(
-//       providers: [
-//         // ChangeNotifierProvider(create: (_) => NavigationProvider()),
-//         // ChangeNotifierProvider(create: (_) => RememberMeProvider()),
-//       ],
+
+
 
 // comands for localization and key filder
 
