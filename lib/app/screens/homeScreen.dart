@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:home_saloon/app/routes/app_route_const.dart';
-import 'package:home_saloon/app/screens/contacts.dart';
 import 'package:home_saloon/app/utils/CustomsizedBox.dart';
 import '../../localization/keys/codegen_loader.g.dart';
 
