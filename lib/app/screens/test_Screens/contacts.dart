@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-import '../common/vibrate/vibrate.dart';
+import '../../common/vibrate/vibrate.dart';
 
 class Contact extends StatelessWidget {
   const Contact({super.key});

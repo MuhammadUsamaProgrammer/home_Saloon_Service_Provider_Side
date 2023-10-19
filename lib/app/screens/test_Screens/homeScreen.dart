@@ -3,7 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
 
-import '../../utils/localization/keys/codegen_loader.g.dart';
+import '../../../utils/localization/keys/codegen_loader.g.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
