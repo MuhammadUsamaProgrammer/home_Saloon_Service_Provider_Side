@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/screens/authentication/short_Code_Screen/provider/chortCode_Controller_Provider.dart';
+import 'package:home_saloon/app/screens/authentication/short_Code_Screen/provider/shortCode_Controller_Provider.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:provider/provider.dart';
 
@@ -23,9 +23,7 @@ class ShortCodeTextField extends StatelessWidget {
               controller: value.shortCodeTextController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return "Name is Required";
-                } else if (value.length < 6) {
-                  return "Name is Required 6";
+                  return "Short code is Required";
                 } else
                   return null;
               },

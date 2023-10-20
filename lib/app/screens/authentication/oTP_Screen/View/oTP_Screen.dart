@@ -2,11 +2,16 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:home_saloon/app/common/buttons/textButton.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
+import 'package:home_saloon/app/screens/authentication/oTP_Screen/provider/oTP_timer_Provider.dart';
 import 'package:home_saloon/utils/localization/keys/codegen_loader.g.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
+import 'package:provider/provider.dart';
 import '../components/back_Ground_Image.dart';
-import '../components/oTP_Form1.dart';
+import '../components/oTP_Field.dart';
+import '../components/oTP_Timer.dart';
+import '../components/resed_Button.dart';
+import '../provider/oTP_Controller_Provider.dart';
 
 class OTPScreen extends StatelessWidget {
   const OTPScreen({super.key});
@@ -47,22 +52,40 @@ class OTPScreen extends StatelessWidget {
                             style: AppTextStyle.enter_OTP,
                           ),
                           heightC(44),
-                          // textfield heading
-                          Text(
-                            LocaleKeys.shortcode.tr(),
-                            style: AppTextStyle.shortCode,
-                          ),
-                          heightC(15),
                           // text field
-                          OTPForm(),
-                          heightC(22),
-                          // stay loggedin
-                          heightC(42),
+                          OTPField(),
+                          heightC(23),
+                          // resend otp
+                          ResendButton(),
+                          heightC(54),
                           // Button
-                          Button1(
-                            text: LocaleKeys.login.tr(),
-                            onTap: () {},
-                          )
+                          Consumer<OTPControllerProvider>(
+                            builder: (context, value, child) {
+                              return value.pin1.text.isEmpty ||
+                                      value.pin2.text.isEmpty ||
+                                      value.pin3.text.isEmpty ||
+                                      value.pin4.text.isEmpty
+                                  ? Button1(
+                                      text: LocaleKeys.login.tr(),
+                                      isActive: false,
+                                      color: MyColors.text_field_color,
+                                      onTap: () {},
+                                    )
+                                  : Consumer<OTPTimerProvider>(
+                                      builder: (context, value, child) {
+                                        return Button1(
+                                          text: LocaleKeys.login.tr(),
+                                          onTap: () {
+                                            value.dispose();
+                                          },
+                                        );
+                                      },
+                                    );
+                            },
+                          ),
+                          heightC(19),
+                          // Timer
+                          OTPTimer(),
                         ]),
                   ),
                 ),

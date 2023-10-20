@@ -64,6 +64,20 @@ class AppTextStyle {
     fontWeight: FontWeight.w600,
   );
 
+  static const TextStyle resend_OTP_Active = TextStyle(
+    fontFamily: font,
+    fontSize: 15,
+    color: MyColors.primaryColor,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle resend_OTP_InActive = TextStyle(
+    fontFamily: font,
+    fontSize: 15,
+    color: MyColors.text_field_color,
+    fontWeight: FontWeight.w400,
+  );
+
   static const TextStyle timer_OTP = TextStyle(
     fontFamily: font,
     fontSize: 18,

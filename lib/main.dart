@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:home_saloon/utils/routes/app_route_config.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:provider/provider.dart';
+import 'app/screens/authentication/oTP_Screen/provider/oTP_Controller_Provider.dart';
+import 'app/screens/authentication/oTP_Screen/provider/oTP_timer_Provider.dart';
 import 'app/screens/authentication/short_Code_Screen/provider/check_Box_Provider.dart';
-import 'app/screens/authentication/short_Code_Screen/provider/chortCode_Controller_Provider.dart';
+import 'app/screens/authentication/short_Code_Screen/provider/shortCode_Controller_Provider.dart';
 import 'app/screens/onBoarding/provider/ionBoarding_Provider.dart';
 import 'utils/localization/codegen_loader.g.dart';
 
@@ -33,8 +35,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => OnBoardingProvider()),
         ChangeNotifierProvider(create: (_) => CheckBoxProvider()),
         ChangeNotifierProvider(create: (_) => ShortCodeControllerProvider()),
-        // ChangeNotifierProvider(create: (_) => CheckBoxProvider()),
-        // ChangeNotifierProvider(create: (_) => CheckBoxProvider()),
+        ChangeNotifierProvider(create: (_) => OTPControllerProvider()),
+        ChangeNotifierProvider(create: (_) => OTPTimerProvider()),
         // ChangeNotifierProvider(create: (_) => CheckBoxProvider()),
         // ChangeNotifierProvider(create: (_) => CheckBoxProvider()),
         // ChangeNotifierProvider(create: (_) => CheckBoxProvider()),

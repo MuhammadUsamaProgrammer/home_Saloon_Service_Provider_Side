@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:home_saloon/app/common/buttons/textButton.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/app/common/textField/shortCodeTextField.dart';
+import 'package:home_saloon/app/screens/authentication/oTP_Screen/provider/oTP_timer_Provider.dart';
 import 'package:home_saloon/utils/localization/keys/codegen_loader.g.dart';
 import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
@@ -11,7 +12,7 @@ import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 import 'package:provider/provider.dart';
 import '../components/back_Ground_Image.dart';
 import '../components/stay_Loggedin.dart';
-import '../provider/chortCode_Controller_Provider.dart';
+import '../provider/shortCode_Controller_Provider.dart';
 
 class ShortCodeScreen extends StatelessWidget {
   ShortCodeScreen({super.key});
@@ -64,14 +65,24 @@ class ShortCodeScreen extends StatelessWidget {
                           heightC(42),
                           // Button
                           Consumer<ShortCodeControllerProvider>(
-                            builder: (context, value, child) {
-                              return Button1(
-                                text: LocaleKeys.login.tr(),
-                                onTap: () {
-                                  if (value.formKey.currentState!.validate()) {
-                                    GoRouter.of(context)
-                                        .pushNamed(MyRoutes.oTPScreen);
-                                  }
+                            builder: (context, shortCode, child) {
+                              return Consumer<OTPTimerProvider>(
+                                builder: (context, otp, child) {
+                                  return Button1(
+                                    text: LocaleKeys.login.tr(),
+                                    onTap: () {
+                                      if (shortCode.formKey.currentState!
+                                          .validate()) {
+                                        otp.seconds == 0
+                                            ? otp.startTimer()
+                                            : null;
+                                        GoRouter.of(context)
+                                            .pushNamed(MyRoutes.oTPScreen);
+                                        shortCode.shortCodeTextController
+                                            .clear();
+                                      }
+                                    },
+                                  );
                                 },
                               );
                             },
