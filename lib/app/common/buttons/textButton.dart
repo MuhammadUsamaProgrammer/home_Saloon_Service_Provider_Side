@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:home_saloon/utils/audio/click_Sounds.dart';
+import 'package:home_saloon/utils/theme/colors_theme_data.dart';
+import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 
 class Button1 extends StatelessWidget {
   final String text;
@@ -20,20 +23,19 @@ class Button1 extends StatelessWidget {
       height: height,
       child: TextButton(
         onPressed: () {
-          print("sds");
+          ClickSound.play();
           onTap();
         },
         child: Text(
           text,
-          style: TextStyle(
-              fontSize: 14, color: Colors.white, fontFamily: 'DM_Sans'),
+          style: AppTextStyle.button_text,
         ),
         style: TextButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(100),
           ),
-          // primary: Colors.white,
-          backgroundColor: Colors.pink,
+          primary: Color.fromARGB(255, 255, 255, 255),
+          backgroundColor: MyColors.primaryColor,
           // minimumSize: Size.fromHeight(54),
         ),
       ),

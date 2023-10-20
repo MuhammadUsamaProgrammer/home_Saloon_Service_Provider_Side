@@ -7,13 +7,15 @@ class ClickSound {
       'sounds/click_Sound_Large_Button_Iphone.mpeg';
 
   static AudioPlayer player = AudioPlayer();
-
-  static Future<void> play({int sound = 0}) async {
+  static int sound = 0;
+  static Future<void> play() async {
     try {
-      if (sound == 0) {
-        await player.play(AssetSource(lightClickSound));
-      } else {
+      if (sound == 3) {
         await player.play(AssetSource(heavyClickSound));
+        sound = 0;
+      } else {
+        await player.play(AssetSource(lightClickSound));
+        sound++;
       }
     } catch (e) {
       print('Error playing sound: $e');
