@@ -31,10 +31,10 @@ class Button1 extends StatelessWidget {
           style: AppTextStyle.button_text,
         ),
         style: TextButton.styleFrom(
+          foregroundColor: Color.fromARGB(255, 255, 206, 121),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(100),
           ),
-          primary: Color.fromARGB(255, 255, 255, 255),
           backgroundColor: MyColors.primaryColor,
           // minimumSize: Size.fromHeight(54),
         ),

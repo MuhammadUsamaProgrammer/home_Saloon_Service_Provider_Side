@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../utils/localization/keys/codegen_loader.g.dart';
@@ -21,7 +23,7 @@ class OnBoardingScreenBottomButton extends StatelessWidget {
                   text: 'Get Started',
                   onTap: () {
                     vibrate();
-                    // Get.toNamed(RouteName.signInPage);
+                    GoRouter.of(context).goNamed(MyRoutes.shortCodeScreen);
                   },
                 ),
               )

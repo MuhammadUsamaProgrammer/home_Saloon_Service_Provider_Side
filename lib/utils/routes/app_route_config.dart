@@ -4,6 +4,8 @@ import 'package:home_saloon/app/screens/onBoarding/view/onBoarding_page.dart';
 import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:home_saloon/utils/routes/transitions.dart';
 import 'package:home_saloon/app/screens/splash_Screen/view/splash_View.dart';
+import '../../app/screens/authentication/oTP_Screen/View/oTP_Screen.dart';
+import '../../app/screens/authentication/short_Code_Screen/View/short_Code_Screen.dart';
 import '../../app/screens/test_Screens/error_Page.dart';
 
 GoRouter router = GoRouter(
@@ -14,8 +16,10 @@ GoRouter router = GoRouter(
     ),
     transitionsleftToRightPage(
         myRoutes: MyRoutes.onBoardingPage, screen: OnBoardingPage()),
-    // transitionsleftToRightPage(myRoutes: MyRoutes.profile, screen: Profile()),
-    // transitionsleftToRightPage(myRoutes: MyRoutes.profile, screen: Profile()),
+    transitionsleftToRightPage(
+        myRoutes: MyRoutes.shortCodeScreen, screen: ShortCodeScreen()),
+    transitionsleftToRightPage(
+        myRoutes: MyRoutes.oTPScreen, screen: OTPScreen()),
     // transitionsleftToRightPage(myRoutes: MyRoutes.profile, screen: Profile()),
     // transitionsleftToRightPage(myRoutes: MyRoutes.profile, screen: Profile()),
     // transitionsleftToRightPage(myRoutes: MyRoutes.profile, screen: Profile()),

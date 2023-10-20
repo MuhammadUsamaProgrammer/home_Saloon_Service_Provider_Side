@@ -24,9 +24,9 @@ class Home extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(LocaleKeys.I_am_Usama.tr()),
-                addVerticalSpace(10),
+                heightC(10),
                 Text(LocaleKeys.Privacy_Policy_Paragraph.tr()),
-                addVerticalSpace(50),
+                heightC(50),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [

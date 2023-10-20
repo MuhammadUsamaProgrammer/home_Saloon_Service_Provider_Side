@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 
+extension TextSizeAdjuster on BuildContext {
+  double adjustedTextSize(double userTextSize) {
+    final MediaQueryData mediaQuery = MediaQuery.of(this);
+    final double devicePixelRatio = mediaQuery.devicePixelRatio;
+    // Calculate the adjusted text size
+    return userTextSize * devicePixelRatio / 3;
+  }
+}
+
 class AppTextStyle {
+  final BuildContext context;
+
+  AppTextStyle(this.context);
   static const String font = 'poppins';
-  static const TextStyle onBoarding_heading = TextStyle(
+  static TextStyle onBoarding_heading = TextStyle(
     fontFamily: font,
     fontSize: 24,
     fontWeight: FontWeight.w700,

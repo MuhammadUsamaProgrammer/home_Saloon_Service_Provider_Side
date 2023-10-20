@@ -15,34 +15,36 @@ class Screen extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            height: MediaQuery.of(context).size.width + 50,
-            width: MediaQuery.of(context).size.width,
-            child: ClipRRect(
-                child: Image.asset(
-              onBoardingScreenModel[index].image,
-              fit: BoxFit.cover,
-            )),
-          ),
-          addVerticalSpace(MediaQuery.of(context).size.width / 5.7),
-          Text(
-            LocaleKeys.Onboarding_Screen_heading.tr(),
-            style: AppTextStyle.onBoarding_heading,
-          ),
-          addVerticalSpace(16),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 35.0),
-            child: Text(
-              LocaleKeys.Onboarding_Screen_paragraph.tr(),
-              style: AppTextStyle.onBoarding_paragraph,
-              textAlign: TextAlign.center,
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.width + 50,
+              width: MediaQuery.of(context).size.width,
+              child: ClipRRect(
+                  child: Image.asset(
+                onBoardingScreenModel[index].image,
+                fit: BoxFit.cover,
+              )),
             ),
-          ),
-        ],
+            heightC(MediaQuery.of(context).size.width / 5.7),
+            Text(
+              LocaleKeys.Onboarding_Screen_heading.tr(),
+              style: AppTextStyle.onBoarding_heading,
+            ),
+            heightC(16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 35.0),
+              child: Text(
+                LocaleKeys.Onboarding_Screen_paragraph.tr(),
+                style: AppTextStyle.onBoarding_paragraph,
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

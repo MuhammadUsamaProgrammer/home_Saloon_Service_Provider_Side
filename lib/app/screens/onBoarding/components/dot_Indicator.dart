@@ -26,9 +26,7 @@ class DotIndicator extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Row(
                       children: [
-                        index > 0
-                            ? addHorizontalSpace(8)
-                            : addHorizontalSpace(0),
+                        index > 0 ? widthW(8) : widthW(0),
                         AnimatedContainer(
                           curve: Curves.easeInOut,
                           duration: Duration(milliseconds: 500),
@@ -48,7 +46,7 @@ class DotIndicator extends StatelessWidget {
             ),
           ),
         ),
-        addVerticalSpace(100)
+        heightC(100)
       ],
     );
   }

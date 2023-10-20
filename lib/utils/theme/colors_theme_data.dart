@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 class MyColors {
   static const Color primaryColor = Color(0xFFF74C69);
+  static const Color backgroundColor = Color(0xFFFFFFFF);
   static const Color splashGradient1 = Color(0xDEFFFFFF);
   static const Color splashGradient2 = Color(0xD4F74C69);
   static const Color splashGradient3 = Color(0xFFF74C69);
   static const Color onBoarding_paragraph_text_color = Color(0xFF8A8A8E);
+  static const Color auth_Image_Color = Color(0x38F74C69);
   static const Color textColor_primary = Color(0xFF000000);
   static const Color text_field_color = Color(0xFFADADAD);
   static const Color unSelected_index_color = Color(0xFFE4E4E6);
@@ -23,7 +25,6 @@ class MyColors {
   static const Color available_Balance = Color(0xFF7A7A7A);
   static const Color language = Color(0xFFD6CFCD);
   static const Color select_Options_In_Feedback = Color(0xFF727272);
-  // static const Color primaryColor = Color(0xFF00AEEF);
   // static const Color primaryColor = Color(0xFF00AEEF);
   // static const Color primaryColor = Color(0xFF00AEEF);
   // static const Color primaryColor = Color(0xFF00AEEF);

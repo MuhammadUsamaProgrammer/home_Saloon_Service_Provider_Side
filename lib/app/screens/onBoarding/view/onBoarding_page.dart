@@ -21,15 +21,9 @@ class OnBoardingPage extends StatelessWidget {
                   controller: value.controller,
                   onPageChanged: value.setPage,
                   children: [
-                    Screen(
-                      index: 0,
-                    ),
-                    Screen(
-                      index: 1,
-                    ),
-                    Screen(
-                      index: 2,
-                    ),
+                    Screen(index: 0),
+                    Screen(index: 1),
+                    Screen(index: 2),
                   ],
                 ),
               );
@@ -40,6 +34,7 @@ class OnBoardingPage extends StatelessWidget {
           DotIndicator(),
         ],
       ),
+      // BottomButton
       bottomSheet: OnBoardingScreenBottomButton(),
     );
   }
