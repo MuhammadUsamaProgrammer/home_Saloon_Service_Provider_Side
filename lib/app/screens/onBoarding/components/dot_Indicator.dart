@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../../../utils/theme/colors_theme_data.dart';
 import '../../../common/cutomize_Sizedbox/CustomsizedBox.dart';
-import '../provider/ionBoarding_Provider.dart';
+import '../provider/onBoarding_Provider.dart';
 
 class DotIndicator extends StatelessWidget {
   const DotIndicator({super.key});

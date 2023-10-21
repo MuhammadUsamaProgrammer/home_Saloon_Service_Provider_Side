@@ -1,9 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:home_saloon/app/common/buttons/textButton.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/app/screens/authentication/oTP_Screen/provider/oTP_timer_Provider.dart';
 import 'package:home_saloon/utils/localization/keys/codegen_loader.g.dart';
+import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 import 'package:provider/provider.dart';
@@ -67,6 +69,8 @@ class OTPScreen extends StatelessWidget {
                                         return Button1(
                                           text: LocaleKeys.login.tr(),
                                           onTap: () {
+                                            GoRouter.of(context)
+                                                .pushNamed(MyRoutes.mainPage);
                                             value.dispose();
                                           },
                                         );

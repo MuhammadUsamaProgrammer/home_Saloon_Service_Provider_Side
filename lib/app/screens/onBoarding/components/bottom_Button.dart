@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import '../../../../utils/localization/keys/codegen_loader.g.dart';
 import '../../../common/buttons/textButton.dart';
 import '../../../common/vibrate/vibrate.dart';
-import '../provider/ionBoarding_Provider.dart';
+import '../provider/onBoarding_Provider.dart';
 
 class OnBoardingScreenBottomButton extends StatelessWidget {
   const OnBoardingScreenBottomButton({super.key});

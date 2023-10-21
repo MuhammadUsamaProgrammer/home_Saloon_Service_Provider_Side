@@ -5,7 +5,7 @@ class MyRoutes {
   static const String onBoardingPage = 'onBoardingPage';
   static const String shortCodeScreen = 'shortCodeScreen';
   static const String oTPScreen = 'oTPScreen';
-  // static const String onBoardingPage = 'onBoardingPage';
+  static const String mainPage = 'mainPage';
   // static const String onBoardingPage = 'onBoardingPage';
   // static const String onBoardingPage = 'onBoardingPage';
   // static const String onBoardingPage = 'onBoardingPage';

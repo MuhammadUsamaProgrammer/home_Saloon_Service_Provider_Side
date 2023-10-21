@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../components/bottom_Button.dart';
-import '../components/dot_Indicator.dart';
-import '../components/onBoarding_screen.dart';
-import '../provider/onBoarding_Provider.dart';
+import '../../onBoarding/components/dot_Indicator.dart';
+import '../../onBoarding/components/onBoarding_screen.dart';
+import '../provider/main_Page_Provider.dart';
 
-class OnBoardingPage extends StatelessWidget {
+class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
           // pages
-          Consumer<OnBoardingProvider>(
+          Consumer<MainPageProvider>(
             builder: (context, value, child) {
               return Container(
                 padding: EdgeInsets.only(bottom: 80),
@@ -35,7 +34,7 @@ class OnBoardingPage extends StatelessWidget {
         ],
       ),
       // BottomButton
-      bottomSheet: OnBoardingScreenBottomButton(),
+      // bottomSheet: OnBoardingScreenBottomButton(),
     );
   }
 }
