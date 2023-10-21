@@ -19,8 +19,11 @@ class OTPFormField extends StatelessWidget {
               style: Theme.of(context).textTheme.headlineLarge,
               keyboardType: TextInputType.number,
               textAlign: TextAlign.center,
-              onChanged: (value) {
-                FocusScope.of(context).nextFocus();
+              onChanged: (fieldValue) {
+                fieldValue.isNotEmpty
+                    ? FocusScope.of(context).nextFocus()
+                    : null;
+                value.toogleisAllOTPFilled();
               },
               inputFormatters: [
                 LengthLimitingTextInputFormatter(1),
@@ -28,12 +31,6 @@ class OTPFormField extends StatelessWidget {
               ],
               cursorColor: MyColors.primaryColor,
               controller: controller,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return "Name is Required";
-                } else
-                  return null;
-              },
               decoration: InputDecoration(
                 filled: false,
                 contentPadding:

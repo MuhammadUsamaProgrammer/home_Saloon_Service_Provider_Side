@@ -61,17 +61,8 @@ class OTPScreen extends StatelessWidget {
                           // Button
                           Consumer<OTPControllerProvider>(
                             builder: (context, value, child) {
-                              return value.pin1.text.isEmpty ||
-                                      value.pin2.text.isEmpty ||
-                                      value.pin3.text.isEmpty ||
-                                      value.pin4.text.isEmpty
-                                  ? Button1(
-                                      text: LocaleKeys.login.tr(),
-                                      isActive: false,
-                                      color: MyColors.text_field_color,
-                                      onTap: () {},
-                                    )
-                                  : Consumer<OTPTimerProvider>(
+                              return value.isAllOTPFilled
+                                  ? Consumer<OTPTimerProvider>(
                                       builder: (context, value, child) {
                                         return Button1(
                                           text: LocaleKeys.login.tr(),
@@ -80,6 +71,12 @@ class OTPScreen extends StatelessWidget {
                                           },
                                         );
                                       },
+                                    )
+                                  : Button1(
+                                      text: LocaleKeys.login.tr(),
+                                      isActive: false,
+                                      color: MyColors.text_field_color,
+                                      onTap: () {},
                                     );
                             },
                           ),
