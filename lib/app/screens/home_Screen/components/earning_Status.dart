@@ -37,11 +37,12 @@ class EarningStatus extends StatelessWidget {
                             children: [
                               Text(
                                 LocaleKeys.Total_Earnings.tr(),
-                                style: AppTextStyle.earning_Status_Headings,
+                                style: AppTextStyle.earning_Status_Headings(
+                                    context),
                               ),
                               Text(
                                 'SR 40.50',
-                                style: AppTextStyle.earning_Status,
+                                style: AppTextStyle.earning_Status(context),
                               ),
                             ],
                           ),
@@ -55,11 +56,12 @@ class EarningStatus extends StatelessWidget {
                             children: [
                               Text(
                                 LocaleKeys.Active_Orders.tr(),
-                                style: AppTextStyle.earning_Status_Headings,
+                                style: AppTextStyle.earning_Status_Headings(
+                                    context),
                               ),
                               Text(
                                 '3',
-                                style: AppTextStyle.earning_Status,
+                                style: AppTextStyle.earning_Status(context),
                               ),
                             ],
                           ),
@@ -82,11 +84,12 @@ class EarningStatus extends StatelessWidget {
                             children: [
                               Text(
                                 LocaleKeys.Earnings_in_November.tr(),
-                                style: AppTextStyle.earning_Status_Headings,
+                                style: AppTextStyle.earning_Status_Headings(
+                                    context),
                               ),
                               Text(
                                 'SR 40.50',
-                                style: AppTextStyle.earning_Status,
+                                style: AppTextStyle.earning_Status(context),
                               ),
                             ],
                           ),
@@ -100,11 +103,12 @@ class EarningStatus extends StatelessWidget {
                             children: [
                               Text(
                                 LocaleKeys.Completed_Order.tr(),
-                                style: AppTextStyle.earning_Status_Headings,
+                                style: AppTextStyle.earning_Status_Headings(
+                                    context),
                               ),
                               Text(
                                 '3',
-                                style: AppTextStyle.earning_Status,
+                                style: AppTextStyle.earning_Status(context),
                               ),
                             ],
                           ),

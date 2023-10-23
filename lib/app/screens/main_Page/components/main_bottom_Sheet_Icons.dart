@@ -36,8 +36,8 @@ class MainBottomSheetsIcons extends StatelessWidget {
               Text(
                 name,
                 style: index == value.currentIndex
-                    ? AppTextStyle.bottomBar_Selected_Text
-                    : AppTextStyle.bottomBar_Unselected_Text,
+                    ? AppTextStyle.bottomBar_Selected_Text(context)
+                    : AppTextStyle.bottomBar_Unselected_Text(context),
               )
             ],
           ),

@@ -36,7 +36,7 @@ class stayLoggedin extends StatelessWidget {
         widthW(11),
         Text(
           LocaleKeys.Stay_logged_in.tr(),
-          style: AppTextStyle.stay_Loggedin,
+          style: AppTextStyle.stay_Loggedin(context),
         ),
       ],
     );

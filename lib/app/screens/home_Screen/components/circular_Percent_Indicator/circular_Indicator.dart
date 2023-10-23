@@ -29,7 +29,7 @@ class CircularPercentIndicator extends StatelessWidget {
             ),
             Text(
               '${(percent).toStringAsFixed(0)}%',
-              style: AppTextStyle.status,
+              style: AppTextStyle.status(context),
             ),
           ],
         ),
@@ -64,7 +64,7 @@ class CircularTotalIndicator extends StatelessWidget {
             ),
             Text(
               '${total.toStringAsFixed(0)}',
-              style: AppTextStyle.status,
+              style: AppTextStyle.status(context),
             ),
           ],
         ),

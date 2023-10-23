@@ -4,7 +4,7 @@ import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/utils/localization/keys/codegen_loader.g.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 import '../components/app_Bar_Of_Home_Page.dart';
-import '../components/circular_Percent_Indicator/percent_Indicators.dart';
+import '../components/circular_Percent_Indicator/percent_Indicators_Tile.dart';
 import '../components/earning_Status.dart';
 
 class HomePage extends StatelessWidget {
@@ -23,14 +23,14 @@ class HomePage extends StatelessWidget {
               heightC(34),
               Text(
                 LocaleKeys.Your_Stats_are_Good_Keep_it_up.tr(),
-                style: AppTextStyle.status_Headings,
+                style: AppTextStyle.status_Headings(context),
               ),
               heightC(10),
               CircleIndicators(),
               heightC(35),
               Text(
                 LocaleKeys.Earning_Status.tr(),
-                style: AppTextStyle.status_Headings,
+                style: AppTextStyle.status_Headings(context),
               ),
               EarningStatus(),
             ],

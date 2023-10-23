@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => OTPTimerProvider()),
         ChangeNotifierProvider(create: (_) => MainPageProvider()),
         ChangeNotifierProvider(create: (_) => NotificationProvider()),
-        // ChangeNotifierProvider(create: (_) => CheckBoxProvider()),
+        // ChangeNotifierProvider(create: (_) => OTPControllerrProvider()),
         // ChangeNotifierProvider(create: (_) => CheckBoxProvider()),
       ],
       child: MaterialApp.router(

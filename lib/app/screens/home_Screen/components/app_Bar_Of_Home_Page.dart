@@ -24,11 +24,11 @@ class AppBarOfHomePage extends StatelessWidget {
               children: [
                 Text(
                   'Good Morning',
-                  style: AppTextStyle.good_Morning,
+                  style: AppTextStyle.good_Morning(context),
                 ),
                 Text(
                   'Taimoor!',
-                  style: AppTextStyle.name,
+                  style: AppTextStyle.name(context),
                 ),
               ],
             ),

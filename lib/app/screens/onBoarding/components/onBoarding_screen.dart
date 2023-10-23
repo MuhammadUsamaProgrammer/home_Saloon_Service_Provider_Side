@@ -32,14 +32,14 @@ class Screen extends StatelessWidget {
             heightC(MediaQuery.of(context).size.width / 5.7),
             Text(
               LocaleKeys.Onboarding_Screen_heading.tr(),
-              style: AppTextStyle.onBoarding_heading,
+              style: AppTextStyle.onBoarding_heading(context),
             ),
             heightC(16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 35.0),
               child: Text(
                 LocaleKeys.Onboarding_Screen_paragraph.tr(),
-                style: AppTextStyle.onBoarding_paragraph,
+                style: AppTextStyle.onBoarding_paragraph(context),
                 textAlign: TextAlign.center,
               ),
             ),

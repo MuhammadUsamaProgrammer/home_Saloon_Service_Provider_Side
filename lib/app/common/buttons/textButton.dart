@@ -35,7 +35,7 @@ class Button1 extends StatelessWidget {
         },
         child: Text(
           text,
-          style: AppTextStyle.button_text,
+          style: AppTextStyle.button_text(context),
         ),
         style: TextButton.styleFrom(
           foregroundColor:

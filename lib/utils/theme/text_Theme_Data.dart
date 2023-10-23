@@ -1,367 +1,421 @@
 import 'package:flutter/material.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
-
-extension TextSizeAdjuster on BuildContext {
-  double adjustedTextSize(double userTextSize) {
-    final MediaQueryData mediaQuery = MediaQuery.of(this);
-    final double devicePixelRatio = mediaQuery.devicePixelRatio;
-    // Calculate the adjusted text size
-    return userTextSize * devicePixelRatio / 3;
-  }
-}
+import 'package:home_saloon/utils/theme/text_Adjustment.dart';
 
 class AppTextStyle {
-  final BuildContext context;
-
-  AppTextStyle(this.context);
   static const String font = 'poppins';
-  static TextStyle onBoarding_heading = TextStyle(
-    fontFamily: font,
-    fontSize: 24,
-    fontWeight: FontWeight.w700,
-    color: MyColors.primaryColor,
-  );
 
-  static const TextStyle onBoarding_paragraph = TextStyle(
-    fontFamily: font,
-    fontSize: 16,
-    color: MyColors.onBoarding_paragraph_text_color,
-    fontWeight: FontWeight.w400,
-  );
+  static TextStyle onBoarding_heading(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: context.adjustedTextSize(24),
+      fontWeight: FontWeight.w700,
+      color: MyColors.primaryColor,
+    );
+  }
 
-  static const TextStyle button_text = TextStyle(
-    fontFamily: font,
-    fontSize: 18,
-    color: MyColors.textColor_Secondary,
-    fontWeight: FontWeight.w600,
-  );
+  static TextStyle onBoarding_paragraph(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 16,
+      color: MyColors.onBoarding_paragraph_text_color,
+      fontWeight: FontWeight.w400,
+    );
+  }
 
-  static const TextStyle continue_With_ShortCode = TextStyle(
-    fontFamily: font,
-    fontSize: 22,
-    color: MyColors.primaryColor,
-    fontWeight: FontWeight.w700,
-  );
+  static TextStyle button_text(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 18,
+      color: MyColors.textColor_Secondary,
+      fontWeight: FontWeight.w600,
+    );
+  }
 
-  static const TextStyle shortCode = TextStyle(
-    fontFamily: font,
-    fontSize: 18,
-    color: MyColors.textColor_primary,
-    fontWeight: FontWeight.w600,
-  );
+  static TextStyle continue_With_ShortCode(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 22,
+      color: MyColors.primaryColor,
+      fontWeight: FontWeight.w700,
+    );
+  }
 
-  static const TextStyle stay_Loggedin = TextStyle(
-    fontFamily: font,
-    fontSize: 12,
-    color: MyColors.stay_Login_Color,
-    fontWeight: FontWeight.w400,
-  );
+  static TextStyle shortCode(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 18,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w600,
+    );
+  }
 
-  static const TextStyle enter_OTP = TextStyle(
-    fontFamily: font,
-    fontSize: 26,
-    color: MyColors.textColor_primary,
-    fontWeight: FontWeight.w600,
-  );
+  static TextStyle stay_Loggedin(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 12,
+      color: MyColors.stay_Login_Color,
+      fontWeight: FontWeight.w400,
+    );
+  }
 
-  static const TextStyle resend_OTP_Active = TextStyle(
-    fontFamily: font,
-    fontSize: 15,
-    color: MyColors.primaryColor,
-    fontWeight: FontWeight.w400,
-  );
+  static TextStyle enter_OTP(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 26,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w600,
+    );
+  }
 
-  static const TextStyle resend_OTP_InActive = TextStyle(
-    fontFamily: font,
-    fontSize: 15,
-    color: MyColors.text_field_color,
-    fontWeight: FontWeight.w400,
-  );
+  static TextStyle resend_OTP_Active(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 15,
+      color: MyColors.primaryColor,
+      fontWeight: FontWeight.w400,
+    );
+  }
 
-  static const TextStyle timer_OTP = TextStyle(
-    fontFamily: font,
-    fontSize: 18,
-    color: MyColors.primaryColor,
-    fontWeight: FontWeight.w500,
-  );
+  static TextStyle resend_OTP_InActive(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 15,
+      color: MyColors.text_field_color,
+      fontWeight: FontWeight.w400,
+    );
+  }
 
-  static const TextStyle good_Morning = TextStyle(
-    fontFamily: font,
-    fontSize: 13,
-    color: MyColors.textColor_primary,
-    fontWeight: FontWeight.w700,
-  );
+  static TextStyle timer_OTP(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 18,
+      color: MyColors.primaryColor,
+      fontWeight: FontWeight.w500,
+    );
+  }
 
-  static const TextStyle name = TextStyle(
-    fontFamily: font,
-    fontSize: 19,
-    color: MyColors.textColor_primary,
-    fontWeight: FontWeight.w700,
-  );
+  static TextStyle good_Morning(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 13,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w700,
+    );
+  }
 
-  static const TextStyle status_Headings = TextStyle(
-    fontFamily: font,
-    fontSize: 16,
-    color: MyColors.textColor_primary,
-    fontWeight: FontWeight.w700,
-  );
+  static TextStyle name(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 19,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w700,
+    );
+  }
 
-  static const TextStyle status = TextStyle(
-    fontFamily: font,
-    fontSize: 17,
-    color: MyColors.textColor_Secondary,
-    fontWeight: FontWeight.w700,
-  );
+  static TextStyle status_Headings(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 16,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w700,
+    );
+  }
 
-  static const TextStyle status_Name = TextStyle(
-    fontFamily: font,
-    fontSize: 12,
-    color: MyColors.textColor_Secondary,
-    fontWeight: FontWeight.w600,
-  );
+  static TextStyle status(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 17,
+      color: MyColors.textColor_Secondary,
+      fontWeight: FontWeight.w700,
+    );
+  }
 
-  static const TextStyle earning_Status_Headings = TextStyle(
-    fontFamily: font,
-    fontSize: 12,
-    color: MyColors.textColor_Secondary,
-    fontWeight: FontWeight.w400,
-  );
+  static TextStyle status_Name(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 12,
+      color: MyColors.textColor_Secondary,
+      fontWeight: FontWeight.w600,
+    );
+  }
 
-  static const TextStyle earning_Status = TextStyle(
-    fontFamily: font,
-    fontSize: 16,
-    color: MyColors.textColor_Secondary,
-    fontWeight: FontWeight.w700,
-  );
+  static TextStyle earning_Status_Headings(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 12,
+      color: MyColors.textColor_Secondary,
+      fontWeight: FontWeight.w400,
+    );
+  }
 
-  static const TextStyle active_Orders = TextStyle(
-    fontFamily: font,
-    fontSize: 16,
-    color: MyColors.onBoarding_paragraph_text_color,
-    fontWeight: FontWeight.w700,
-  );
+  static TextStyle earning_Status(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 16,
+      color: MyColors.textColor_Secondary,
+      fontWeight: FontWeight.w700,
+    );
+  }
 
-  static const TextStyle see_All = TextStyle(
-    fontFamily: font,
-    fontSize: 12,
-    color: MyColors.see_All,
-    fontWeight: FontWeight.w400,
-  );
+  static TextStyle active_Orders(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 16,
+      color: MyColors.onBoarding_paragraph_text_color,
+      fontWeight: FontWeight.w700,
+    );
+  }
 
-  static const TextStyle Tile_Text_Heading = TextStyle(
-    fontFamily: font,
-    fontSize: 16,
-    color: MyColors.textColor_primary,
-    fontWeight: FontWeight.w600,
-  );
+  static TextStyle see_All(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 12,
+      color: MyColors.see_All,
+      fontWeight: FontWeight.w400,
+    );
+  }
 
-  static const TextStyle Tile_Text_content = TextStyle(
-    fontFamily: font,
-    fontSize: 13,
-    color: MyColors.textColor_primary,
-    fontWeight: FontWeight.w400,
-  );
+  static TextStyle Tile_Text_Heading(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 16,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w600,
+    );
+  }
 
-  static const TextStyle customer_Name__In_Tile = TextStyle(
-    fontFamily: font,
-    fontSize: 14,
-    color: MyColors.customer_Name__In_Tile,
-    fontWeight: FontWeight.w600,
-  );
+  static TextStyle Tile_Text_content(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 13,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w400,
+    );
+  }
 
-  static const TextStyle order_Status = TextStyle(
-    fontFamily: font,
-    fontSize: 12,
-    color: MyColors.primaryColor,
-    fontWeight: FontWeight.w500,
-  );
+  static TextStyle customer_Name__In_Tile(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 14,
+      color: MyColors.customer_Name__In_Tile,
+      fontWeight: FontWeight.w600,
+    );
+  }
 
-  static const TextStyle bottomBar_Selected_Text = TextStyle(
-    fontFamily: font,
-    fontSize: 8,
-    color: MyColors.primaryColor,
-    fontWeight: FontWeight.w400,
-  );
+  static TextStyle order_Status(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 12,
+      color: MyColors.primaryColor,
+      fontWeight: FontWeight.w500,
+    );
+  }
 
-  static const TextStyle bottomBar_Unselected_Text = TextStyle(
-    fontFamily: font,
-    fontSize: 8,
-    color: MyColors.unSelected_bottomBar_Icons_Color,
-    fontWeight: FontWeight.w400,
-  );
+  static TextStyle bottomBar_Selected_Text(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 8,
+      color: MyColors.primaryColor,
+      fontWeight: FontWeight.w400,
+    );
+  }
 
-  static const TextStyle manage_Orders = TextStyle(
-    fontFamily: font,
-    fontSize: 19,
-    color: MyColors.textColor_primary,
-    fontWeight: FontWeight.w700,
-  );
+  static TextStyle bottomBar_Unselected_Text(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 8,
+      color: MyColors.unSelected_bottomBar_Icons_Color,
+      fontWeight: FontWeight.w400,
+    );
+  }
 
-  static const TextStyle tabBar_Unselected_Heading = TextStyle(
-    fontFamily: font,
-    fontSize: 14,
-    color: MyColors.unSelected_TabBar_text_Color,
-    fontWeight: FontWeight.w400,
-  );
+  static TextStyle manage_Orders(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 19,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w700,
+    );
+  }
 
-  static const TextStyle tabBar_Selected_Heading = TextStyle(
-    fontFamily: font,
-    fontSize: 14,
-    color: MyColors.textColor_Secondary,
-    fontWeight: FontWeight.w400,
-  );
+  static TextStyle tabBar_Unselected_Heading(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 14,
+      color: MyColors.unSelected_TabBar_text_Color,
+      fontWeight: FontWeight.w400,
+    );
+  }
 
-  static const TextStyle profile_Name = TextStyle(
-    fontFamily: font,
-    fontSize: 22,
-    color: MyColors.textColor_primary,
-    fontWeight: FontWeight.w600,
-  );
+  static TextStyle tabBar_Selected_Heading(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 14,
+      color: MyColors.textColor_Secondary,
+      fontWeight: FontWeight.w400,
+    );
+  }
 
-  static const TextStyle lists_Text = TextStyle(
-    fontFamily: font,
-    fontSize: 16,
-    color: MyColors.textColor_primary,
-    fontWeight: FontWeight.w500,
-  );
+  static TextStyle profile_Name(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 22,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w600,
+    );
+  }
 
-  static const TextStyle coPages_Headings = TextStyle(
-    fontFamily: font,
-    fontSize: 18,
-    color: MyColors.textColor_primary,
-    fontWeight: FontWeight.w600,
-  );
+  static TextStyle lists_Text(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 16,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w500,
+    );
+  }
 
-  static const TextStyle current_Language = TextStyle(
-    fontFamily: font,
-    fontSize: 14,
-    color: MyColors.language,
-    fontWeight: FontWeight.w500,
-  );
+  static TextStyle coPages_Headings(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 18,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w600,
+    );
+  }
 
-  static const TextStyle edit_Profile_Text = TextStyle(
-    fontFamily: font,
-    fontSize: 18,
-    color: MyColors.text_field_color,
-    fontWeight: FontWeight.w500,
-  );
+  static TextStyle current_Language(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 14,
+      color: MyColors.language,
+      fontWeight: FontWeight.w500,
+    );
+  }
 
-  static const TextStyle available_Balance_Heading = TextStyle(
-    fontFamily: font,
-    fontSize: 14,
-    color: MyColors.available_Balance,
-    fontWeight: FontWeight.w500,
-  );
+  static TextStyle edit_Profile_Text(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 18,
+      color: MyColors.text_field_color,
+      fontWeight: FontWeight.w500,
+    );
+  }
 
-  static const TextStyle available_Balance = TextStyle(
-    fontFamily: font,
-    fontSize: 29,
-    color: MyColors.textColor_primary,
-    fontWeight: FontWeight.w600,
-  );
+  static TextStyle available_Balance_Heading(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 14,
+      color: MyColors.available_Balance,
+      fontWeight: FontWeight.w500,
+    );
+  }
 
-  static const TextStyle recent_Payments_Heading = TextStyle(
-    fontFamily: font,
-    fontSize: 14,
-    color: MyColors.onBoarding_paragraph_text_color,
-    fontWeight: FontWeight.w600,
-  );
+  static TextStyle available_Balance(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 29,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w600,
+    );
+  }
 
-  static const TextStyle recent_Payments_Date = TextStyle(
-    fontFamily: font,
-    fontSize: 10,
-    color: MyColors.available_Balance,
-    fontWeight: FontWeight.w400,
-  );
+  static TextStyle recent_Payments_Heading(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 14,
+      color: MyColors.onBoarding_paragraph_text_color,
+      fontWeight: FontWeight.w600,
+    );
+  }
 
-  static const TextStyle recent_Payments_Reason = TextStyle(
-    fontFamily: font,
-    fontSize: 16,
-    color: MyColors.textColor_primary,
-    fontWeight: FontWeight.w600,
-  );
+  static TextStyle recent_Payments_Date(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 10,
+      color: MyColors.available_Balance,
+      fontWeight: FontWeight.w400,
+    );
+  }
 
-  static const TextStyle recent_Payments_Amount = TextStyle(
-    fontFamily: font,
-    fontSize: 12,
-    color: MyColors.primaryColor,
-    fontWeight: FontWeight.w600,
-  );
+  static TextStyle recent_Payments_Reason(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 16,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w600,
+    );
+  }
 
-  static const TextStyle select_Options_In_Feedback = TextStyle(
-    fontFamily: font,
-    fontSize: 16,
-    color: MyColors.select_Options_In_Feedback,
-    fontWeight: FontWeight.w400,
-  );
+  static TextStyle recent_Payments_Amount(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 12,
+      color: MyColors.primaryColor,
+      fontWeight: FontWeight.w600,
+    );
+  }
 
-  static const TextStyle write_A_Message = TextStyle(
-    fontFamily: font,
-    fontSize: 12,
-    color: MyColors.textColor_primary,
-    fontWeight: FontWeight.w600,
-  );
+  static TextStyle select_Options_In_Feedback(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 16,
+      color: MyColors.select_Options_In_Feedback,
+      fontWeight: FontWeight.w400,
+    );
+  }
 
-  static const TextStyle type_Your_Message_Hint = TextStyle(
-    fontFamily: font,
-    fontSize: 14,
-    color: MyColors.text_field_color,
-    fontWeight: FontWeight.w500,
-  );
+  static TextStyle write_A_Message(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 12,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w600,
+    );
+  }
 
-  static const TextStyle type_Your_Message_Text = TextStyle(
-    fontFamily: font,
-    fontSize: 16,
-    color: MyColors.textColor_primary,
-    fontWeight: FontWeight.w400,
-  );
+  static TextStyle type_Your_Message_Hint(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 14,
+      color: MyColors.text_field_color,
+      fontWeight: FontWeight.w500,
+    );
+  }
 
-  static const TextStyle about_Terms_paragraph_Heading = TextStyle(
-    fontFamily: font,
-    fontSize: 16,
-    color: MyColors.textColor_primary,
-    fontWeight: FontWeight.w600,
-  );
+  static TextStyle type_Your_Message_Text(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 16,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w400,
+    );
+  }
 
-  static const TextStyle about_Terms_paragraph_Text = TextStyle(
-    fontFamily: font,
-    fontSize: 16,
-    color: MyColors.textColor_primary,
-    fontWeight: FontWeight.w400,
-  );
+  static TextStyle about_Terms_paragraph_Heading(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 16,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w600,
+    );
+  }
 
-  static const TextStyle contactUs_Texts = TextStyle(
-    fontFamily: font,
-    fontSize: 12,
-    color: MyColors.onBoarding_paragraph_text_color,
-    fontWeight: FontWeight.w400,
-  );
+  static TextStyle about_Terms_paragraph_Text(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 16,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w400,
+    );
+  }
 
-  // static const TextStyle onBoarding_paragraph = TextStyle(
-  //   fontFamily: font,
-  //   fontSize: 16,
-  //   color: MyColors.onBoarding_paragraph_text_color,
-  //   fontWeight: FontWeight.w400,
-  // );
-
-  // static const TextStyle onBoarding_paragraph = TextStyle(
-  //   fontFamily: font,
-  //   fontSize: 16,
-  //   color: MyColors.onBoarding_paragraph_text_color,
-  //   fontWeight: FontWeight.w400,
-  // );
-
-  // static const TextStyle onBoarding_paragraph = TextStyle(
-  //   fontFamily: font,
-  //   fontSize: 16,
-  //   color: MyColors.onBoarding_paragraph_text_color,
-  //   fontWeight: FontWeight.w400,
-  // );
-
-  // static const TextStyle onBoarding_paragraph = TextStyle(
-  //   fontFamily: font,
-  //   fontSize: 16,
-  //   color: MyColors.onBoarding_paragraph_text_color,
-  //   fontWeight: FontWeight.w400,
-  // );
+  static TextStyle contactUs_Texts(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 12,
+      color: MyColors.onBoarding_paragraph_text_color,
+      fontWeight: FontWeight.w400,
+    );
+  }
 }
