@@ -20,12 +20,12 @@ class MyColors {
   static const Color tile_shadow_color = Color(0x26693EFF);
   static const Color see_All = Color(0xFF939393);
   static const Color customer_Name__In_Tile = Color(0xFF7A7A7A);
+  static const Color bottom_Bar_Shadow_Color = Color(0xFFABB0BF);
   static const Color unSelected_bottomBar_Icons_Color = Color(0xFFABB0BF);
   static const Color unSelected_TabBar_text_Color = Color(0xFF7B7A85);
   static const Color available_Balance = Color(0xFF7A7A7A);
   static const Color language = Color(0xFFD6CFCD);
   static const Color select_Options_In_Feedback = Color(0xFF727272);
-  // static const Color primaryColor = Color(0xFF00AEEF);
   // static const Color primaryColor = Color(0xFF00AEEF);
   // static const Color primaryColor = Color(0xFF00AEEF);
 

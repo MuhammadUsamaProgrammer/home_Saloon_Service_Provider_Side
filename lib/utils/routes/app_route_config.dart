@@ -6,13 +6,14 @@ import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:home_saloon/utils/routes/transitions.dart';
 import '../../app/screens/authentication/oTP_Screen/View/oTP_Screen.dart';
 import '../../app/screens/authentication/short_Code_Screen/View/short_Code_Screen.dart';
+import '../../app/screens/splash_Screen/view/splash_View.dart';
 import '../../app/screens/test_Screens/error_Page.dart';
 
 GoRouter router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      pageBuilder: (context, state) => MaterialPage(child: MainPage()),
+      pageBuilder: (context, state) => MaterialPage(child: SplashScreen()),
     ),
     transitionsleftToRightPage(
         myRoutes: MyRoutes.onBoardingPage, screen: OnBoardingPage()),
@@ -20,7 +21,7 @@ GoRouter router = GoRouter(
         myRoutes: MyRoutes.shortCodeScreen, screen: ShortCodeScreen()),
     transitionsleftToRightPage(
         myRoutes: MyRoutes.oTPScreen, screen: OTPScreen()),
-    // transitionsleftToRightPage(myRoutes: MyRoutes.mainPage, screen: MainPage()),
+    transitionsleftToRightPage(myRoutes: MyRoutes.mainPage, screen: MainPage()),
     // transitionsleftToRightPage(myRoutes: MyRoutes.profile, screen: Profile()),
     // transitionsleftToRightPage(myRoutes: MyRoutes.profile, screen: Profile()),
     // transitionsleftToRightPage(myRoutes: MyRoutes.profile, screen: Profile()),

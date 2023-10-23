@@ -95,7 +95,7 @@ class AppTextStyle {
   static const TextStyle name = TextStyle(
     fontFamily: font,
     fontSize: 19,
-    color: MyColors.onBoarding_paragraph_text_color,
+    color: MyColors.textColor_primary,
     fontWeight: FontWeight.w700,
   );
 
@@ -176,7 +176,14 @@ class AppTextStyle {
     fontWeight: FontWeight.w500,
   );
 
-  static const TextStyle bottomBar_Text = TextStyle(
+  static const TextStyle bottomBar_Selected_Text = TextStyle(
+    fontFamily: font,
+    fontSize: 8,
+    color: MyColors.primaryColor,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle bottomBar_Unselected_Text = TextStyle(
     fontFamily: font,
     fontSize: 8,
     color: MyColors.unSelected_bottomBar_Icons_Color,

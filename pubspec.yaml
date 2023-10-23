@@ -72,6 +72,7 @@ flutter:
     - assets/localization/
     - assets/sounds/
     - assets/images/
+    - assets/svg/
     # - assets/sounds/click_Sound_Large_Button_Iphone.mpeg
     # - assets/sounds/click_Sound_Small_Button_Iphone.mpeg
 
