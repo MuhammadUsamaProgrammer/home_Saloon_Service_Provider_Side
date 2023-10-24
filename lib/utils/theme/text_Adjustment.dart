@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 
-// extension TextSizeAdjuster on BuildContext {
-//   double adjustedTextSize(double userTextSize) {
-//     final MediaQueryData mediaQuery = MediaQuery.of(this);
-//     // final double devicePixelRatio = mediaQuery.devicePixelRatio;
-//     // Calculate the adjusted text size
-//     return MediaQuery.of(this).size.width * userTextSize / 355;
-//   }
-// }
 extension TextSizeAdjuster on BuildContext {
   double adjustedTextSize(double userTextSize) {
     final MediaQueryData mediaQuery = MediaQuery.of(this);
     final double devicePixelRatio = mediaQuery.devicePixelRatio;
     // Calculate the adjusted text size
     return userTextSize * devicePixelRatio / 3;
+  }
+}
+
+class Responsivnes {
+  static double responsiveSize(size, BuildContext context) {
+    return MediaQuery.of(context).size.width * size / 390;
   }
 }
 // class AppFonts {

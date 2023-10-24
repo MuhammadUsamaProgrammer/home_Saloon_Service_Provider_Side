@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
-import 'package:home_saloon/utils/theme/text_Adjustment.dart';
 
-class AppTextStyle {
+class MyTextStyle {
   static const String font = 'poppins';
 
   static TextStyle onBoarding_heading(BuildContext context) {
     return TextStyle(
       fontFamily: font,
-      fontSize: context.adjustedTextSize(24),
+      fontSize: 24,
       fontWeight: FontWeight.w700,
       color: MyColors.primaryColor,
     );
@@ -113,6 +112,24 @@ class AppTextStyle {
     );
   }
 
+  static TextStyle search_Here(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 14,
+      color: MyColors.primaryColor,
+      fontWeight: FontWeight.w400,
+    );
+  }
+
+  static TextStyle filter_Text(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 13,
+      color: MyColors.primaryColor,
+      fontWeight: FontWeight.w400,
+    );
+  }
+
   static TextStyle status_Headings(BuildContext context) {
     return TextStyle(
       fontFamily: font,
@@ -162,7 +179,7 @@ class AppTextStyle {
     return TextStyle(
       fontFamily: font,
       fontSize: 16,
-      color: MyColors.onBoarding_paragraph_text_color,
+      color: MyColors.primaryColor,
       fontWeight: FontWeight.w700,
     );
   }
@@ -176,7 +193,7 @@ class AppTextStyle {
     );
   }
 
-  static TextStyle Tile_Text_Heading(BuildContext context) {
+  static TextStyle Tile_Price(BuildContext context) {
     return TextStyle(
       fontFamily: font,
       fontSize: 16,
@@ -199,6 +216,15 @@ class AppTextStyle {
       fontFamily: font,
       fontSize: 14,
       color: MyColors.customer_Name__In_Tile,
+      fontWeight: FontWeight.w600,
+    );
+  }
+
+  static TextStyle order_Date(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 16,
+      color: MyColors.textColor_primary,
       fontWeight: FontWeight.w600,
     );
   }

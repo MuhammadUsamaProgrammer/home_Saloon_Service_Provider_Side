@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:home_saloon/utils/icons/app_Icons.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../../../resources/icons/app_Icons.dart';
 import '../../../../utils/theme/colors_theme_data.dart';
 import '../../../common/toast_message/toast_message.dart';
 import '../../../common/vibrate/vibrate.dart';
@@ -20,6 +20,7 @@ class NotificationButton extends StatelessWidget {
             vibrate();
             if (value.notification == false)
               showToastMessage('No new notification');
+            // open notification botton sheet function
             showModalBottomSheet(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
@@ -40,9 +41,9 @@ class NotificationButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(100),
               boxShadow: [
                 BoxShadow(
-                  color: MyColors.bottom_Bar_Shadow_Color,
+                  color: MyColors.appBar_Items_Shadow_Color,
                   blurRadius: 5,
-                  // offset: Offset(5, 0),
+                  offset: Offset(1, 0),
                 ),
               ],
             ),

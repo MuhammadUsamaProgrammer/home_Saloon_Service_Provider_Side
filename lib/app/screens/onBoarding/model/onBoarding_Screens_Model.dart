@@ -1,4 +1,4 @@
-import 'package:home_saloon/utils/images/images_Path.dart';
+import '../../../../resources/images/images_Path.dart';
 
 class OnBoardingScreenModel {
   final String image;
@@ -9,12 +9,12 @@ class OnBoardingScreenModel {
 
 List<OnBoardingScreenModel> onBoardingScreenModel = [
   OnBoardingScreenModel(
-    image: ImagesPath.onBoarding_1,
+    image: MyImagesPath.onBoarding_1,
   ),
   OnBoardingScreenModel(
-    image: ImagesPath.onBoarding_2,
+    image: MyImagesPath.onBoarding_2,
   ),
   OnBoardingScreenModel(
-    image: ImagesPath.onBoarding_3,
+    image: MyImagesPath.onBoarding_3,
   ),
 ];

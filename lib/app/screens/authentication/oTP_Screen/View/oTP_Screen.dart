@@ -51,7 +51,7 @@ class OTPScreen extends StatelessWidget {
                           // Heading Text
                           Text(
                             LocaleKeys.enter_OTP.tr(),
-                            style: AppTextStyle.enter_OTP(context),
+                            style: MyTextStyle.enter_OTP(context),
                           ),
                           heightC(44),
                           // text field

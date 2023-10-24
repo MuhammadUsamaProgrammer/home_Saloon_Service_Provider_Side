@@ -10,10 +10,11 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // inside 3 pages (home)(orders)(profile)
       body: Consumer<MainPageProvider>(
         builder: (context, value, child) {
           return Container(
-            padding: EdgeInsets.only(bottom: 80),
+            padding: EdgeInsets.only(bottom: 68),
             child: PageView(
               physics: BouncingScrollPhysics(),
               controller: value.controller,

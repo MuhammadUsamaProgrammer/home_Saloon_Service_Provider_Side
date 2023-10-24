@@ -17,6 +17,7 @@ class OnBoardingScreenBottomButton extends StatelessWidget {
     return Consumer<OnBoardingProvider>(
       builder: (context, value, child) {
         return value.isLastPage
+            // get started button
             ? Padding(
                 padding: const EdgeInsets.only(left: 24, right: 24, bottom: 18),
                 child: Button1(
@@ -27,6 +28,7 @@ class OnBoardingScreenBottomButton extends StatelessWidget {
                   },
                 ),
               )
+            // next page button
             : Padding(
                 padding: const EdgeInsets.only(left: 24, right: 24, bottom: 18),
                 child: Button1(

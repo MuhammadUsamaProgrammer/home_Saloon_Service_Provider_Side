@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:home_saloon/utils/audio/click_Sounds.dart';
+import 'package:home_saloon/resources/audio/click_Sounds.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 
 import '../../../utils/theme/colors_theme_data.dart';
@@ -35,7 +35,7 @@ class Button1 extends StatelessWidget {
         },
         child: Text(
           text,
-          style: AppTextStyle.button_text(context),
+          style: MyTextStyle.button_text(context),
         ),
         style: TextButton.styleFrom(
           foregroundColor:

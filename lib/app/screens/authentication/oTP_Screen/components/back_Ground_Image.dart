@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../utils/images/images_Path.dart';
+import '../../../../../resources/images/images_Path.dart';
 import '../../../../../utils/theme/colors_theme_data.dart';
 
 class BackGroundImageOTPScreen extends StatelessWidget {
@@ -18,7 +18,7 @@ class BackGroundImageOTPScreen extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
-                    ImagesPath.oTP_Image,
+                    MyImagesPath.oTP_Image,
                   ),
                   fit: BoxFit.cover),
             ),

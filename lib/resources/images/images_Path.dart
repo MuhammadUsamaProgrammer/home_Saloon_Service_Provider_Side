@@ -1,4 +1,4 @@
-class ImagesPath {
+class MyImagesPath {
   static const String logo = 'assets/images/logo.png';
   static const String splashText = 'assets/images/Agent_Text.png';
   static const String onBoarding_1 = 'assets/images/onBoarding_1.png';

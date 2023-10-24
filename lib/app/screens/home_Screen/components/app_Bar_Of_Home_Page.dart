@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
-import 'package:home_saloon/utils/images/images_Path.dart';
+import 'package:home_saloon/app/common/vibrate/vibrate.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 
+import '../../../../resources/images/images_Path.dart';
 import '../../../../utils/theme/colors_theme_data.dart';
 import 'notification_Button.dart';
 
@@ -24,35 +25,41 @@ class AppBarOfHomePage extends StatelessWidget {
               children: [
                 Text(
                   'Good Morning',
-                  style: AppTextStyle.good_Morning(context),
+                  style: MyTextStyle.good_Morning(context),
                 ),
                 Text(
                   'Taimoor!',
-                  style: AppTextStyle.name(context),
+                  style: MyTextStyle.name(context),
                 ),
               ],
             ),
             // notification & profile pic
             Row(
               children: [
+                // notification button
                 NotificationButton(),
                 widthW(11),
                 // profile image
-                Container(
-                  height: 37,
-                  width: 37,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      border: Border.all(color: Colors.white, width: 1),
-                      boxShadow: [
-                        BoxShadow(
-                          color: MyColors.bottom_Bar_Shadow_Color,
-                          blurRadius: 5,
-                        ),
-                      ],
-                      image: DecorationImage(
-                          image: AssetImage(ImagesPath.profile_Image),
-                          fit: BoxFit.cover)),
+                GestureDetector(
+                  onTap: () {
+                    vibrate();
+                  },
+                  child: Container(
+                    height: 37,
+                    width: 37,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        border: Border.all(color: Colors.white, width: 1),
+                        boxShadow: [
+                          BoxShadow(
+                            color: MyColors.appBar_Items_Shadow_Color,
+                            blurRadius: 1,
+                          ),
+                        ],
+                        image: DecorationImage(
+                            image: AssetImage(MyImagesPath.profile_Image),
+                            fit: BoxFit.cover)),
+                  ),
                 )
               ],
             )

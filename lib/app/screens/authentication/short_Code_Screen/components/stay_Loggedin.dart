@@ -15,6 +15,7 @@ class stayLoggedin extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        // check box
         Consumer<CheckBoxProvider>(
           builder: (context, value, child) => InkWell(
             onTap: () {
@@ -34,9 +35,10 @@ class stayLoggedin extends StatelessWidget {
           ),
         ),
         widthW(11),
+        // stay loggedin text
         Text(
           LocaleKeys.Stay_logged_in.tr(),
-          style: AppTextStyle.stay_Loggedin(context),
+          style: MyTextStyle.stay_Loggedin(context),
         ),
       ],
     );

@@ -48,14 +48,13 @@ class ShortCodeScreen extends StatelessWidget {
                           // Heading Text
                           Text(
                             LocaleKeys.Continue_with_shortcode.tr(),
-                            style:
-                                AppTextStyle.continue_With_ShortCode(context),
+                            style: MyTextStyle.continue_With_ShortCode(context),
                           ),
                           heightC(44),
                           // textfield heading
                           Text(
                             LocaleKeys.shortcode.tr(),
-                            style: AppTextStyle.shortCode(context),
+                            style: MyTextStyle.shortCode(context),
                           ),
                           heightC(15),
                           // text field

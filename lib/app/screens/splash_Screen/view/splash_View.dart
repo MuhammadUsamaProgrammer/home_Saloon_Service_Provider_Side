@@ -2,9 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:home_saloon/utils/images/images_Path.dart';
 import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
+
+import '../../../../resources/images/images_Path.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -35,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage(ImagesPath.onBoarding_1),
+                      image: AssetImage(MyImagesPath.onBoarding_1),
                       fit: BoxFit.cover)),
             ),
             Container(
@@ -60,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     width: 167,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage(ImagesPath.logo),
+                            image: AssetImage(MyImagesPath.logo),
                             fit: BoxFit.cover)),
                   ),
                   Container(
@@ -68,7 +69,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     width: 134,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage(ImagesPath.splashText),
+                            image: AssetImage(MyImagesPath.splashText),
                             filterQuality: FilterQuality.high)),
                   ),
                 ],

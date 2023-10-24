@@ -26,18 +26,26 @@ class MainBottomSheetsIcons extends StatelessWidget {
           },
           child: Column(
             children: [
-              SvgPicture.asset(
-                svg,
-                color: index == value.currentIndex
-                    ? MyColors.primaryColor
-                    : MyColors.unSelected_bottomBar_Icons_Color,
+              // bottom Icon
+              AnimatedContainer(
+                duration: Duration(milliseconds: 300),
+                height: index == value.currentIndex ? 32 : 26,
+                child: SvgPicture.asset(
+                  svg,
+                  color: index == value.currentIndex
+                      ? MyColors.primaryColor
+                      : MyColors.unSelected_bottomBar_Icons_Color,
+                  width: 32,
+                  // height: 30,
+                ),
               ),
               heightC(6),
+              // icon text
               Text(
                 name,
                 style: index == value.currentIndex
-                    ? AppTextStyle.bottomBar_Selected_Text(context)
-                    : AppTextStyle.bottomBar_Unselected_Text(context),
+                    ? MyTextStyle.bottomBar_Selected_Text(context)
+                    : MyTextStyle.bottomBar_Unselected_Text(context),
               )
             ],
           ),

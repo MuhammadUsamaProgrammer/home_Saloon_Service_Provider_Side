@@ -23,6 +23,7 @@ class Screen extends StatelessWidget {
             Container(
               height: MediaQuery.of(context).size.width + 50,
               width: MediaQuery.of(context).size.width,
+              // image
               child: ClipRRect(
                   child: Image.asset(
                 onBoardingScreenModel[index].image,
@@ -30,16 +31,18 @@ class Screen extends StatelessWidget {
               )),
             ),
             heightC(MediaQuery.of(context).size.width / 5.7),
+            // heading
             Text(
               LocaleKeys.Onboarding_Screen_heading.tr(),
-              style: AppTextStyle.onBoarding_heading(context),
+              style: MyTextStyle.onBoarding_heading(context),
             ),
             heightC(16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 35.0),
+              // paragraph text
               child: Text(
                 LocaleKeys.Onboarding_Screen_paragraph.tr(),
-                style: AppTextStyle.onBoarding_paragraph(context),
+                style: MyTextStyle.onBoarding_paragraph(context),
                 textAlign: TextAlign.center,
               ),
             ),

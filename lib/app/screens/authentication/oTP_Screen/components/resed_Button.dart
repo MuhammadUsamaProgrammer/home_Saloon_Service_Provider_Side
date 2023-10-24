@@ -20,8 +20,8 @@ class ResendButton extends StatelessWidget {
               },
               child: Text('RESEND',
                   style: value.seconds == 0
-                      ? AppTextStyle.resend_OTP_Active(context)
-                      : AppTextStyle.resend_OTP_InActive(context)),
+                      ? MyTextStyle.resend_OTP_Active(context)
+                      : MyTextStyle.resend_OTP_InActive(context)),
             );
           },
         )

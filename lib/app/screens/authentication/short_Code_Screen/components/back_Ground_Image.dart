@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../utils/images/images_Path.dart';
+import '../../../../../resources/images/images_Path.dart';
 import '../../../../../utils/theme/colors_theme_data.dart';
 
 class ShortCodeBackGroundImage extends StatelessWidget {
@@ -18,7 +18,7 @@ class ShortCodeBackGroundImage extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
-                    ImagesPath.short_Code_Image,
+                    MyImagesPath.short_Code_Image,
                   ),
                   fit: BoxFit.cover),
             ),

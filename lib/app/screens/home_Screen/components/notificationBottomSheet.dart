@@ -11,7 +11,6 @@ class NotificationbottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 230,
-      // width: MediaQuery.of(context).size.width * .5,
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(50)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -19,6 +18,7 @@ class NotificationbottomSheet extends StatelessWidget {
           SizedBox(
             height: 11,
           ),
+          // bottom sheet handle container
           Center(
             child: Container(
               height: 5,
@@ -43,6 +43,7 @@ class NotificationbottomSheet extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
+          // notifications
           Consumer<NotificationProvider>(
             builder: (context, value, child) {
               return InkWell(
