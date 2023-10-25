@@ -1,11 +1,12 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-class MainPageProvider with ChangeNotifier {
+class OrderScreenProvider extends ChangeNotifier {
+  //
   PageController _controller = PageController();
+  PageController get controller => _controller;
+
   int _currentIndex = 0;
   int get currentIndex => _currentIndex;
-
-  PageController get controller => _controller;
 
   void setPage(int index) {
     _currentIndex = index;
@@ -14,6 +15,11 @@ class MainPageProvider with ChangeNotifier {
 
   void changePage(int index) {
     controller.jumpToPage(index);
+    notifyListeners();
+  }
+
+  void onChangePanal() {
+    _currentIndex = 0;
     notifyListeners();
   }
 

@@ -274,10 +274,11 @@ class MyTextStyle {
     );
   }
 
-  static TextStyle tabBar_Selected_Heading(BuildContext context) {
+  static TextStyle tabBar_Selected_Heading(BuildContext context,
+      {double textSize = 14}) {
     return TextStyle(
       fontFamily: font,
-      fontSize: 14,
+      fontSize: textSize,
       color: MyColors.textColor_Secondary,
       fontWeight: FontWeight.w400,
     );

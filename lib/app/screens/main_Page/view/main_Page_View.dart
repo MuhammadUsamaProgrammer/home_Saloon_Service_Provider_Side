@@ -21,8 +21,8 @@ class MainPage extends StatelessWidget {
               onPageChanged: value.setPage,
               children: [
                 HomePage(),
-                ProfileScreen(),
                 OrderScreen(),
+                ProfileScreen(),
               ],
             ),
           );

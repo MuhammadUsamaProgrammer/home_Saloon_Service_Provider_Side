@@ -12,6 +12,7 @@ class OrdersContainer extends StatelessWidget {
   final String address;
   final String date;
   final String status;
+  final double width;
   const OrdersContainer({
     super.key,
     required this.image,
@@ -21,6 +22,7 @@ class OrdersContainer extends StatelessWidget {
     required this.address,
     required this.date,
     required this.status,
+    this.width = 364,
   });
 
   @override
@@ -30,9 +32,9 @@ class OrdersContainer extends StatelessWidget {
         vibrate();
       },
       child: Container(
-        margin: EdgeInsets.only(bottom: 8),
+        margin: EdgeInsets.only(bottom: 8, right: 8),
         height: 172,
-        width: 364,
+        width: width,
         // whole tile decoration
         decoration: BoxDecoration(
           color: MyColors.backgroundColor,
@@ -89,9 +91,13 @@ class OrdersContainer extends StatelessWidget {
                               size: 20,
                             ),
                             // SvgPicture.asset(MySvgPath.plane_Icon),
-                            Text(
-                              address,
-                              style: MyTextStyle.Tile_Text_content(context),
+                            Container(
+                              width: MediaQuery.of(context).size.width / 2.4,
+                              child: Text(
+                                address,
+                                style: MyTextStyle.Tile_Text_content(context),
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             ),
                           ],
                         )

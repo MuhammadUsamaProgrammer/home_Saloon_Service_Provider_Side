@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:home_saloon/app/screens/main_Page/view/main_Page_View.dart';
@@ -15,6 +17,10 @@ GoRouter router = GoRouter(
       path: '/',
       pageBuilder: (context, state) => MaterialPage(child: SplashScreen()),
     ),
+    // GoRoute(
+    //   path: '/',
+    //   pageBuilder: (context, state) => MaterialPage(child: MainPage()),
+    // ),
     transitionsleftToRightPage(
         myRoutes: MyRoutes.onBoardingPage, screen: OnBoardingPage()),
     transitionsleftToRightPage(

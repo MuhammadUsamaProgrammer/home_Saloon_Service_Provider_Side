@@ -1,14 +1,16 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/app/common/vibrate/vibrate.dart';
+import 'package:home_saloon/utils/localization/keys/codegen_loader.g.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
-
 import '../../../../resources/images/images_Path.dart';
 import '../../../../utils/theme/colors_theme_data.dart';
 import 'notification_Button.dart';
 
-class AppBarOfHomePage extends StatelessWidget {
-  const AppBarOfHomePage({super.key});
+class CustomAppBar extends StatelessWidget {
+  final int index;
+  CustomAppBar({super.key, this.index = 0});
 
   @override
   Widget build(BuildContext context) {
@@ -19,20 +21,26 @@ class AppBarOfHomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            //   goodmorning and name
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Good Morning',
-                  style: MyTextStyle.good_Morning(context),
-                ),
-                Text(
-                  'Taimoor!',
-                  style: MyTextStyle.name(context),
-                ),
-              ],
-            ),
+            index == 0
+                //   goodmorning and name
+                ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Good Morning',
+                        style: MyTextStyle.good_Morning(context),
+                      ),
+                      Text(
+                        'Taimoor!',
+                        style: MyTextStyle.name(context),
+                      ),
+                    ],
+                  )
+                //   Manage_Orders
+                : Text(
+                    LocaleKeys.Manage_Orders.tr(),
+                    style: MyTextStyle.manage_Orders(context),
+                  ),
             // notification & profile pic
             Row(
               children: [

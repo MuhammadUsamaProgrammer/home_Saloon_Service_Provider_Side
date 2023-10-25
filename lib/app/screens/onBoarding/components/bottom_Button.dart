@@ -25,6 +25,7 @@ class OnBoardingScreenBottomButton extends StatelessWidget {
                   onTap: () {
                     vibrate();
                     GoRouter.of(context).goNamed(MyRoutes.shortCodeScreen);
+                    value.dispose();
                   },
                 ),
               )

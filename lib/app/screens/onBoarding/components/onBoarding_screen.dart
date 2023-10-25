@@ -21,16 +21,25 @@ class Screen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              height: MediaQuery.of(context).size.width + 50,
+              height: MediaQuery.of(context).size.height / 2,
               width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(34),
+                      bottomRight: Radius.circular(34)),
+                  image: DecorationImage(
+                      image: AssetImage(
+                        onBoardingScreenModel[index].image,
+                      ),
+                      fit: BoxFit.cover)),
               // image
-              child: ClipRRect(
-                  child: Image.asset(
-                onBoardingScreenModel[index].image,
-                fit: BoxFit.cover,
-              )),
+              // child: ClipRRect(
+              //     child: Image.asset(
+              //   onBoardingScreenModel[index].image,
+              //   fit: BoxFit.cover,
+              // )),
             ),
-            heightC(MediaQuery.of(context).size.width / 5.7),
+            heightC(MediaQuery.of(context).size.height / 15),
             // heading
             Text(
               LocaleKeys.Onboarding_Screen_heading.tr(),
