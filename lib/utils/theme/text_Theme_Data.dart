@@ -284,6 +284,15 @@ class MyTextStyle {
     );
   }
 
+  static TextStyle page_Heading_Profile(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 18,
+      color: MyColors.backgroundColor,
+      fontWeight: FontWeight.w600,
+    );
+  }
+
   static TextStyle profile_Name(BuildContext context) {
     return TextStyle(
       fontFamily: font,

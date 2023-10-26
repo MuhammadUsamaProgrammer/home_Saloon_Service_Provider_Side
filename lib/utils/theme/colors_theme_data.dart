@@ -10,6 +10,7 @@ class MyColors {
   static const Color auth_Image_Color = Color(0x38F74C69);
   static const Color textColor_primary = Color(0xFF000000);
   static const Color text_field_color = Color(0xFFADADAD);
+  static const Color text_field_color_Secondary = Color(0x66E4E4E4);
   static const Color unSelected_index_color = Color(0xFFE4E4E6);
   static const Color textColor_Secondary = Color(0xFFFFFFFF);
   static const Color stay_Login_checkBox_Color = Color(0xFFEEEEEE);

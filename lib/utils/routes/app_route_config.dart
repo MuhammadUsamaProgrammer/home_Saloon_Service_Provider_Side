@@ -13,21 +13,21 @@ import '../../app/screens/test_Screens/error_Page.dart';
 
 GoRouter router = GoRouter(
   routes: [
-    GoRoute(
-      path: '/',
-      pageBuilder: (context, state) => MaterialPage(child: SplashScreen()),
-    ),
     // GoRoute(
     //   path: '/',
-    //   pageBuilder: (context, state) => MaterialPage(child: MainPage()),
+    //   pageBuilder: (context, state) => MaterialPage(child: SplashScreen()),
     // ),
+    GoRoute(
+      path: '/',
+      pageBuilder: (context, state) => MaterialPage(child: MainPage()),
+    ),
     transitionsleftToRightPage(
         myRoutes: MyRoutes.onBoardingPage, screen: OnBoardingPage()),
     transitionsleftToRightPage(
         myRoutes: MyRoutes.shortCodeScreen, screen: ShortCodeScreen()),
     transitionsleftToRightPage(
         myRoutes: MyRoutes.oTPScreen, screen: OTPScreen()),
-    transitionsleftToRightPage(myRoutes: MyRoutes.mainPage, screen: MainPage()),
+    // transitionsleftToRightPage(myRoutes: MyRoutes.mainPage, screen: MainPage()),
     // transitionsleftToRightPage(myRoutes: MyRoutes.profile, screen: Profile()),
     // transitionsleftToRightPage(myRoutes: MyRoutes.profile, screen: Profile()),
     // transitionsleftToRightPage(myRoutes: MyRoutes.profile, screen: Profile()),
