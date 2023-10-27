@@ -56,10 +56,10 @@ class HomePage extends StatelessWidget {
                   heightC(10),
                   // service provider earning status
                   EarningStatus(),
-                  heightC(26),
+                  heightC(14),
                   // active orders see all row
                   SeeAllRow(),
-                  heightC(20),
+                  heightC(7),
                 ],
               ),
             ),

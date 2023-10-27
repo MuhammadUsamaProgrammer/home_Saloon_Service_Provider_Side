@@ -19,7 +19,7 @@ class ShortCodeTextField extends StatelessWidget {
           key: value.formKey,
           child: TextFormField(
               cursorColor: MyColors.primaryColor,
-              keyboardType: TextInputType.number,
+              keyboardType: TextInputType.visiblePassword,
               controller: value.shortCodeTextController,
               validator: (value) {
                 if (value == null || value.isEmpty) {

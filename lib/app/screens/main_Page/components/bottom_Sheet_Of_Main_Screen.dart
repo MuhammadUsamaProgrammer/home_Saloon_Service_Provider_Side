@@ -11,46 +11,43 @@ class BottomSheetOfMainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 68,
-      width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: MyColors.bottom_Bar_Shadow_Color,
-            blurRadius: 15,
-            // offset: Offset(5, 0),
-          ),
-        ],
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              MainBottomSheetsIcons(
-                svg: MySvgPath.home_Svg,
-                name: LocaleKeys.Home.tr(),
-                index: 0,
-              ),
-              SizedBox(),
-              MainBottomSheetsIcons(
-                svg: MySvgPath.orders_Svg,
-                name: LocaleKeys.Orders.tr(),
-                index: 1,
-              ),
-              SizedBox(),
-              MainBottomSheetsIcons(
-                svg: MySvgPath.profile_Svg,
-                name: LocaleKeys.Profile.tr(),
-                index: 2,
-              ),
-            ],
-          ),
-        ],
+    return Material(
+      child: Container(
+        height: 68,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: MyColors.bottom_Bar_Shadow_Color,
+              blurRadius: 15,
+              // offset: Offset(5, 0),
+            ),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            MainBottomSheetsIcons(
+              svg: MySvgPath.home_Svg,
+              name: LocaleKeys.Home.tr(),
+              index: 0,
+            ),
+            SizedBox(),
+            MainBottomSheetsIcons(
+              svg: MySvgPath.orders_Svg,
+              name: LocaleKeys.Orders.tr(),
+              index: 1,
+            ),
+            SizedBox(),
+            MainBottomSheetsIcons(
+              svg: MySvgPath.profile_Svg,
+              name: LocaleKeys.Profile.tr(),
+              index: 2,
+            ),
+          ],
+        ),
       ),
     );
   }

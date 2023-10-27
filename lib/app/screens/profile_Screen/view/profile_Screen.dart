@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../components/backGroud_Image.dart';
 import '../components/foreground_Content copy.dart';
 

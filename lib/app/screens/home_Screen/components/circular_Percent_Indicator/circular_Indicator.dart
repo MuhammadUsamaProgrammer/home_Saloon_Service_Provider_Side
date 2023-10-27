@@ -52,17 +52,20 @@ class CircularPercentIndicator extends StatelessWidget {
             ],
           ),
           heightC(12),
-          Row(
-            children: [
-              // bottom text
-              Expanded(
-                child: Text(
-                  text,
-                  style: MyTextStyle.status_Name(context),
-                  textAlign: TextAlign.center,
+          Container(
+            width: 75,
+            child: Row(
+              children: [
+                // bottom text
+                Expanded(
+                  child: Text(
+                    text,
+                    style: MyTextStyle.status_Name(context),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),

@@ -20,25 +20,32 @@ class ProfileItemsTile extends StatelessWidget {
             onTap: () {
               ontap;
             },
-            child: Container(
-              height: 62,
-              width: context.MediaQueryWidth(),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    text,
-                    style: MyTextStyle.lists_Text(context),
-                  ),
-                  SvgPicture.asset(MySvgPath.next_Arrow_Round)
-                ],
+            borderRadius: BorderRadius.circular(5),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 7.0),
+              child: Container(
+                height: 62,
+                width: context.MediaQueryWidth(),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      text,
+                      style: MyTextStyle.lists_Text(context),
+                    ),
+                    SvgPicture.asset(MySvgPath.next_Arrow_Round)
+                  ],
+                ),
               ),
             ),
           ),
         ),
-        Divider(
-          color: MyColors.text_field_color_Secondary,
-          thickness: 2,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 7.0),
+          child: Divider(
+            color: MyColors.text_field_color_Secondary,
+            thickness: 2,
+          ),
         )
       ],
     );

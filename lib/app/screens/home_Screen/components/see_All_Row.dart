@@ -26,15 +26,21 @@ class SeeAllRow extends StatelessWidget {
           onTap: () {
             vibrate();
           },
-          child: Row(
-            children: [
-              Text(
-                LocaleKeys.See_All.tr(),
-                style: MyTextStyle.see_All(context),
-              ),
-              widthW(5),
-              SvgPicture.asset(MySvgPath.next_Arrow_Boxy),
-            ],
+          borderRadius: BorderRadius.circular(5),
+          child: Container(
+            height: 50,
+            width: 70,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  LocaleKeys.See_All.tr(),
+                  style: MyTextStyle.see_All(context),
+                ),
+                widthW(5),
+                SvgPicture.asset(MySvgPath.next_Arrow_Boxy),
+              ],
+            ),
           ),
         )
       ],

@@ -50,9 +50,17 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => MainPageProvider()),
         ChangeNotifierProvider(create: (_) => NotificationProvider()),
         ChangeNotifierProvider(create: (_) => OrderScreenProvider()),
-        // ChangeNotifierProvider(create: (_) => CheckBoxProvider()),
+        // ChangeNotifierProvider(create: (_) => BounceState()),
+        // ChangeNotifierProvider(create: (_) => BounceState()),
+        // ChangeNotifierProvider(create: (_) => BounceState()),
+        // ChangeNotifierProvider(create: (_) => BounceState()),
+        // ChangeNotifierProvider(create: (_) => BounceState()),
       ],
       child: MaterialApp.router(
+        builder: (_, child) {
+          return ScrollConfiguration(
+              behavior: CustomBehaviour(), child: child!);
+        },
         supportedLocales: context.supportedLocales,
         localizationsDelegates: context.localizationDelegates,
         locale: context.locale,
@@ -66,7 +74,31 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class CustomBehaviour extends ScrollBehavior {
+  @override
+  Widget buildOverscrollIndicator(
+    BuildContext context,
+    Widget child,
+    ScrollableDetails details,
+  ) {
+    return GlowingOverscrollIndicator(
+      child: child,
+      showLeading: true,
+      showTrailing: false,
+      axisDirection: details.direction,
+      color: MyColors.backgroundColor,
+    );
+  }
+}
 
+
+// class CustomBehaviour extends ScrollBehavior {
+//   @override
+//   Widget buildOverscrollIndicator(BuildContext context, Widget child, _) {
+//     // TODO: implement buildOverscrollIndicator
+//     return child;
+//   }
+// }
 
 // comands for localization and key filder
 

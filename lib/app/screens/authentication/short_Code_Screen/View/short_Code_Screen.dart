@@ -27,15 +27,16 @@ class ShortCodeScreen extends StatelessWidget {
           ShortCodeBackGroundImage(),
           // Front screen(textfields, buttons etc)
           SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
             child: Column(
               children: [
                 heightC(201),
                 Container(
-                  height: MediaQuery.of(context).size.height,
+                  height: 800,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20)),
                     color: MyColors.backgroundColor,
                   ),
                   // padding of just inner content

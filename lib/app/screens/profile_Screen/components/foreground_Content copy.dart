@@ -14,9 +14,8 @@ class ForegroundContentProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
       child: Container(
-        height: context.MediaQueryHeight(),
+        height: 907,
         width: context.MediaQueryWidth(),
         // this stack is to place profile image over ther foreground content
         child: Stack(children: [
@@ -32,7 +31,7 @@ class ForegroundContentProfileScreen extends StatelessWidget {
                           topLeft: Radius.circular(16),
                           topRight: Radius.circular(16))),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 27.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -56,22 +55,27 @@ class ForegroundContentProfileScreen extends StatelessWidget {
                           color: MyColors.backgroundColor,
                           child: InkWell(
                             onTap: () {},
-                            child: Container(
-                              height: 62,
-                              width: context.MediaQueryWidth(),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    LocaleKeys.Logout.tr(),
-                                    style: MyTextStyle.lists_Text(context),
-                                  ),
-                                  widthW(14),
-                                  Icon(
-                                    Icons.logout_rounded,
-                                    color: MyColors.primaryColor,
-                                  )
-                                  // SvgPicture.asset(MySvgPath.logout),
-                                ],
+                            borderRadius: BorderRadius.circular(5),
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 7.0),
+                              child: Container(
+                                height: 62,
+                                width: context.MediaQueryWidth(),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      LocaleKeys.Logout.tr(),
+                                      style: MyTextStyle.lists_Text(context),
+                                    ),
+                                    widthW(14),
+                                    Icon(
+                                      Icons.logout_rounded,
+                                      color: MyColors.primaryColor,
+                                    )
+                                    // SvgPicture.asset(MySvgPath.logout),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
