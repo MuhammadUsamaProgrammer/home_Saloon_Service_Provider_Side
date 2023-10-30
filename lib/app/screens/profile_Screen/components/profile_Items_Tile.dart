@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
+import 'package:home_saloon/app/common/vibrate/vibrate.dart';
 import 'package:home_saloon/resources/icons/app_Icons.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
@@ -18,7 +19,8 @@ class ProfileItemsTile extends StatelessWidget {
           color: MyColors.backgroundColor,
           child: InkWell(
             onTap: () {
-              ontap;
+              vibrate();
+              ontap();
             },
             borderRadius: BorderRadius.circular(5),
             child: Padding(

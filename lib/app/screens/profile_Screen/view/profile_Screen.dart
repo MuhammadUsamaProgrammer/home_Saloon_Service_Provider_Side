@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/backGroud_Image.dart';
-import '../components/foreground_Content copy.dart';
+import '../components/foreground_Content.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});

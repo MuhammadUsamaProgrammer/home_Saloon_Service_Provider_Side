@@ -8,8 +8,9 @@ class MyImagesPath {
   static const String saloon_Image = 'assets/images/saloon_Image.png';
   static const String short_Code_Image = 'assets/images/short_Code_Image.png';
   static const String profile_Image = 'assets/images/profile.png';
-  // static const String
-  // static const String
+  static const String dotted_Container_Border =
+      'assets/images/dotted_Border.png';
+  static const String file_Icon = 'assets/images/file_Icon.png';
   // static const String
   // static const String
   // static const String

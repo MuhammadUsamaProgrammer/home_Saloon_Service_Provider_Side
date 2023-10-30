@@ -320,11 +320,29 @@ class MyTextStyle {
     );
   }
 
+  static TextStyle setting_Page_Tile_Text(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 16,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w600,
+    );
+  }
+
   static TextStyle current_Language(BuildContext context) {
     return TextStyle(
       fontFamily: font,
       fontSize: 14,
       color: MyColors.language,
+      fontWeight: FontWeight.w500,
+    );
+  }
+
+  static TextStyle current_Language_Dialog_Text(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 14,
+      color: MyColors.textColor_primary,
       fontWeight: FontWeight.w500,
     );
   }
@@ -360,7 +378,7 @@ class MyTextStyle {
     return TextStyle(
       fontFamily: font,
       fontSize: 14,
-      color: MyColors.onBoarding_paragraph_text_color,
+      color: MyColors.textColor_primary,
       fontWeight: FontWeight.w600,
     );
   }

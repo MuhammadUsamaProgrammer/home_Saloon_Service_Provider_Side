@@ -40,6 +40,8 @@ abstract class  LocaleKeys {
   static const My_Wallet = 'My_Wallet';
   static const Settings = 'Settings';
   static const Logout = 'Logout';
+  static const Change_Password = 'Change_Password';
+  static const Current_Language = 'Current_Language';
   static const Change_Language = 'Change_Language';
   static const About_us = 'About_us';
   static const Privacy_Policy = 'Privacy_Policy';

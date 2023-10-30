@@ -1,9 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
 import 'package:home_saloon/app/screens/profile_Screen/components/profile_Image.dart';
 import 'package:home_saloon/app/screens/profile_Screen/components/profile_Items_Tile.dart';
+import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 import '../../../../utils/localization/keys/codegen_loader.g.dart';
@@ -43,12 +45,23 @@ class ForegroundContentProfileScreen extends StatelessWidget {
                         ),
                         heightC(50),
                         // lists
+                        // Edit_Profile tile
                         ProfileItemsTile(
                             text: LocaleKeys.Edit_Profile.tr(), ontap: () {}),
+                        // My_Wallet tile
                         ProfileItemsTile(
-                            text: LocaleKeys.My_Wallet.tr(), ontap: () {}),
+                            text: LocaleKeys.My_Wallet.tr(),
+                            ontap: () {
+                              GoRouter.of(context)
+                                  .pushNamed(MyRoutes.myWalletScreen);
+                            }),
+                        // Settings tile
                         ProfileItemsTile(
-                            text: LocaleKeys.Settings.tr(), ontap: () {}),
+                            text: LocaleKeys.Settings.tr(),
+                            ontap: () {
+                              GoRouter.of(context)
+                                  .pushNamed(MyRoutes.settingScreen);
+                            }),
 
                         // logout tile
                         Material(

@@ -31,6 +31,7 @@ class MyColors {
   static const Color select_Options_In_Feedback = Color(0xFF727272);
   static const Color container_Shadow_Color = Color(0x26693EFF);
   static const Color filter_Box_Color = Color(0xFFEAF7FF);
+  static const Color recent_Payment_Tile_Shadow_Color = Color(0x12000000);
 
   static const MaterialColor primaryMaterial =
       MaterialColor(_primaryPrimaryValue, <int, Color>{

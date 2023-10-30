@@ -107,3 +107,5 @@ class CustomBehaviour extends ScrollBehavior {
 // flutter pub run easy_localization:generate --source-dir ./assets/localization --output-dir ./lib/keys -f keys
 
 // flutter pub run easy_localization:generate -h
+
+// flutter build apk --split-per-abi
