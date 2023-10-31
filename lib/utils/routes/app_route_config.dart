@@ -16,14 +16,15 @@ import '../../app/screens/test_Screens/error_Page.dart';
 
 GoRouter router = GoRouter(
   routes: [
-    // GoRoute(
-    //   path: '/',
-    //   pageBuilder: (context, state) => MaterialPage(child: SplashScreen()),
-    // ),
     GoRoute(
       path: '/',
       pageBuilder: (context, state) => MaterialPage(child: MainPage()),
     ),
+    // GoRoute(
+    //   path: '/',
+    //   pageBuilder: (context, state) => MaterialPage(child: SplashScreen()),
+    // ),
+    // transitionsleftToRightPage(myRoutes: MyRoutes.mainPage, screen: MainPage()),
     transitionsleftToRightPage(
         myRoutes: MyRoutes.onBoardingPage, screen: OnBoardingPage()),
     transitionsleftToRightPage(
@@ -36,7 +37,6 @@ GoRouter router = GoRouter(
         myRoutes: MyRoutes.myWalletScreen, screen: MyWalletScreen()),
     transitionsleftToRightPage(
         myRoutes: MyRoutes.feedbackScreen, screen: FeedbackScreen()),
-    // transitionsleftToRightPage(myRoutes: MyRoutes.profile, screen: Profile()),
     // transitionsleftToRightPage(myRoutes: MyRoutes.profile, screen: Profile()),
     // transitionsleftToRightPage(myRoutes: MyRoutes.profile, screen: Profile()),
   ],

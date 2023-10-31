@@ -15,6 +15,7 @@ class OrderScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          heightC(20),
           // app bar
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -47,14 +48,14 @@ class OrderScreen extends StatelessWidget {
               ],
             ),
           ),
-          heightC(28),
+          heightC(10),
           // this is page view of all orders sepratly
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Consumer<OrderScreenProvider>(
               builder: (context, value, child) {
                 return Container(
-                  height: MediaQuery.of(context).size.height - 230,
+                  height: MediaQuery.of(context).size.height - 250,
                   child: PageView(
                     physics: BouncingScrollPhysics(),
                     controller: value.controller,

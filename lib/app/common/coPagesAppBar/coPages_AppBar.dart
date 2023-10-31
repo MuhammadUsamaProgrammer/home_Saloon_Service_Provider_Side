@@ -4,10 +4,10 @@ import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/app/common/vibrate/vibrate.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 
-class CoPagesAppBar extends StatelessWidget {
+class CoPagesAppBarContent extends StatelessWidget {
   final String heading;
   final double padding;
-  CoPagesAppBar({super.key, required this.heading, this.padding = 10});
+  CoPagesAppBarContent({super.key, required this.heading, this.padding = 10});
 
   @override
   Widget build(BuildContext context) {
@@ -26,16 +26,36 @@ class CoPagesAppBar extends StatelessWidget {
                   width: 50,
                   child: Row(
                     children: [
-                      Icon(Icons.arrow_back_rounded),
+                      // back icon
+                      Icon(
+                        Icons.arrow_back_rounded,
+                        color: Colors.black,
+                      ),
                     ],
                   ))),
+          // appbar heading
           Text(
             heading,
             style: MyTextStyle.coPages_Headings(context),
           ),
+          // this sizedbox is for balance to make heading perfectly in center
           widthW(50),
         ],
       ),
     );
   }
+}
+
+// appbar setting
+
+PreferredSizeWidget? CoPagesAppBar(String heading) {
+  return AppBar(
+    leading: Text(''),
+    leadingWidth: 0,
+    shadowColor: Colors.transparent,
+    backgroundColor: Colors.transparent,
+    title: CoPagesAppBarContent(
+      heading: heading,
+    ),
+  );
 }

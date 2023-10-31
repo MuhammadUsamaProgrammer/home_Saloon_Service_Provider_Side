@@ -17,21 +17,28 @@ class PageViewScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      physics: BouncingScrollPhysics(),
-      itemCount: itemCount,
-      itemBuilder: (context, listIndex) {
-        return OrdersContainer(
-          image: activeOrdersModel[0].image,
-          name: activeOrdersModel[0].name,
-          price: activeOrdersModel[0].price,
-          service_Type: activeOrdersModel[0].service_Type,
-          address: activeOrdersModel[0].address,
-          date: activeOrdersModel[0].date,
-          status: serviceStatusModel[index].status,
-          width: MediaQuery.of(context).size.width,
-        );
-      },
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Expanded(
+          child: ListView.builder(
+            physics: BouncingScrollPhysics(),
+            itemCount: itemCount,
+            itemBuilder: (context, listIndex) {
+              return OrdersContainer(
+                image: activeOrdersModel[0].image,
+                name: activeOrdersModel[0].name,
+                price: activeOrdersModel[0].price,
+                service_Type: activeOrdersModel[0].service_Type,
+                address: activeOrdersModel[0].address,
+                date: activeOrdersModel[0].date,
+                status: serviceStatusModel[index].status,
+                width: MediaQuery.of(context).size.width,
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 }

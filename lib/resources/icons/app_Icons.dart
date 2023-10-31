@@ -11,4 +11,5 @@ class MySvgPath {
   static const String logout = 'assets/svg/logout.svg';
   static const String search = 'assets/svg/search.svg';
   static const String file_Icon = 'assets/svg/file_Icon.svg';
+  static const String dropDown_Icon = 'assets/svg/dropDown_Icon.svg';
 }

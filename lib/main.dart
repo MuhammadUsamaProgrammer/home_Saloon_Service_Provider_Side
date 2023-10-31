@@ -9,7 +9,9 @@ import 'app/screens/authentication/oTP_Screen/provider/oTP_Controller_Provider.d
 import 'app/screens/authentication/oTP_Screen/provider/oTP_timer_Provider.dart';
 import 'app/screens/authentication/short_Code_Screen/provider/check_Box_Provider.dart';
 import 'app/screens/authentication/short_Code_Screen/provider/shortCode_Controller_Provider.dart';
+import 'app/screens/feedback_Screen/provider/feedback_Provider.dart';
 import 'app/screens/home_Screen/provider/notification_Provider.dart';
+import 'app/screens/myWallet/provider/heightControlProvider.dart';
 import 'app/screens/onBoarding/provider/onBoarding_Provider.dart';
 import 'app/screens/orders_Screen/provider/order_Screen_Provider.dart';
 import 'utils/localization/codegen_loader.g.dart';
@@ -50,8 +52,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => MainPageProvider()),
         ChangeNotifierProvider(create: (_) => NotificationProvider()),
         ChangeNotifierProvider(create: (_) => OrderScreenProvider()),
-        // ChangeNotifierProvider(create: (_) => BounceState()),
-        // ChangeNotifierProvider(create: (_) => BounceState()),
+        ChangeNotifierProvider(create: (_) => FeedbackProvider()),
+        ChangeNotifierProvider(create: (_) => HeightControlProvider()),
         // ChangeNotifierProvider(create: (_) => BounceState()),
         // ChangeNotifierProvider(create: (_) => BounceState()),
         // ChangeNotifierProvider(create: (_) => BounceState()),

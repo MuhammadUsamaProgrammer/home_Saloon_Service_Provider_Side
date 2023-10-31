@@ -1,60 +1,40 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
+import 'package:home_saloon/app/screens/feedback_Screen/components/feedBack_Options.dart';
+import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 import '../../../../utils/localization/keys/codegen_loader.g.dart';
 import '../../../common/coPagesAppBar/coPages_AppBar.dart';
 import '../../../common/cutomize_Sizedbox/CustomsizedBox.dart';
 
-class FeedbackScreen extends StatefulWidget {
-  const FeedbackScreen({super.key});
+class FeedbackScreen extends StatelessWidget {
+  const FeedbackScreen({Key? key});
 
-  @override
-  State<FeedbackScreen> createState() => _FeedbackScreenState();
-}
-
-class _FeedbackScreenState extends State<FeedbackScreen> {
   @override
   Widget build(BuildContext context) {
-    String? dropDownValue = '1';
     return Scaffold(
+      // app bar
+      appBar: CoPagesAppBar(
+        LocaleKeys.Feedback.tr(),
+      ),
+      // body
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Column(
-              children: [
-                // app bar
-                CoPagesAppBar(
-                  heading: LocaleKeys.Feedback.tr(),
-                ),
-                heightC(57),
-                DropdownButton<String>(
-                  value: dropDownValue,
-                  icon: Icon(Icons.menu),
-                  style: TextStyle(),
-                  items: [
-                    DropdownMenuItem<String>(
-                      value: '1',
-                      child: Text('one'),
-                    ),
-                    DropdownMenuItem<String>(
-                      value: '2',
-                      child: Text('two'),
-                    ),
-                    DropdownMenuItem<String>(
-                      value: '3',
-                      child: Text('three'),
-                    ),
-                  ],
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      dropDownValue = newValue!;
-                    });
-                  },
-                )
-              ],
-            ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              heightC(57),
+              // feedback options
+              FeedbackOptions(),
+              heightC(33),
+              Text(
+                LocaleKeys.Write_a_message.tr(),
+                style: MyTextStyle.write_A_Message(context),
+              ),
+
+              heightC(10),
+            ],
           ),
         ),
       ),
