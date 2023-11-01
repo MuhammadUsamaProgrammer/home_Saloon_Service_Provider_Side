@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
+import 'package:home_saloon/app/common/vibrate/vibrate.dart';
 import 'package:home_saloon/app/screens/profile_Screen/components/profile_Image.dart';
 import 'package:home_saloon/app/screens/profile_Screen/components/profile_Items_Tile.dart';
 import 'package:home_saloon/utils/routes/app_route_const.dart';
@@ -69,6 +70,7 @@ class ForegroundContentProfileScreen extends StatelessWidget {
                           color: MyColors.backgroundColor,
                           child: InkWell(
                             onTap: () {
+                              vibrate();
                               showDialog(
                                   context: context,
                                   builder: (BuildContext context) {

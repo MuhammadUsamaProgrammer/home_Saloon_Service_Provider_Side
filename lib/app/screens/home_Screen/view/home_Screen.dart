@@ -28,7 +28,6 @@ class HomePage extends StatelessWidget {
             ),
             Expanded(
               child: SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
                 child: Column(
                   children: [
                     Padding(
@@ -56,6 +55,7 @@ class HomePage extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          //  earning status heading
                           Text(
                             LocaleKeys.Earning_Status.tr(),
                             style: MyTextStyle.status_Headings(context),

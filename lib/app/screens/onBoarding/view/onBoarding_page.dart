@@ -17,7 +17,6 @@ class OnBoardingPage extends StatelessWidget {
               return Container(
                 padding: EdgeInsets.only(bottom: 80),
                 child: PageView(
-                  physics: BouncingScrollPhysics(),
                   controller: value.controller,
                   onPageChanged: value.setPage,
                   children: [

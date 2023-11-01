@@ -9,6 +9,7 @@ import 'app/screens/authentication/oTP_Screen/provider/oTP_Controller_Provider.d
 import 'app/screens/authentication/oTP_Screen/provider/oTP_timer_Provider.dart';
 import 'app/screens/authentication/short_Code_Screen/provider/check_Box_Provider.dart';
 import 'app/screens/authentication/short_Code_Screen/provider/shortCode_Controller_Provider.dart';
+import 'app/screens/feedback_Screen/provider/feedbackTextControllerProvider.dart';
 import 'app/screens/feedback_Screen/provider/feedback_Provider.dart';
 import 'app/screens/home_Screen/provider/notification_Provider.dart';
 import 'app/screens/myWallet/provider/heightControlProvider.dart';
@@ -55,7 +56,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => OrderScreenProvider()),
         ChangeNotifierProvider(create: (_) => FeedbackProvider()),
         ChangeNotifierProvider(create: (_) => HeightControlProvider()),
-        // ChangeNotifierProvider(create: (_) => BounceState()),
+        ChangeNotifierProvider(create: (_) => FeedbackTextControllerProvider()),
         // ChangeNotifierProvider(create: (_) => BounceState()),
         // ChangeNotifierProvider(create: (_) => BounceState()),
       ],
@@ -68,7 +69,7 @@ class MyApp extends StatelessWidget {
         locale: context.locale,
         routerConfig: router,
         theme: ThemeData(
-          useMaterial3: true,
+          // useMaterial3: true,
           primaryColor: MyColors.primaryMaterial,
           scaffoldBackgroundColor: MyColors.backgroundColor,
         ),
@@ -106,16 +107,6 @@ class CustomBehavior extends ScrollBehavior {
     );
   }
 }
-
-
-
-// class CustomBehaviour extends ScrollBehavior {
-//   @override
-//   Widget buildOverscrollIndicator(BuildContext context, Widget child, _) {
-//     // TODO: implement buildOverscrollIndicator
-//     return child;
-//   }
-// }
 
 // comands for localization and key filder
 

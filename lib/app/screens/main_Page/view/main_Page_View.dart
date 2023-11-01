@@ -16,7 +16,6 @@ class MainPage extends StatelessWidget {
           return Container(
             padding: EdgeInsets.only(bottom: 68),
             child: PageView(
-              physics: BouncingScrollPhysics(),
               controller: value.controller,
               onPageChanged: value.setPage,
               children: [

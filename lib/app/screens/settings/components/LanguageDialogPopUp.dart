@@ -18,7 +18,6 @@ class LanguageDialogPopUp extends StatelessWidget {
         height: 270,
         width: 324,
         child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [

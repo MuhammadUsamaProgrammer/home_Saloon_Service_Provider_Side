@@ -10,8 +10,8 @@ class CircleIndicators extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
+      physics: BouncingScrollPhysics(),
       child: Row(
         children: [
           widthW(24),

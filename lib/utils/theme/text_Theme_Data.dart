@@ -302,6 +302,24 @@ class MyTextStyle {
     );
   }
 
+  static TextStyle logout_Text(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 12,
+      color: Color.fromARGB(219, 173, 173, 173),
+      fontWeight: FontWeight.w500,
+    );
+  }
+
+  static TextStyle popup_Button_Yes(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 12,
+      color: MyColors.backgroundColor,
+      fontWeight: FontWeight.w500,
+    );
+  }
+
   static TextStyle lists_Text(BuildContext context) {
     return TextStyle(
       fontFamily: font,

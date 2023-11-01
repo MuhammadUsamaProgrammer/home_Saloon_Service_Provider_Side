@@ -55,9 +55,8 @@ class OrderScreen extends StatelessWidget {
             child: Consumer<OrderScreenProvider>(
               builder: (context, value, child) {
                 return Container(
-                  height: MediaQuery.of(context).size.height - 250,
+                  height: MediaQuery.of(context).size.height - 234,
                   child: PageView(
-                    physics: BouncingScrollPhysics(),
                     controller: value.controller,
                     onPageChanged: value.setPage,
                     children: [

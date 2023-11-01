@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:home_saloon/app/screens/home_Screen/components/orders_Container.dart';
-
 import '../../home_Screen/models/active_Orders_Model.dart';
 import '../models/service_Status_Model.dart';
 
@@ -22,7 +21,6 @@ class PageViewScreen extends StatelessWidget {
       children: [
         Expanded(
           child: ListView.builder(
-            physics: BouncingScrollPhysics(),
             itemCount: itemCount,
             itemBuilder: (context, listIndex) {
               return OrdersContainer(

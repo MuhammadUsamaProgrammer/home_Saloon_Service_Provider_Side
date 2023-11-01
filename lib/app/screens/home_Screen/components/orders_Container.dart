@@ -22,7 +22,7 @@ class OrdersContainer extends StatelessWidget {
     required this.address,
     required this.date,
     required this.status,
-    this.width = 364,
+    this.width = 360,
   });
 
   @override
