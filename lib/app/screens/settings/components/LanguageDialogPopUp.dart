@@ -1,18 +1,12 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/buttons/textButton.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
-import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
-import 'package:home_saloon/app/common/vibrate/vibrate.dart';
+import 'package:home_saloon/app/screens/settings/components/language_Popup_Tile.dart';
+import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import '../../../../utils/theme/text_Theme_Data.dart';
 
-class DialogPopUp extends StatelessWidget {
-  final String message;
-  final String okText;
-  DialogPopUp({
+class LanguageDialogPopUp extends StatelessWidget {
+  LanguageDialogPopUp({
     super.key,
-    required this.message,
-    required this.okText,
   });
   @override
   Widget build(BuildContext context) {
@@ -21,7 +15,7 @@ class DialogPopUp extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: Container(
-        height: context.MediaQueryHeight() / 2.5,
+        height: 270,
         width: 324,
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
@@ -33,72 +27,21 @@ class DialogPopUp extends StatelessWidget {
                 'Select Language',
                 style: MyTextStyle.setting_Page_Tile_Text(context),
               ),
-              heightC(30),
-              // english Language button
-              Container(
-                height: 50,
-                width: 150,
-                child: InkWell(
-                  onTap: () async {
-                    await context.setLocale(Locale('en'));
-                    vibrate();
-                  },
-                  borderRadius: BorderRadius.circular(5),
-                  child: Center(
-                    child: Text(
-                      'English',
-                      style: MyTextStyle.current_Language_Dialog_Text(context),
-                    ),
-                  ),
-                ),
+              heightC(20),
+              Divider(
+                color: MyColors.language,
+                thickness: 0.5,
+                height: 1,
               ),
+              heightC(10),
+              // english Language button
+              LanguagePopupTile(languageCode: 'en', text: 'English'),
               heightC(10),
               // اردو Language button
-              Container(
-                height: 50,
-                width: 150,
-                child: InkWell(
-                  onTap: () async {
-                    await context.setLocale(Locale('ur'));
-                    vibrate();
-                  },
-                  borderRadius: BorderRadius.circular(5),
-                  child: Center(
-                    child: Text(
-                      'اردو',
-                      style: MyTextStyle.current_Language_Dialog_Text(context),
-                    ),
-                  ),
-                ),
-              ),
+              LanguagePopupTile(languageCode: 'ur', text: 'اردو'),
               heightC(10),
               // العربية Language button
-              Container(
-                height: 50,
-                width: 150,
-                child: InkWell(
-                  onTap: () async {
-                    await context.setLocale(Locale('ar'));
-                    vibrate();
-                  },
-                  borderRadius: BorderRadius.circular(5),
-                  child: Center(
-                    child: Text(
-                      'العربية',
-                      style: MyTextStyle.current_Language_Dialog_Text(context),
-                    ),
-                  ),
-                ),
-              ),
-              heightC(20),
-              // Ok Language button
-              Button1(
-                  width: 150,
-                  text: 'Ok',
-                  onTap: () {
-                    Navigator.pop(context);
-                  }),
-              heightC(20),
+              LanguagePopupTile(languageCode: 'ar', text: 'العربية'),
             ],
           ),
         ),

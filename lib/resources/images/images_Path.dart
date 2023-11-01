@@ -11,7 +11,7 @@ class MyImagesPath {
   static const String dotted_Container_Border =
       'assets/images/dotted_Border.png';
   static const String file_Icon = 'assets/images/file_Icon.png';
-  // static const String
+  static const String error = 'assets/images/error.png';
   // static const String
   // static const String
   // static const String

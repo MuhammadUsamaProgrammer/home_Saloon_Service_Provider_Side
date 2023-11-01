@@ -21,39 +21,48 @@ class MyWalletScreen extends StatelessWidget {
         LocaleKeys.My_Wallet.tr(),
       ),
       // body
-      body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              heightC(46),
-              // current balance detail container
-              CurrentBalanceContainer(),
-              // this is height between payment container and recent transaction
-              Consumer<HeightControlProvider>(
-                builder: (context, value, child) {
-                  if (context.MediaQueryHeight() * 0.6 -
+      body: Scrollbar(
+        // ignore: deprecated_member_use
+        hoverThickness: 50,
+        trackVisibility: false,
+        radius: Radius.circular(100),
+        thumbVisibility: true,
+        thickness: 10,
+        interactive: true,
+        child: SingleChildScrollView(
+          // physics: BouncingScrollPhysics()
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                heightC(46),
+                // current balance detail container
+                CurrentBalanceContainer(),
+                // this is height between payment container and recent transaction
+                Consumer<HeightControlProvider>(
+                  builder: (context, value, child) {
+                    if (context.MediaQueryHeight() * 0.6 -
+                            (value.containerHeight + value.sizedBoxHeight) *
+                                value.items.toDouble() >
+                        0) {
+                      return heightC(context.MediaQueryHeight() * 0.6 -
                           (value.containerHeight + value.sizedBoxHeight) *
-                              value.items.toDouble() >
-                      0) {
-                    return heightC(context.MediaQueryHeight() * 0.6 -
-                        (value.containerHeight + value.sizedBoxHeight) *
-                            value.items.toDouble());
-                  } else
-                    return heightC(10);
-                },
-              ),
-              // this is recent paymets heading
-              Text(
-                LocaleKeys.Recent_Payments.tr(),
-                style: MyTextStyle.recent_Payments_Heading(context),
-              ),
-              heightC(27),
-              // this is the list of all recent payment withdraws
-              RecentTransactionList(),
-            ],
+                              value.items.toDouble());
+                    } else
+                      return heightC(10);
+                  },
+                ),
+                // this is recent paymets heading
+                Text(
+                  LocaleKeys.Recent_Payments.tr(),
+                  style: MyTextStyle.recent_Payments_Heading(context),
+                ),
+                heightC(27),
+                // this is the list of all recent payment withdraws
+                RecentTransactionList(),
+              ],
+            ),
           ),
         ),
       ),

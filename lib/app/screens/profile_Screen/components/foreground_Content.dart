@@ -9,6 +9,7 @@ import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 import '../../../../utils/localization/keys/codegen_loader.g.dart';
+import 'logoutDialogPopUp.dart';
 
 class ForegroundContentProfileScreen extends StatelessWidget {
   const ForegroundContentProfileScreen({super.key});
@@ -67,7 +68,13 @@ class ForegroundContentProfileScreen extends StatelessWidget {
                         Material(
                           color: MyColors.backgroundColor,
                           child: InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return LogoutDialogPopUp();
+                                  });
+                            },
                             borderRadius: BorderRadius.circular(5),
                             child: Padding(
                               padding:

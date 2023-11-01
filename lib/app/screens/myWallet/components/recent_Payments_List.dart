@@ -20,6 +20,8 @@ class RecentTransactionList extends StatelessWidget {
               value.items.toDouble(),
           width: context.MediaQueryWidth(),
           child: ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            scrollDirection: Axis.vertical,
             itemCount: value.items,
             itemBuilder: (context, index) {
               // this colum is to give distance in Recent transection container and sized box

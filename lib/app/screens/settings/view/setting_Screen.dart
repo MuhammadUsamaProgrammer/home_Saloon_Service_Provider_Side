@@ -7,7 +7,7 @@ import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 
 import '../../../common/cutomize_Sizedbox/CustomsizedBox.dart';
-import '../components/LanguageDialogPopUp.dart';
+import '../components/languageDialogPopUp.dart';
 import '../components/settingTile.dart';
 
 class SettingScreen extends StatelessWidget {
@@ -44,10 +44,7 @@ class SettingScreen extends StatelessWidget {
                   showDialog(
                       context: context,
                       builder: (BuildContext context) {
-                        return DialogPopUp(
-                          message: 'text',
-                          okText: 'Ok',
-                        );
+                        return LanguageDialogPopUp();
                       });
                 },
               ),

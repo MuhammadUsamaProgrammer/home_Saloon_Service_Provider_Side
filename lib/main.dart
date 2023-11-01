@@ -21,6 +21,7 @@ Future<void> main() async {
     SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark,
+      statusBarBrightness: Brightness.dark,
     ),
   );
   WidgetsFlutterBinding.ensureInitialized();
@@ -60,14 +61,14 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp.router(
         builder: (_, child) {
-          return ScrollConfiguration(
-              behavior: CustomBehaviour(), child: child!);
+          return ScrollConfiguration(behavior: CustomBehavior(), child: child!);
         },
         supportedLocales: context.supportedLocales,
         localizationsDelegates: context.localizationDelegates,
         locale: context.locale,
         routerConfig: router,
         theme: ThemeData(
+          useMaterial3: true,
           primaryColor: MyColors.primaryMaterial,
           scaffoldBackgroundColor: MyColors.backgroundColor,
         ),
@@ -76,22 +77,36 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class CustomBehaviour extends ScrollBehavior {
+// class CustomBehaviour extends ScrollBehavior {
+//   @override
+//   Widget buildOverscrollIndicator(
+//     BuildContext context,
+//     Widget child,
+//     ScrollableDetails details,
+//   ) {
+//     return GlowingOverscrollIndicator(
+//       child: child,
+//       showLeading: true,
+//       showTrailing: false,
+//       axisDirection: details.direction,
+//       color: MyColors.backgroundColor,
+//     );
+//   }
+// }
+class CustomBehavior extends ScrollBehavior {
   @override
   Widget buildOverscrollIndicator(
     BuildContext context,
     Widget child,
     ScrollableDetails details,
   ) {
-    return GlowingOverscrollIndicator(
+    return StretchingOverscrollIndicator(
+      axisDirection: AxisDirection.down,
       child: child,
-      showLeading: true,
-      showTrailing: false,
-      axisDirection: details.direction,
-      color: MyColors.backgroundColor,
     );
   }
 }
+
 
 
 // class CustomBehaviour extends ScrollBehavior {
