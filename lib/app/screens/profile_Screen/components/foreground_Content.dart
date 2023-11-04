@@ -9,7 +9,9 @@ import 'package:home_saloon/app/screens/profile_Screen/components/profile_Items_
 import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
+import 'package:provider/provider.dart';
 import '../../../../utils/localization/keys/codegen_loader.g.dart';
+import '../../editProfile_Screen/provider/edit_Profile_Details_Provider.dart';
 import 'logoutDialogPopUp.dart';
 
 class ForegroundContentProfileScreen extends StatelessWidget {
@@ -41,15 +43,23 @@ class ForegroundContentProfileScreen extends StatelessWidget {
                       children: [
                         heightC(66),
                         // name of user
-                        Text(
-                          'Anny Peter',
-                          style: MyTextStyle.profile_Name(context),
+                        Consumer<EditProfileDetailsProvider>(
+                          builder: (context, value, child) {
+                            return Text(
+                              '${value.firstName} ${value.secondName}',
+                              style: MyTextStyle.profile_Name(context),
+                            );
+                          },
                         ),
                         heightC(50),
                         // lists
                         // Edit_Profile tile
                         ProfileItemsTile(
-                            text: LocaleKeys.Edit_Profile.tr(), ontap: () {}),
+                            text: LocaleKeys.Edit_Profile.tr(),
+                            ontap: () {
+                              GoRouter.of(context)
+                                  .pushNamed(MyRoutes.editProfileScreen);
+                            }),
                         // My_Wallet tile
                         ProfileItemsTile(
                             text: LocaleKeys.My_Wallet.tr(),

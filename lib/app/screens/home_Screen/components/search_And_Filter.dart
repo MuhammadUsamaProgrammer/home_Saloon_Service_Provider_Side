@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/app/common/vibrate/vibrate.dart';
+import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -22,6 +24,7 @@ class SearchAndFilter extends StatelessWidget {
             child: InkWell(
               onTap: () {
                 vibrate();
+                GoRouter.of(context).pushNamed(MyRoutes.searchScreen);
               },
               borderRadius: BorderRadius.circular(20),
               child: Container(

@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:provider/provider.dart';
-
 import '../../../../utils/localization/keys/codegen_loader.g.dart';
 import '../../../common/buttons/textButton.dart';
-import '../../../common/vibrate/vibrate.dart';
 import '../provider/onBoarding_Provider.dart';
 
 class OnBoardingScreenBottomButton extends StatelessWidget {
@@ -23,7 +21,6 @@ class OnBoardingScreenBottomButton extends StatelessWidget {
                 child: Button1(
                   text: 'Get Started',
                   onTap: () {
-                    vibrate();
                     GoRouter.of(context).goNamed(MyRoutes.shortCodeScreen);
                     value.dispose();
                   },
@@ -35,7 +32,6 @@ class OnBoardingScreenBottomButton extends StatelessWidget {
                 child: Button1(
                   text: LocaleKeys.next_button_text.tr(),
                   onTap: () {
-                    vibrate();
                     value.controller.nextPage(
                       duration: Duration(milliseconds: 500),
                       curve: Curves.easeInOut,

@@ -62,7 +62,7 @@ class OrderScreen extends StatelessWidget {
                     children: [
                       PageViewScreen(
                         index: 0,
-                        itemCount: 2,
+                        itemCount: 4,
                       ),
                       PageViewScreen(
                         index: 1,

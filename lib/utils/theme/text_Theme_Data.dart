@@ -486,7 +486,7 @@ class MyTextStyle {
     return TextStyle(
       fontFamily: font,
       fontSize: 12,
-      color: MyColors.onBoarding_paragraph_text_color,
+      color: MyColors.textColor_primary,
       fontWeight: FontWeight.w400,
     );
   }

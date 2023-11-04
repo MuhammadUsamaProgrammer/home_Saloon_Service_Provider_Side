@@ -1,11 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/app/common/vibrate/vibrate.dart';
 import 'package:home_saloon/utils/localization/keys/codegen_loader.g.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
+import 'package:provider/provider.dart';
 import '../../../../resources/images/images_Path.dart';
+import '../../../../utils/routes/app_route_const.dart';
 import '../../../../utils/theme/colors_theme_data.dart';
+import '../../editProfile_Screen/components/new_profile_Image.dart';
+import '../../editProfile_Screen/provider/edit_Profile_Details_Provider.dart';
 import 'notification_Button.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -30,9 +35,14 @@ class CustomAppBar extends StatelessWidget {
                         'Good Morning',
                         style: MyTextStyle.good_Morning(context),
                       ),
-                      Text(
-                        'Taimoor!',
-                        style: MyTextStyle.name(context),
+                      // name of user
+                      Consumer<EditProfileDetailsProvider>(
+                        builder: (context, value, child) {
+                          return Text(
+                            '${value.firstName}!',
+                            style: MyTextStyle.name(context),
+                          );
+                        },
                       ),
                     ],
                   )
@@ -51,6 +61,7 @@ class CustomAppBar extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     vibrate();
+                    GoRouter.of(context).pushNamed(MyRoutes.editProfileScreen);
                   },
                   child: Container(
                     height: 37,
@@ -67,6 +78,7 @@ class CustomAppBar extends StatelessWidget {
                         image: DecorationImage(
                             image: AssetImage(MyImagesPath.profile_Image),
                             fit: BoxFit.cover)),
+                    child: NewProfileImage(),
                   ),
                 )
               ],

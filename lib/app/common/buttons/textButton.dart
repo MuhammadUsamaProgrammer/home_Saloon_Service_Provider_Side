@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:home_saloon/resources/audio/click_Sounds.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 
 import '../../../utils/theme/colors_theme_data.dart';
@@ -29,7 +28,6 @@ class Button1 extends StatelessWidget {
       height: height,
       child: TextButton(
         onPressed: () {
-          isActive ? ClickSound.play() : null;
           isActive ? vibrate() : null;
           onTap();
         },

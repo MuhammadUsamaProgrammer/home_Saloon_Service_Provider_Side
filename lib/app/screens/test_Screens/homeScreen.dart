@@ -1,4 +1,3 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
@@ -39,25 +38,16 @@ class Home extends StatelessWidget {
                         )),
                     ElevatedButton(
                         onPressed: () async {
-                          final player = AudioPlayer();
-                          player.play(AssetSource(
-                              'sounds/click_Sound_Small_Button_Iphone.mpeg'));
                           await context.setLocale(Locale('ar'));
                         },
                         child: Center(child: Text('العربية'))),
                     ElevatedButton(
                         onPressed: () async {
-                          final player = AudioPlayer();
-                          player.play(AssetSource(
-                              'sounds/click_Sound_Large_Button_Iphone.mpeg'));
                           await context.setLocale(Locale('ur'));
                         },
                         child: Center(child: Text('اردو'))),
                     ElevatedButton(
                         onPressed: () {
-                          final player = AudioPlayer();
-                          player.play(AssetSource(
-                              'sounds/click_Sound_Large_Button_Iphone.mpeg'));
                           // GoRouter.of(context).pushNamed(MyRoutes.contact);
                         },
                         child: Center(child: Text('contact'))),

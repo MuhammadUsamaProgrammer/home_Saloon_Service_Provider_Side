@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:home_saloon/utils/localization/keys/codegen_loader.g.dart';
 
 class FeedbackProvider extends ChangeNotifier {
+  TextEditingController feedbackTextController = TextEditingController();
   int? _index = 0;
   int? get index => _index;
 

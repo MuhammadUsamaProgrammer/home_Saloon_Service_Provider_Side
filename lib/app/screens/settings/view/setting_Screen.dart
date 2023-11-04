@@ -5,8 +5,8 @@ import 'package:home_saloon/app/common/coPagesAppBar/coPages_AppBar.dart';
 import 'package:home_saloon/utils/localization/keys/codegen_loader.g.dart';
 import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
-
 import '../../../common/cutomize_Sizedbox/CustomsizedBox.dart';
+import '../components/deleteAccount_DialogPopUp.dart';
 import '../components/languageDialogPopUp.dart';
 import '../components/settingTile.dart';
 
@@ -26,12 +26,12 @@ class SettingScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             children: [
-              heightC(57),
-              // Change_Password Tile
-              SettingTile(
-                text: LocaleKeys.Change_Password.tr(),
-                ontap: () {},
-              ),
+              heightC(30),
+              // // Change_Password Tile
+              // SettingTile(
+              //   text: LocaleKeys.Change_Password.tr(),
+              //   ontap: () {},
+              // ),
               // Change_Language Tile
               SettingTile(
                 text: LocaleKeys.Change_Language.tr(),
@@ -50,17 +50,23 @@ class SettingScreen extends StatelessWidget {
               // About_us Tile
               SettingTile(
                 text: LocaleKeys.About_us.tr(),
-                ontap: () {},
+                ontap: () {
+                  GoRouter.of(context).pushNamed(MyRoutes.aboutUs);
+                },
               ),
               // Privacy_Policy Tile
               SettingTile(
                 text: LocaleKeys.Privacy_Policy.tr(),
-                ontap: () {},
+                ontap: () {
+                  GoRouter.of(context).pushNamed(MyRoutes.termsAndPolicies);
+                },
               ),
               // Contact_us Tile
               SettingTile(
                 text: LocaleKeys.Contact_us.tr(),
-                ontap: () {},
+                ontap: () {
+                  GoRouter.of(context).pushNamed(MyRoutes.contactUs);
+                },
               ),
               // Feedback Tile
               SettingTile(
@@ -72,7 +78,13 @@ class SettingScreen extends StatelessWidget {
               // Delete_Account Tile
               SettingTile(
                 text: LocaleKeys.Delete_Account.tr(),
-                ontap: () {},
+                ontap: () {
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return DeleteAccountDialogPopUp();
+                      });
+                },
               ),
             ],
           ),

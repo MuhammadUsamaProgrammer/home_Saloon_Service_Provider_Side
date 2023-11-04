@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../resources/icons/app_Icons.dart';
@@ -6,7 +8,6 @@ import '../../../../utils/theme/colors_theme_data.dart';
 import '../../../common/toast_message/toast_message.dart';
 import '../../../common/vibrate/vibrate.dart';
 import '../provider/notification_Provider.dart';
-import 'notificationBottomSheet.dart';
 
 class NotificationButton extends StatelessWidget {
   const NotificationButton({super.key});
@@ -21,16 +22,17 @@ class NotificationButton extends StatelessWidget {
             if (value.notification == false)
               showToastMessage('No new notification');
             // open notification botton sheet function
-            showModalBottomSheet(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20))),
-              context: context,
-              builder: (BuildContext context) {
-                return NotificationbottomSheet();
-              },
-            );
+            GoRouter.of(context).pushNamed(MyRoutes.notificationsScreen);
+            // showModalBottomSheet(
+            //   shape: RoundedRectangleBorder(
+            //       borderRadius: BorderRadius.only(
+            //           topLeft: Radius.circular(20),
+            //           topRight: Radius.circular(20))),
+            //   context: context,
+            //   builder: (BuildContext context) {
+            //     return NotificationbottomSheet();
+            //   },
+            // );
           },
           borderRadius: BorderRadius.circular(16),
           child: Container(

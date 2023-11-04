@@ -14,7 +14,7 @@ class CircleIndicators extends StatelessWidget {
       physics: BouncingScrollPhysics(),
       child: Row(
         children: [
-          widthW(24),
+          widthW(20),
           // Total_Orders
           CircularTotalIndicator(
             total: 50,

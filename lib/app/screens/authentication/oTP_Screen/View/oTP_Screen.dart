@@ -69,7 +69,7 @@ class OTPScreen extends StatelessWidget {
                                           text: LocaleKeys.login.tr(),
                                           onTap: () {
                                             GoRouter.of(context)
-                                                .pushNamed(MyRoutes.mainPage);
+                                                .goNamed(MyRoutes.mainPage);
                                             value.dispose();
                                           },
                                         );

@@ -80,7 +80,7 @@ class HomePage extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: index == 0
-                                ? EdgeInsets.only(left: 25.0)
+                                ? EdgeInsets.only(left: 20.0)
                                 : EdgeInsets.only(left: 12.0),
                             child: OrdersContainer(
                                 image: activeOrdersModel[index].image,

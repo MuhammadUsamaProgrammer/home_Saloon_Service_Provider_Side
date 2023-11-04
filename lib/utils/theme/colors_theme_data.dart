@@ -9,6 +9,7 @@ class MyColors {
   static const Color onBoarding_paragraph_text_color = Color(0xFF8A8A8E);
   static const Color auth_Image_Color = Color(0x38F74C69);
   static const Color textColor_primary = Color(0xFF000000);
+  static const Color edit_Profile_Popup_Icon_Color = Color(0xC4000000);
   static const Color text_field_color = Color(0xFFADADAD);
   static const Color text_field_color_Secondary = Color(0x66E4E4E4);
   static const Color unSelected_index_color = Color(0xFFE4E4E6);
@@ -33,6 +34,7 @@ class MyColors {
   static const Color filter_Box_Color = Color(0xFFEAF7FF);
   static const Color recent_Payment_Tile_Shadow_Color = Color(0x12000000);
   static const Color feedback_TextField_Color = Color(0xFFFBFBFB);
+  static const Color edit_Profile_Profile_Shadow = Color(0x2e000000);
 
   static const MaterialColor primaryMaterial =
       MaterialColor(_primaryPrimaryValue, <int, Color>{

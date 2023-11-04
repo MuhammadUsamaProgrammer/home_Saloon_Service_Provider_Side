@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/app/common/vibrate/vibrate.dart';
 import 'package:home_saloon/resources/images/images_Path.dart';
+import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 
@@ -95,13 +97,18 @@ class LogoutDialogPopUp extends StatelessWidget {
             // this is 'yes' button
             Center(
               child: Container(
-                alignment: Alignment(1, 0.815),
+                alignment: Alignment(1, 0.85),
                 height: 240,
                 width: 290,
                 child: GestureDetector(
                   onTap: () {
                     vibrate();
                     Navigator.pop(context);
+                    GoRouter.of(context)
+                        .pushReplacementNamed(MyRoutes.shortCodeScreen);
+                    // (MyRoutes.shortCodeScreen);
+                    // Navigator.popAndPushNamed(
+                    //     context, MyRoutes.shortCodeScreen);
                   },
                   child: Container(
                     height: 30,

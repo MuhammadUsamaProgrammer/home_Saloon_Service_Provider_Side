@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:home_saloon/app/common/buttons/textButton.dart';
+import 'package:home_saloon/app/common/toast_message/toast_message.dart';
 import 'package:home_saloon/app/screens/feedback_Screen/components/feedBack_Options.dart';
 import 'package:home_saloon/app/common/textField/feedbackTextField.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
@@ -7,7 +9,7 @@ import 'package:provider/provider.dart';
 import '../../../../utils/localization/keys/codegen_loader.g.dart';
 import '../../../common/coPagesAppBar/coPages_AppBar.dart';
 import '../../../common/cutomize_Sizedbox/CustomsizedBox.dart';
-import '../provider/feedbackTextControllerProvider.dart';
+import '../provider/feedback_Provider.dart';
 
 class FeedbackScreen extends StatelessWidget {
   const FeedbackScreen({Key? key});
@@ -35,12 +37,28 @@ class FeedbackScreen extends StatelessWidget {
                 style: MyTextStyle.write_A_Message(context),
               ),
               heightC(10),
-              Consumer<FeedbackTextControllerProvider>(
+              Consumer<FeedbackProvider>(
                 builder: (context, value, child) {
                   return FeedbackTextField(
                       controller: value.feedbackTextController);
                 },
-              )
+              ),
+              heightC(30),
+              Consumer<FeedbackProvider>(
+                builder: (context, value, child) {
+                  return Button1(
+                      text: 'Submit',
+                      onTap: () {
+                        if (value.index == 0) {
+                          showToastMessage('Please select any option first!');
+                        } else {
+                          value.feedbackTextController.clear();
+                          value.changeIndex(0);
+                          Navigator.pop(context);
+                        }
+                      });
+                },
+              ),
             ],
           ),
         ),

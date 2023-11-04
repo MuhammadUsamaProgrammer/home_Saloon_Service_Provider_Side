@@ -27,6 +27,7 @@ class LinkButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(100),
           ),
+          // ignore: deprecated_member_use
           primary: Colors.white,
           backgroundColor: Color(0xff333333),
           minimumSize: Size.fromHeight(54)),
