@@ -17,7 +17,7 @@ import 'app/screens/map/provider/map_Provider.dart';
 import 'app/screens/myWallet/provider/heightControlProvider.dart';
 import 'app/screens/onBoarding/provider/onBoarding_Provider.dart';
 import 'app/screens/orders_Screen/provider/order_Screen_Provider.dart';
-import 'app/screens/test_Screens/calenderTest/provider/sliderProvider.dart';
+import 'app/screens/test_Screens/bottomSheet/provider/sliderProvider.dart';
 import 'utils/localization/codegen_loader.g.dart';
 
 Future<void> main() async {

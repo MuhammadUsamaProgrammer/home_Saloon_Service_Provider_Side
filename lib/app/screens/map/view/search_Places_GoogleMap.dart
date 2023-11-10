@@ -5,7 +5,9 @@ import '../../../common/textField/map_Search_TextFiled.dart';
 import '../provider/map_Provider.dart';
 
 class SearchPlaces extends StatelessWidget {
-  const SearchPlaces({super.key});
+  const SearchPlaces({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
