@@ -13,6 +13,7 @@ import 'app/screens/editProfile_Screen/provider/edit_Profile_Details_Provider.da
 import 'app/screens/editProfile_Screen/provider/imageProvider.dart';
 import 'app/screens/feedback_Screen/provider/feedback_Provider.dart';
 import 'app/screens/home_Screen/provider/notification_Provider.dart';
+import 'app/screens/map/provider/map_Provider.dart';
 import 'app/screens/myWallet/provider/heightControlProvider.dart';
 import 'app/screens/onBoarding/provider/onBoarding_Provider.dart';
 import 'app/screens/orders_Screen/provider/order_Screen_Provider.dart';
@@ -39,6 +40,8 @@ Future<void> main() async {
       fallbackLocale: Locale('en'),
       assetLoader: CodegenLoader(),
       child: MyApp()));
+  // SystemChannels.platform
+  //     .setMethodCallHandler((MethodCall methodCall) async {});
 }
 
 class MyApp extends StatelessWidget {
@@ -61,8 +64,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => CustomSliderProvider()),
         ChangeNotifierProvider(create: (_) => PickImageProvider()),
         ChangeNotifierProvider(create: (_) => EditProfileDetailsProvider()),
-        // ChangeNotifierProvider(create: (_) => BounceState()),
-        // ChangeNotifierProvider(create: (_) => BounceState()),
+        ChangeNotifierProvider(create: (_) => MapProvider()),
+        // ChangeNotifierProvider(create: (_) => CurretLocationProvider()),
         // ChangeNotifierProvider(create: (_) => BounceState()),
         // ChangeNotifierProvider(create: (_) => BounceState()),
         // ChangeNotifierProvider(create: (_) => BounceState()),

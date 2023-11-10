@@ -15,7 +15,7 @@ class MyRoutes {
   static const String notificationsScreen = 'notificationsScreen';
   static const String searchScreen = 'searchScreen';
   static const String editProfileScreen = 'editProfileScreen';
-  // static const String onBoardingPage = 'onBoardingPage';
-  // static const String onBoardingPage = 'onBoardingPage';
+  static const String mapScreen = 'mapScreen';
+  static const String searchPlaces = 'searchPlaces';
   // static const String onBoardingPage = 'onBoardingPage';
 }

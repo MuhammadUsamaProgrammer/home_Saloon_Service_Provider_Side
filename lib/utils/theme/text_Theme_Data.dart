@@ -490,4 +490,13 @@ class MyTextStyle {
       fontWeight: FontWeight.w400,
     );
   }
+
+  static TextStyle map_Search_List(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 14,
+      color: MyColors.customer_Name__In_Tile,
+      fontWeight: FontWeight.w400,
+    );
+  }
 }

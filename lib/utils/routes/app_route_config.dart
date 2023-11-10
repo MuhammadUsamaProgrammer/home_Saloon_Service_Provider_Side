@@ -12,6 +12,8 @@ import '../../app/screens/authentication/oTP_Screen/View/oTP_Screen.dart';
 import '../../app/screens/authentication/short_Code_Screen/View/short_Code_Screen.dart';
 import '../../app/screens/editProfile_Screen/view/edit_Profile_Screen.dart';
 import '../../app/screens/feedback_Screen/view/feedback_Screen.dart';
+import '../../app/screens/map/view/google_Map.dart';
+import '../../app/screens/map/view/search_Places_GoogleMap.dart';
 import '../../app/screens/myWallet/view/walletScreen.dart';
 import '../../app/screens/notifications_Screen/notifications_Screen.dart';
 import '../../app/screens/searchScreen/search_Screen.dart';
@@ -20,17 +22,18 @@ import '../../app/screens/settings/view/about_Terms_Contactus_Screens/contact_Us
 import '../../app/screens/settings/view/about_Terms_Contactus_Screens/terms_And_Policies.dart';
 import '../../app/screens/settings/view/setting_Screen.dart';
 import '../../app/screens/test_Screens/error_Page.dart';
+import '../../app/screens/test_Screens/profile.dart';
 
 GoRouter router = GoRouter(
   routes: [
-    // GoRoute(
-    //   path: '/',
-    //   pageBuilder: (context, state) => MaterialPage(child: MainPage()),
-    // ),
     GoRoute(
       path: '/',
-      pageBuilder: (context, state) => MaterialPage(child: SplashScreen()),
+      pageBuilder: (context, state) => MaterialPage(child: Profile()),
     ),
+    // GoRoute(
+    //   path: '/',
+    //   pageBuilder: (context, state) => MaterialPage(child: SplashScreen()),
+    // ),
     transitionsleftToRightPage(myRoutes: MyRoutes.mainPage, screen: MainPage()),
     transitionsleftToRightPage(
         myRoutes: MyRoutes.onBoardingPage, screen: OnBoardingPage()),
@@ -55,8 +58,10 @@ GoRouter router = GoRouter(
         myRoutes: MyRoutes.searchScreen, screen: SearchScreen()),
     transitionsleftToRightPage(
         myRoutes: MyRoutes.editProfileScreen, screen: EditProfileScreen()),
-    // transitionsleftToRightPage(myRoutes: MyRoutes.profile, screen: Profile()),
-    // transitionsleftToRightPage(myRoutes: MyRoutes.profile, screen: Profile()),
+    transitionsleftToRightPage(
+        myRoutes: MyRoutes.mapScreen, screen: MapScreen()),
+    transitionsdownToUpPage(
+        myRoutes: MyRoutes.searchPlaces, screen: SearchPlaces()),
     // transitionsleftToRightPage(myRoutes: MyRoutes.profile, screen: Profile()),
   ],
   errorPageBuilder: (context, state) {

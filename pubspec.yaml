@@ -42,6 +42,11 @@ dependencies:
   fluttertoast: ^8.2.2
   url_launcher: ^6.1.12
   image_picker: ^1.0.2
+  google_maps_flutter: ^2.5.0
+  geocoding: ^2.1.1
+  geolocator: ^10.1.0
+  http: ^1.1.0
+  uuid: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +78,8 @@ flutter:
     - assets/sounds/
     - assets/images/
     - assets/svg/
+    - assets/map_Theme_json/dark_Map.json
+    - assets/map_Theme_json/light_Map.json
     # - assets/sounds/click_Sound_Large_Button_Iphone.mpeg
     # - assets/sounds/click_Sound_Small_Button_Iphone.mpeg
 
