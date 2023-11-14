@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:home_saloon/app/common/buttons/textButton.dart';
 import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
 
-import '../components/customSlider.dart';
-
 class Contact extends StatefulWidget {
   @override
   State<Contact> createState() => _ContactState();
@@ -228,10 +226,6 @@ class _ContactState extends State<Contact> {
         height: context.MediaQueryHeight(),
         width: context.MediaQueryWidth(),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          CustomSlider(
-            width: MediaQuery.of(context).size.width,
-            height: 10,
-          ),
           Button1(
               text: 'jf',
               onTap: () {

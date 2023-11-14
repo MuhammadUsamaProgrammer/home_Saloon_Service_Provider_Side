@@ -37,6 +37,7 @@ class CircleIndicators extends StatelessWidget {
             percent: 60,
             text: LocaleKeys.Positive_Rating.tr(),
           ),
+          widthW(20),
         ],
       ),
     );

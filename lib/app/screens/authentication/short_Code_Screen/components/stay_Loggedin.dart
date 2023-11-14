@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/utils/localization/keys/codegen_loader.g.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
@@ -23,23 +22,47 @@ class stayLoggedin extends StatelessWidget {
               value.toogleStayLoggedIn();
             },
             child: Container(
-              height: 15,
-              width: 15,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(2),
-                color: value.stayLoggedIn
-                    ? MyColors.primaryColor
-                    : MyColors.stay_Login_checkBox_Color,
+              height: 50,
+              width: 26,
+              child: Row(
+                children: [
+                  Container(
+                    height: 15,
+                    width: 15,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(2),
+                      color: value.stayLoggedIn
+                          ? MyColors.primaryColor
+                          : MyColors.stay_Login_checkBox_Color,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
         ),
-        widthW(11),
         // stay loggedin text
-        Text(
-          LocaleKeys.Stay_logged_in.tr(),
-          style: MyTextStyle.stay_Loggedin(context),
-        ),
+
+        Consumer<CheckBoxProvider>(builder: (context, value, child) {
+          return GestureDetector(
+            onTap: () {
+              vibrate();
+              value.toogleStayLoggedIn();
+            },
+            child: Container(
+              height: 50,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    LocaleKeys.Stay_logged_in.tr(),
+                    style: MyTextStyle.stay_Loggedin(context),
+                  ),
+                ],
+              ),
+            ),
+          );
+        }),
       ],
     );
   }

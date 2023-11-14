@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
+import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
 import 'package:home_saloon/app/screens/home_Screen/components/orders_Container.dart';
 import 'package:home_saloon/utils/localization/keys/codegen_loader.g.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
@@ -83,6 +84,7 @@ class HomePage extends StatelessWidget {
                                 ? EdgeInsets.only(left: 20.0)
                                 : EdgeInsets.only(left: 12.0),
                             child: OrdersContainer(
+                                width: context.MediaQueryWidth(),
                                 image: activeOrdersModel[index].image,
                                 name: activeOrdersModel[index].name,
                                 price: activeOrdersModel[index].price,

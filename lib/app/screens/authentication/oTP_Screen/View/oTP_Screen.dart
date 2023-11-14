@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:home_saloon/app/common/buttons/textButton.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
+import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
 import 'package:home_saloon/app/screens/authentication/oTP_Screen/provider/oTP_timer_Provider.dart';
 import 'package:home_saloon/utils/localization/keys/codegen_loader.g.dart';
 import 'package:home_saloon/utils/routes/app_route_const.dart';
@@ -32,8 +33,10 @@ class OTPScreen extends StatelessWidget {
               children: [
                 heightC(201),
                 Container(
-                  height: 800,
-                  width: MediaQuery.of(context).size.width,
+                  height: context.MediaQueryHeight() < 500
+                      ? 510
+                      : context.MediaQueryHeight(),
+                  width: context.MediaQueryWidth(),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20),

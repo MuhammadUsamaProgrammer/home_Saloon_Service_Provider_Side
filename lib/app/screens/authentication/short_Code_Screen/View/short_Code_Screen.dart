@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:home_saloon/app/common/buttons/textButton.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
+import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
 import 'package:home_saloon/app/common/textField/shortCodeTextField.dart';
 import 'package:home_saloon/app/screens/authentication/oTP_Screen/provider/oTP_timer_Provider.dart';
 import 'package:home_saloon/utils/localization/keys/codegen_loader.g.dart';
@@ -16,7 +17,6 @@ import '../provider/shortCode_Controller_Provider.dart';
 
 class ShortCodeScreen extends StatelessWidget {
   ShortCodeScreen({super.key});
-  // final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,9 @@ class ShortCodeScreen extends StatelessWidget {
               children: [
                 heightC(201),
                 Container(
-                  height: 800,
+                  height: context.MediaQueryHeight() < 430
+                      ? 450
+                      : context.MediaQueryHeight(),
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -60,10 +62,10 @@ class ShortCodeScreen extends StatelessWidget {
                           heightC(15),
                           // text field
                           ShortCodeTextField(),
-                          heightC(22),
+                          heightC(5),
                           // stay loggedin
                           stayLoggedin(),
-                          heightC(42),
+                          heightC(25),
                           // Button
                           Consumer<ShortCodeControllerProvider>(
                             builder: (context, shortCode, child) {

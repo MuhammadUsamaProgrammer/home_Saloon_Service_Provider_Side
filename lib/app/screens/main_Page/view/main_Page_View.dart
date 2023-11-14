@@ -16,8 +16,9 @@ class MainPage extends StatelessWidget {
           return Container(
             padding: EdgeInsets.only(bottom: 68),
             child: PageView(
+              physics: NeverScrollableScrollPhysics(),
               controller: value.controller,
-              onPageChanged: value.setPage,
+              // onPageChanged: value.setPage,
               children: [
                 HomePage(),
                 OrderScreen(),

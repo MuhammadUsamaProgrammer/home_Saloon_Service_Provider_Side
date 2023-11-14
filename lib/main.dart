@@ -18,9 +18,12 @@ import 'app/screens/myWallet/provider/heightControlProvider.dart';
 import 'app/screens/onBoarding/provider/onBoarding_Provider.dart';
 import 'app/screens/orders_Screen/provider/order_Screen_Provider.dart';
 import 'app/screens/test_Screens/bottomSheet/provider/sliderProvider.dart';
+import 'app/screens/test_Screens/calander_Test/provider/calender_Provider.dart';
+import 'app/screens/test_Screens/calander_Test/provider/testg.dart';
 import 'utils/localization/codegen_loader.g.dart';
 
 Future<void> main() async {
+  YourClass().initializeCalendar();
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -65,7 +68,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => PickImageProvider()),
         ChangeNotifierProvider(create: (_) => EditProfileDetailsProvider()),
         ChangeNotifierProvider(create: (_) => MapProvider()),
-        // ChangeNotifierProvider(create: (_) => CurretLocationProvider()),
+        ChangeNotifierProvider(create: (_) => CalenderProvider()),
         // ChangeNotifierProvider(create: (_) => BounceState()),
         // ChangeNotifierProvider(create: (_) => BounceState()),
         // ChangeNotifierProvider(create: (_) => BounceState()),

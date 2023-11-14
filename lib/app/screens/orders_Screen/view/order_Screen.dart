@@ -50,37 +50,34 @@ class OrderScreen extends StatelessWidget {
           ),
           heightC(10),
           // this is page view of all orders sepratly
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Consumer<OrderScreenProvider>(
-              builder: (context, value, child) {
-                return Container(
-                  height: MediaQuery.of(context).size.height - 234,
-                  child: PageView(
-                    controller: value.controller,
-                    onPageChanged: value.setPage,
-                    children: [
-                      PageViewScreen(
-                        index: 0,
-                        itemCount: 4,
-                      ),
-                      PageViewScreen(
-                        index: 1,
-                        itemCount: 3,
-                      ),
-                      PageViewScreen(
-                        index: 2,
-                        itemCount: 1,
-                      ),
-                      PageViewScreen(
-                        index: 3,
-                        itemCount: 4,
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
+          Consumer<OrderScreenProvider>(
+            builder: (context, value, child) {
+              return Container(
+                height: MediaQuery.of(context).size.height - 234,
+                child: PageView(
+                  controller: value.controller,
+                  onPageChanged: value.setPage,
+                  children: [
+                    PageViewScreen(
+                      index: 0,
+                      itemCount: 4,
+                    ),
+                    PageViewScreen(
+                      index: 1,
+                      itemCount: 3,
+                    ),
+                    PageViewScreen(
+                      index: 2,
+                      itemCount: 1,
+                    ),
+                    PageViewScreen(
+                      index: 3,
+                      itemCount: 4,
+                    ),
+                  ],
+                ),
+              );
+            },
           ),
         ],
       ),

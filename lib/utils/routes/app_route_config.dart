@@ -21,6 +21,7 @@ import '../../app/screens/settings/view/about_Terms_Contactus_Screens/aboutUs_sc
 import '../../app/screens/settings/view/about_Terms_Contactus_Screens/contact_Us.dart';
 import '../../app/screens/settings/view/about_Terms_Contactus_Screens/terms_And_Policies.dart';
 import '../../app/screens/settings/view/setting_Screen.dart';
+import '../../app/screens/test_Screens/calander_Test/view/homeScreen.dart';
 import '../../app/screens/test_Screens/error_Page.dart';
 import '../../app/screens/test_Screens/profile.dart';
 
@@ -28,7 +29,7 @@ GoRouter router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      pageBuilder: (context, state) => MaterialPage(child: MainPage()),
+      pageBuilder: (context, state) => MaterialPage(child: SplashScreen()),
     ),
     // GoRoute(
     //   path: '/',

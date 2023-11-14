@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CustomSliderProvider extends ChangeNotifier {
-  double _sliderValue = 1;
-  double get sliderValue => _sliderValue;
+  int _sliderValue = 1;
+  int get sliderValue => _sliderValue;
 
-  void onChangeSliderValue(double newValue) {
+  void onChangeSliderValue(int newValue) {
     _sliderValue = newValue;
     notifyListeners();
   }
