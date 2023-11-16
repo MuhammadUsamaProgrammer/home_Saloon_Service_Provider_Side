@@ -62,7 +62,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     width: 167,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage(MyImagesPath.logo),
+                            image: AssetImage(MyImagesPath.logo_Removed_BG),
                             fit: BoxFit.cover)),
                   ),
                   Container(

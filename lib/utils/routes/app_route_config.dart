@@ -28,14 +28,14 @@ import '../../app/screens/test_Screens/profile.dart';
 
 GoRouter router = GoRouter(
   routes: [
-    GoRoute(
-      path: '/',
-      pageBuilder: (context, state) => MaterialPage(child: MainPage()),
-    ),
     // GoRoute(
     //   path: '/',
-    //   pageBuilder: (context, state) => MaterialPage(child: SplashScreen()),
+    //   pageBuilder: (context, state) => MaterialPage(child: MainPage()),
     // ),
+    GoRoute(
+      path: '/',
+      pageBuilder: (context, state) => MaterialPage(child: SplashScreen()),
+    ),
     transitionsleftToRightPage(myRoutes: MyRoutes.mainPage, screen: MainPage()),
     transitionsleftToRightPage(
         myRoutes: MyRoutes.onBoardingPage, screen: OnBoardingPage()),
