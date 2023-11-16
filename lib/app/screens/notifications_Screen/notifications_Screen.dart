@@ -30,8 +30,9 @@ class NotificationsScreen extends StatelessWidget {
                     icon: Icons.arrow_downward_rounded,
                   ),
                   // notification
-                  Container(
-                    color: value.tileBackgroundColor(-1),
+                  AnimatedContainer(
+                    duration: Duration(milliseconds: 200),
+                    color: value.tileBackgroundColor(0),
                     child: Container(
                       margin: EdgeInsets.only(
                         bottom: 2,
@@ -67,21 +68,20 @@ class NotificationsScreen extends StatelessWidget {
                               vibrate();
                               value.toogleNotification(index);
                             },
-                            child: Container(
-                              color: value.tileBackgroundColor(index),
-                              child: Container(
+                            child: AnimatedContainer(
+                              duration: Duration(milliseconds: 200),
+                              color: value.tileBackgroundColor(index + 1),
+                              child: AnimatedContainer(
+                                duration: Duration(milliseconds: 200),
                                 margin: EdgeInsets.only(
                                   bottom: 2,
                                 ),
                                 height: 80,
                                 width: MediaQuery.of(context).size.width,
                                 decoration: BoxDecoration(
-                                    color: notificationsModel[index].opened
-                                        ? MyColors.backgroundColor
-                                        : MyColors
-                                            .unRead_notification_tile_Color,
+                                    color: value.tileBackgroundColor(index),
                                     borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(50)),
+                                        bottomLeft: Radius.circular(40)),
                                     boxShadow: [
                                       BoxShadow(
                                           color: Color.fromARGB(

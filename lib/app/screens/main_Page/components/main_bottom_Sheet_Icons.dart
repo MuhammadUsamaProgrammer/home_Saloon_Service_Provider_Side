@@ -29,14 +29,14 @@ class MainBottomSheetsIcons extends StatelessWidget {
                 onTap: () {
                   vibrate();
                   value.changePage(index);
-                  print(value.currentIndex.toString());
                   orderScreenProvider.onChangePanal();
                 },
                 borderRadius: BorderRadius.circular(100),
                 splashColor: const Color.fromARGB(39, 247, 76, 105),
                 highlightColor: const Color.fromARGB(26, 247, 76, 105),
-                child: Container(
-                  width: 68,
+                child: AnimatedContainer(
+                  duration: Duration(milliseconds: 300),
+                  width: index == value.currentIndex ? 85 : 68,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,

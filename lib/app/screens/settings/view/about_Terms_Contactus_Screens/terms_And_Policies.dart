@@ -35,7 +35,8 @@ class TermsAndPolicies extends StatelessWidget {
                 ),
                 heightC(7),
                 Text(
-                  LocaleKeys.Terms_and_Condition_paragraph.tr(),
+                  LocaleKeys.Terms_and_Condition_paragraph.tr() +
+                      LocaleKeys.Terms_and_Condition_paragraph.tr(),
                   style: MyTextStyle.about_Terms_paragraph_Text(context),
                 ),
                 heightC(37),
@@ -49,9 +50,11 @@ class TermsAndPolicies extends StatelessWidget {
                 ),
                 heightC(7),
                 Text(
-                  LocaleKeys.Privacy_Policy_Paragraph.tr(),
+                  LocaleKeys.Privacy_Policy_Paragraph.tr() +
+                      LocaleKeys.Privacy_Policy_Paragraph.tr(),
                   style: MyTextStyle.about_Terms_paragraph_Text(context),
                 ),
+                heightC(40),
               ],
             ),
           ),

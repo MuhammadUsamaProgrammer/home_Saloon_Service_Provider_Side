@@ -8,33 +8,17 @@ class NotificationProvider extends ChangeNotifier {
       notificationsModel.every((notification) => notification.opened);
   bool get allOpened => _allOpened;
   void toogleNotification(int index) {
-    notificationsModel[index].opened = true;
+    notificationsModel[index].opened = !notificationsModel[index].opened;
+    // notificationsModel[index].opened = true;
     _allOpened =
         notificationsModel.every((notification) => notification.opened);
     notifyListeners();
   }
 
-  // void toogleNotificationOpened(int index) {
-  //   notificationsModel[index].opened = true;
-
-  //   _updateAllOpened();
-  //   print(allOpened);
-  //   notifyListeners();
-  // }
-
   Color tileBackgroundColor(int index) {
-    if (index == notificationsModel.length) {
+    if (notificationsModel[index].opened == true) {
       return MyColors.backgroundColor;
-    } else if (index != notificationsModel.length) {
-      if (notificationsModel[index + 1].opened == true) {
-        return MyColors.backgroundColor;
-      } else
-        return MyColors.unRead_notification_tile_Color;
     } else
       return MyColors.unRead_notification_tile_Color;
   }
-
-  // void _updateAllOpened() {
-  //   notifyListeners();
-  // }
 }

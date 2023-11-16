@@ -47,7 +47,8 @@ class AboutUs extends StatelessWidget {
                 ),
                 heightC(7),
                 Text(
-                  LocaleKeys.Who_we_are_paragraph.tr(),
+                  LocaleKeys.Who_we_are_paragraph.tr() +
+                      LocaleKeys.Who_we_are_paragraph.tr(),
                   style: MyTextStyle.about_Terms_paragraph_Text(context),
                 ),
                 heightC(37),
@@ -61,9 +62,11 @@ class AboutUs extends StatelessWidget {
                 ),
                 heightC(7),
                 Text(
-                  LocaleKeys.Our_Vision_paragraph.tr(),
+                  LocaleKeys.Our_Vision_paragraph.tr() +
+                      LocaleKeys.Our_Vision_paragraph.tr(),
                   style: MyTextStyle.about_Terms_paragraph_Text(context),
                 ),
+                heightC(40),
               ],
             ),
           ),

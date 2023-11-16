@@ -44,6 +44,7 @@ class MyWalletScreen extends StatelessWidget {
                     return heightC(10);
                 },
               ),
+              heightC(30),
               // this is recent paymets heading
               Text(
                 LocaleKeys.Recent_Payments.tr(),
