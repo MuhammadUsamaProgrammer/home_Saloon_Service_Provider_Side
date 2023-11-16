@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:home_saloon/app/common/vibrate/vibrate.dart';
-
+import '../../../../localization/keys/codegen_loader.g.dart';
 import '../../../../resources/images/images_Path.dart';
 import '../../../../utils/routes/app_route_const.dart';
 import '../../../../utils/theme/colors_theme_data.dart';
@@ -9,7 +9,6 @@ import '../../../../utils/theme/text_Theme_Data.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
-import 'package:home_saloon/utils/localization/keys/codegen_loader.g.dart';
 
 import '../../editProfile_Screen/components/new_profile_Image.dart';
 

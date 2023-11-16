@@ -29,6 +29,7 @@ class MainBottomSheetsIcons extends StatelessWidget {
                 onTap: () {
                   vibrate();
                   value.changePage(index);
+                  print(value.currentIndex.toString());
                   orderScreenProvider.onChangePanal();
                 },
                 borderRadius: BorderRadius.circular(100),

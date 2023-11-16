@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:home_saloon/utils/routes/app_route_const.dart';
@@ -16,23 +18,14 @@ class NotificationButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<NotificationProvider>(
       builder: (context, value, child) {
+        log("NotificationButton isAllOpened: ${value.allOpened}");
         return InkWell(
           onTap: () {
             vibrate();
-            if (value.notification == false)
+            if (value.allOpened == true)
               showToastMessage('No new notification');
             // open notification botton sheet function
             GoRouter.of(context).pushNamed(MyRoutes.notificationsScreen);
-            // showModalBottomSheet(
-            //   shape: RoundedRectangleBorder(
-            //       borderRadius: BorderRadius.only(
-            //           topLeft: Radius.circular(20),
-            //           topRight: Radius.circular(20))),
-            //   context: context,
-            //   builder: (BuildContext context) {
-            //     return NotificationbottomSheet();
-            //   },
-            // );
           },
           borderRadius: BorderRadius.circular(16),
           child: Container(
@@ -55,7 +48,7 @@ class NotificationButton extends StatelessWidget {
                 // notification Icon
                 Center(child: SvgPicture.asset(MySvgPath.notification_Bell)),
                 // notification dot
-                if (value.notification == true)
+                if (value.allOpened == false)
                   Container(
                     alignment: Alignment(0.3, -0.3),
                     child: Container(

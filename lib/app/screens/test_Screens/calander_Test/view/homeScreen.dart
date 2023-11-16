@@ -16,10 +16,11 @@ class Home extends StatelessWidget {
         width: context.MediaQueryWidth(),
         child: Center(
             child: CustomSlider(
-          slideheight: 10,
-          slidewidth: 300,
-          beadsheight: 20,
-          maxValue: 2,
+          slideHeight: 210,
+          slideWidth: 3,
+          selectedBeadsHeight: 18,
+          unSelectedBeadsHeight: 12,
+          maxValue: 4,
         )),
       ),
     );

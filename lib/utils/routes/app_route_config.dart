@@ -15,6 +15,7 @@ import '../../app/screens/feedback_Screen/view/feedback_Screen.dart';
 import '../../app/screens/map/view/google_Map.dart';
 import '../../app/screens/map/view/search_Places_GoogleMap.dart';
 import '../../app/screens/myWallet/view/walletScreen.dart';
+import '../../app/screens/notifications_Screen/detailed_Notification.dart';
 import '../../app/screens/notifications_Screen/notifications_Screen.dart';
 import '../../app/screens/searchScreen/search_Screen.dart';
 import '../../app/screens/settings/view/about_Terms_Contactus_Screens/aboutUs_screen.dart';
@@ -29,7 +30,7 @@ GoRouter router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      pageBuilder: (context, state) => MaterialPage(child: SplashScreen()),
+      pageBuilder: (context, state) => MaterialPage(child: MainPage()),
     ),
     // GoRoute(
     //   path: '/',
@@ -63,7 +64,8 @@ GoRouter router = GoRouter(
         myRoutes: MyRoutes.mapScreen, screen: MapScreen()),
     transitionsdownToUpPage(
         myRoutes: MyRoutes.searchPlaces, screen: SearchPlaces()),
-    // transitionsleftToRightPage(myRoutes: MyRoutes.profile, screen: Profile()),
+    transitionsleftToRightPage(
+        myRoutes: MyRoutes.detailNotification, screen: DetailNotification()),
   ],
   errorPageBuilder: (context, state) {
     return MaterialPage(child: ErrorPage());

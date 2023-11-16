@@ -10,7 +10,7 @@ import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 import 'package:provider/provider.dart';
-import '../../../../utils/localization/keys/codegen_loader.g.dart';
+import '../../../../localization/keys/codegen_loader.g.dart';
 import '../../editProfile_Screen/provider/edit_Profile_Details_Provider.dart';
 import 'logoutDialogPopUp.dart';
 

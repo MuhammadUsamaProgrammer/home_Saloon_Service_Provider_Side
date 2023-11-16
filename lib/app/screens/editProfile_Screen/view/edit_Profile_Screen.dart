@@ -5,7 +5,7 @@ import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
 import 'package:home_saloon/app/common/textField/edit_Profile_TextField.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:provider/provider.dart';
-import '../../../../utils/localization/keys/codegen_loader.g.dart';
+import '../../../../localization/keys/codegen_loader.g.dart';
 import '../../../../utils/theme/text_Theme_Data.dart';
 import '../../../common/coPagesAppBar/coPages_AppBar.dart';
 import '../../../common/cutomize_Sizedbox/CustomsizedBox.dart';

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
+import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
+import 'package:home_saloon/utils/theme/colors_theme_data.dart';
+import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 import 'package:provider/provider.dart';
-
 import '../../common/coPagesAppBar/coPages_AppBar.dart';
 import '../../common/vibrate/vibrate.dart';
 import '../home_Screen/provider/notification_Provider.dart';
+import 'models/notifications_Models.dart';
 
 class NotificationsScreen extends StatelessWidget {
   const NotificationsScreen({super.key});
@@ -11,54 +15,177 @@ class NotificationsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // app bar
-      appBar: CoPagesAppBar(
-        'Notifications',
-      ),
       // body
-      body: Container(
-        height: 230,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(50)),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 35,
-            ),
-            // notifications
-            Consumer<NotificationProvider>(
-              builder: (context, value, child) {
-                return InkWell(
-                  onTap: () {
-                    vibrate();
-                    value.toogleNotification();
-                  },
-                  child: Container(
-                    height: 60,
-                    width: MediaQuery.of(context).size.width,
-                    child: Row(
-                      children: [
-                        Text(
-                          '       Welcome to Home Saloon  🤗                           ',
-                          style: TextStyle(fontFamily: 'DMSans', fontSize: 16),
+      body: Consumer<NotificationProvider>(builder: (context, value, child) {
+        return SafeArea(
+          child: Container(
+            height: context.MediaQueryHeight(),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CoPagesAppBarContent(
+                    heading: '',
+                    padding: 20,
+                    icon: Icons.arrow_downward_rounded,
+                  ),
+                  // notification
+                  Container(
+                    color: value.tileBackgroundColor(-1),
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        bottom: 2,
+                      ),
+                      width: context.MediaQueryWidth(),
+                      height: 80,
+                      decoration: BoxDecoration(
+                          color: MyColors.backgroundColor,
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(100)),
+                          boxShadow: [
+                            BoxShadow(
+                                color: MyColors.text_field_color,
+                                offset: Offset(-0.3, 0.3)),
+                          ]),
+                      child: Center(
+                        child: Text(
+                          'Notification',
+                          style: MyTextStyle.notification_Page_Heading(context),
                         ),
-                        if (value.notification == true)
-                          Container(
-                            height: 7,
-                            width: 7,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                color: Colors.red),
-                          ),
-                      ],
+                      ),
                     ),
                   ),
-                );
-              },
+                  // notifications Tiles
+                  Container(
+                    height: (notificationsModel.length - 1) * 82,
+                    child: ListView.builder(
+                        physics: NeverScrollableScrollPhysics(),
+                        itemCount: notificationsModel.length - 1,
+                        itemBuilder: (context, index) {
+                          return InkWell(
+                            onTap: () {
+                              vibrate();
+                              value.toogleNotification(index);
+                            },
+                            child: Container(
+                              color: value.tileBackgroundColor(index),
+                              child: Container(
+                                margin: EdgeInsets.only(
+                                  bottom: 2,
+                                ),
+                                height: 80,
+                                width: MediaQuery.of(context).size.width,
+                                decoration: BoxDecoration(
+                                    color: notificationsModel[index].opened
+                                        ? MyColors.backgroundColor
+                                        : MyColors
+                                            .unRead_notification_tile_Color,
+                                    borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(50)),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          color: Color.fromARGB(
+                                              255, 139, 139, 139),
+                                          offset: Offset(-0.3, 0.3)),
+                                    ]),
+                                child: Row(
+                                  children: [
+                                    widthW(20),
+                                    Container(
+                                      height: 50,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                            color: MyColors.backgroundColor,
+                                            width: 2),
+                                        borderRadius:
+                                            BorderRadius.circular(100),
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                              notificationsModel[index].image,
+                                            ),
+                                            fit: BoxFit.cover),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color:
+                                                MyColors.container_Shadow_Color,
+                                            blurRadius: 13,
+                                            offset: Offset(0, 4),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    widthW(8),
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          width:
+                                              context.MediaQueryWidth() - 100,
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                notificationsModel[index]
+                                                    .heading,
+                                                style: notificationsModel[index]
+                                                        .opened
+                                                    ? MyTextStyle
+                                                        .Readed_notifications_Headings(
+                                                            context)
+                                                    : MyTextStyle
+                                                        .unRead_notifications_Headings(
+                                                            context),
+                                              ),
+                                              Text(
+                                                notificationsModel[index].time,
+                                                style: notificationsModel[index]
+                                                        .opened
+                                                    ? MyTextStyle
+                                                        .Readed_notification_time(
+                                                            context)
+                                                    : MyTextStyle
+                                                        .unRead_notification_time(
+                                                            context),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Container(
+                                          width:
+                                              context.MediaQueryWidth() - 100,
+                                          child: Text(
+                                            notificationsModel[index].text,
+                                            style: notificationsModel[index]
+                                                    .opened
+                                                ? MyTextStyle
+                                                    .Readed_notifications_Text(
+                                                        context)
+                                                : MyTextStyle
+                                                    .unRead_notifications_Text(
+                                                        context),
+                                            softWrap: true,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        }),
+                  ),
+                ],
+              ),
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      }),
     );
   }
 }

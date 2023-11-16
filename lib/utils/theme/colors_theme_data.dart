@@ -17,6 +17,10 @@ class MyColors {
   static const Color stay_Login_checkBox_Color = Color(0xFFEEEEEE);
   static const Color stay_Login_Color = Color(0xFF707070);
   static const Color filter_buttonColor = Color(0xFFEAF7FF);
+  static const Color unRead_notification_tile_Color = Color(0xFFFF647E);
+  static const Color unRead_notification_time_Color =
+      Color.fromARGB(255, 255, 255, 255);
+  static const Color Readed_notification_time_Color = Color(0xFF939393);
   static const Color status_Tile_color = Color(0xFF4D4D4D);
   static const Color status_Tile_Ring_color = Color(0xFFA4FF79);
   static const Color tile_shadow_color = Color(0x26693EFF);

@@ -20,7 +20,7 @@ import 'app/screens/orders_Screen/provider/order_Screen_Provider.dart';
 import 'app/screens/test_Screens/bottomSheet/provider/sliderProvider.dart';
 import 'app/screens/test_Screens/calander_Test/provider/calender_Provider.dart';
 import 'app/screens/test_Screens/calander_Test/provider/testg.dart';
-import 'utils/localization/codegen_loader.g.dart';
+import 'localization/codegen_loader.g.dart';
 
 Future<void> main() async {
   YourClass().initializeCalendar();

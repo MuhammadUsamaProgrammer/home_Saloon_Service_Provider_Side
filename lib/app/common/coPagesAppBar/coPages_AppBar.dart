@@ -7,7 +7,13 @@ import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 class CoPagesAppBarContent extends StatelessWidget {
   final String heading;
   final double padding;
-  CoPagesAppBarContent({super.key, required this.heading, this.padding = 10});
+  final IconData icon;
+  CoPagesAppBarContent({
+    super.key,
+    required this.heading,
+    this.padding = 10,
+    this.icon = Icons.arrow_back_rounded,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +34,7 @@ class CoPagesAppBarContent extends StatelessWidget {
                     children: [
                       // back icon
                       Icon(
-                        Icons.arrow_back_rounded,
+                        icon,
                         color: Colors.black,
                       ),
                     ],

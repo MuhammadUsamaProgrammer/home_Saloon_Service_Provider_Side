@@ -55,10 +55,10 @@ class DeleteAccountDialogPopUp extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 10.0),
                       // this is alert message
                       child: Container(
-                        // height: 32,
+                        height: 32,
                         width: 220,
                         child: Text(
-                          'This action cannot be undo. Are you sure you want to delete this account?',
+                          'This action cannot be undo. Are you sure you want to delete ?',
                           style: MyTextStyle.logout_Text(context),
                           textAlign: TextAlign.center,
                         ),

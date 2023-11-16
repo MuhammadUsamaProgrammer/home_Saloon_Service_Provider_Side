@@ -4,7 +4,7 @@ import 'package:home_saloon/app/screens/authentication/short_Code_Screen/provide
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:provider/provider.dart';
 
-import '../../../utils/localization/keys/codegen_loader.g.dart';
+import '../../../localization/keys/codegen_loader.g.dart';
 
 class ShortCodeTextField extends StatelessWidget {
   ShortCodeTextField({

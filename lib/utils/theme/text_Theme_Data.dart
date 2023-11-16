@@ -112,6 +112,69 @@ class MyTextStyle {
     );
   }
 
+  static TextStyle notification_Page_Heading(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 26,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w600,
+    );
+  }
+
+  static TextStyle Readed_notifications_Headings(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 16,
+      color: MyColors.Readed_notification_time_Color,
+      fontWeight: FontWeight.w600,
+    );
+  }
+
+  static TextStyle unRead_notifications_Headings(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 16,
+      color: MyColors.unRead_notification_time_Color,
+      fontWeight: FontWeight.w600,
+    );
+  }
+
+  static TextStyle Readed_notifications_Text(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 10,
+      color: MyColors.textColor_primary,
+      fontWeight: FontWeight.w400,
+    );
+  }
+
+  static TextStyle unRead_notifications_Text(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 10,
+      color: MyColors.textColor_Secondary,
+      fontWeight: FontWeight.w400,
+    );
+  }
+
+  static TextStyle unRead_notification_time(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 8,
+      color: MyColors.unRead_notification_time_Color,
+      fontWeight: FontWeight.w400,
+    );
+  }
+
+  static TextStyle Readed_notification_time(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 8,
+      color: MyColors.Readed_notification_time_Color,
+      fontWeight: FontWeight.w400,
+    );
+  }
+
   static TextStyle search_Here(BuildContext context) {
     return TextStyle(
       fontFamily: font,

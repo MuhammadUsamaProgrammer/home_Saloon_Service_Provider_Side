@@ -6,7 +6,7 @@ import 'package:home_saloon/app/screens/feedback_Screen/components/feedBack_Opti
 import 'package:home_saloon/app/common/textField/feedbackTextField.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 import 'package:provider/provider.dart';
-import '../../../../utils/localization/keys/codegen_loader.g.dart';
+import '../../../../localization/keys/codegen_loader.g.dart';
 import '../../../common/coPagesAppBar/coPages_AppBar.dart';
 import '../../../common/cutomize_Sizedbox/CustomsizedBox.dart';
 import '../provider/feedback_Provider.dart';

@@ -5,11 +5,12 @@ import 'package:home_saloon/app/common/buttons/textButton.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
 import 'package:home_saloon/app/screens/authentication/oTP_Screen/provider/oTP_timer_Provider.dart';
-import 'package:home_saloon/utils/localization/keys/codegen_loader.g.dart';
+
 import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 import 'package:provider/provider.dart';
+import '../../../../../localization/keys/codegen_loader.g.dart';
 import '../components/back_Ground_Image.dart';
 import '../components/oTP_Field.dart';
 import '../components/oTP_Timer.dart';
