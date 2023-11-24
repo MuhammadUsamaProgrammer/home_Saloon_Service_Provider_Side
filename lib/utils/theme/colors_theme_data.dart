@@ -27,6 +27,8 @@ class MyColors {
   static const Color see_All = Color(0xFF939393);
   static const Color customer_Name__In_Tile = Color(0xFF7A7A7A);
   static const Color order_Status_Container_Color = Color(0x12F74C69);
+  static const Color order_Status_active_Container_Color = Color(0x1297C731);
+  static const Color order_Status_active_text_Color = Color(0xFF97C731);
   static const Color bottom_Bar_Shadow_Color = Color(0xFFABB0BF);
   static const Color appBar_Items_Shadow_Color = Color(0x24000000);
   static const Color unSelected_bottomBar_Icons_Color = Color(0xFFABB0BF);

@@ -10,44 +10,47 @@ class DotIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Center(
-          child: Container(
-            height: 8,
-            width: 72,
-            child: Consumer<OnBoardingProvider>(
-              builder: (context, value, child) {
-                return ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 3,
-                  itemBuilder: (context, index) {
-                    return Row(
-                      children: [
-                        index > 0 ? widthW(8) : widthW(0),
-                        AnimatedContainer(
-                          curve: Curves.easeInOut,
-                          duration: Duration(milliseconds: 500),
-                          width: index == value.currentIndex ? 40 : 8,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(100),
-                            color: index == value.currentIndex
-                                ? MyColors.primaryColor
-                                : MyColors.unSelected_index_color,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 50.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Center(
+            child: Container(
+              height: 8,
+              width: 72,
+              child: Consumer<OnBoardingProvider>(
+                builder: (context, value, child) {
+                  return ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 3,
+                    itemBuilder: (context, index) {
+                      return Row(
+                        children: [
+                          index > 0 ? widthW(8) : widthW(0),
+                          AnimatedContainer(
+                            curve: Curves.easeInOut,
+                            duration: Duration(milliseconds: 500),
+                            width: index == value.currentIndex ? 40 : 8,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100),
+                              color: index == value.currentIndex
+                                  ? MyColors.primaryColor
+                                  : MyColors.unSelected_index_color,
+                            ),
                           ),
-                        ),
-                      ],
-                    );
-                  },
-                );
-              },
+                        ],
+                      );
+                    },
+                  );
+                },
+              ),
             ),
           ),
-        ),
-        heightC(100)
-      ],
+          heightC(100)
+        ],
+      ),
     );
   }
 }

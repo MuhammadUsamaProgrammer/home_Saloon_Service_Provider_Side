@@ -50,5 +50,4 @@ List<NotificationsModel> notificationsModel = [
       text: 'We warmly welcome you in our business based app',
       time: '1 day ago',
       opened: true),
-  // NotificationsModel(text: 'Welcome to Home Saloon  🤗 ', opened: false),
 ];

@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 
-import '../../../../localization/keys/codegen_loader.g.dart';
+import '../../../../utils/localization/keys/codegen_loader.g.dart';
 
 class ServiceStatusModel {
   final String status;
@@ -10,10 +10,9 @@ class ServiceStatusModel {
 }
 
 List<ServiceStatusModel> serviceStatusModel = [
-  ServiceStatusModel(
-      tileTital: LocaleKeys.Active.tr(), status: LocaleKeys.In_Progress.tr()),
+  ServiceStatusModel(tileTital: LocaleKeys.Active.tr(), status: 'Active'),
   ServiceStatusModel(
       tileTital: LocaleKeys.Pending.tr(), status: LocaleKeys.Pending.tr()),
-  ServiceStatusModel(tileTital: LocaleKeys.Declined.tr(), status: 'Cancelled'),
+  ServiceStatusModel(tileTital: LocaleKeys.Declined.tr(), status: 'Expired'),
   ServiceStatusModel(tileTital: LocaleKeys.Completed.tr(), status: 'Fulfilled'),
 ];

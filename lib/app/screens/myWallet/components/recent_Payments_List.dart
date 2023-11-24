@@ -73,7 +73,7 @@ class RecentTransactionList extends StatelessWidget {
                           widthW(context.MediaQueryWidth() * .20),
                           // transection amount
                           Text(
-                            '-AED 22.00',
+                            '-PKR 22.00',
                             style: MyTextStyle.recent_Payments_Amount(context),
                           ),
                         ],

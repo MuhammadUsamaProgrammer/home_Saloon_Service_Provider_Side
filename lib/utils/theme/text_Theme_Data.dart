@@ -301,6 +301,15 @@ class MyTextStyle {
     );
   }
 
+  static TextStyle order_Status_active(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 12,
+      color: MyColors.order_Status_active_text_Color,
+      fontWeight: FontWeight.w500,
+    );
+  }
+
   static TextStyle bottomBar_Selected_Text(BuildContext context) {
     return TextStyle(
       fontFamily: font,

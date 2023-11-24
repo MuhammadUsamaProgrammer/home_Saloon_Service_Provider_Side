@@ -3,8 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
+import 'package:home_saloon/app/screens/authentication/short_Code_Screen/provider/check_Box_Provider.dart';
 import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../resources/images/images_Path.dart';
 
@@ -19,8 +21,21 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3), () {
-      context.goNamed(MyRoutes.onBoardingPage);
+    final checkBoxProvider =
+        Provider.of<CheckBoxProvider>(context, listen: false);
+
+    checkBoxProvider.checkFunction();
+    checkBoxProvider.firstTimeshowOnBoarding();
+
+    Future.delayed(Duration(seconds: 3), () {
+      if (checkBoxProvider.isSelected) {
+        context.goNamed(MyRoutes.mainPage);
+      } else {
+        checkBoxProvider.showOnBoarding
+            ? context.goNamed(MyRoutes.onBoardingPage)
+            : context.goNamed(MyRoutes.shortCodeScreen);
+        checkBoxProvider.offshowOnBoarding();
+      }
     });
   }
 

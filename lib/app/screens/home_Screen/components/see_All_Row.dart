@@ -7,7 +7,7 @@ import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../localization/keys/codegen_loader.g.dart';
+import '../../../../utils/localization/keys/codegen_loader.g.dart';
 import '../../../../resources/icons/app_Icons.dart';
 
 class SeeAllRow extends StatelessWidget {

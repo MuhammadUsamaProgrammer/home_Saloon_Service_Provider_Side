@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:home_saloon/app/screens/orders_Screen/components/page_View_Headings_Tile_Of_Manage_Orders.dart';
+import 'package:home_saloon/utils/localization/keys/codegen_loader.g.dart';
 import 'package:provider/provider.dart';
 import '../../../common/cutomize_Sizedbox/CustomsizedBox.dart';
 import '../../home_Screen/components/app_Bar_Of_Home_Page.dart';
@@ -20,6 +22,7 @@ class OrderScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: CustomAppBar(
+              text: LocaleKeys.Manage_Orders.tr(),
               index: 1,
             ),
           ),

@@ -1,52 +1,56 @@
-import 'package:flutter/material.dart';
-
 class calendertModel {
-  List<YearsListModel> list;
-  calendertModel({required this.list});
+  List<YearsListModel> yearList;
+  calendertModel({required this.yearList});
 }
 
 class YearsListModel {
   final int yearNumber;
-  List<MonthListModel> list;
-  YearsListModel({required this.yearNumber, required this.list});
+  List<MonthListModel> monthList;
+  YearsListModel({required this.yearNumber, required this.monthList});
   @override
   String toString() {
-    return 'YearsListModel(yearNumber: $yearNumber, list: $list)';
+    return 'YearsListModel(yearNumber: $yearNumber, list: $monthList)';
   }
 }
 
 class MonthListModel {
   final int monthNumber;
-  List<DaysListModel> list;
-  MonthListModel({required this.monthNumber, required this.list});
+  List<DaysListModel> daysList;
+  MonthListModel({required this.monthNumber, required this.daysList});
   @override
   String toString() {
-    return 'monthListtModel(monthNumber: $monthNumber, list: $list)';
+    return 'monthListtModel(monthNumber: $monthNumber, list: $daysList)';
   }
 }
 
 class DaysListModel {
   final int dayNumber;
-  List<Widget> list;
-  DaysListModel({required this.dayNumber, required this.list});
+  final int dayName;
+  List<bool> slotsList;
+  DaysListModel(
+      {required this.dayNumber,
+      required this.slotsList,
+      required this.dayName});
   @override
   String toString() {
-    return 'DaysListModel(dayNumber: $dayNumber, list: $list)';
+    return 'DaysListModel(dayNumber: $dayNumber, list: $slotsList)';
   }
 }
 
+List<YearsListModel> calendar = [];
+
 class YourClass {
-  List<YearsListModel> calendar = [];
-  int startYear = 2020;
-  int lastYear = 2020;
+  int startYear = 2000;
+  int lastYear = 2050;
+  int currentDayNumber = 6;
 
   // Constants for month days
+  static const int numberOfSlots = 4;
   static const int thirtyOneDays = 31;
   static const int thirtyDays = 30;
   static const int leapYearFebruaryDays = 29;
   static const int notLeapYearFebruaryDays = 28;
   // function to make calender
-  // List<YearsListModel> calender = [];
   void initializeCalendar() {
     for (int year = startYear; year <= lastYear; year++) {
       List<MonthListModel> yearList = [];
@@ -56,28 +60,59 @@ class YourClass {
 
         if ([1, 3, 5, 7, 8, 10, 12].contains(month)) {
           for (int dayNumber = 1; dayNumber <= thirtyOneDays; dayNumber++) {
-            monthList.add(DaysListModel(dayNumber: dayNumber, list: []));
+            List<bool> slotsList = [];
+            for (int slot = 1; slot <= numberOfSlots; slot++) {
+              slotsList.add(false);
+            }
+            monthList.add(DaysListModel(
+                dayNumber: dayNumber,
+                dayName: currentDayNumber,
+                slotsList: slotsList));
+            currentDayNumber++;
+            if (currentDayNumber == 8) {
+              currentDayNumber = 1;
+            }
           }
         } else if ([4, 6, 9, 11].contains(month)) {
           for (int dayNumber = 1; dayNumber <= thirtyDays; dayNumber++) {
-            monthList.add(DaysListModel(dayNumber: dayNumber, list: []));
+            List<bool> slotsList = [];
+            for (int slot = 1; slot <= numberOfSlots; slot++) {
+              slotsList.add(false);
+            }
+            monthList.add(DaysListModel(
+                dayNumber: dayNumber,
+                dayName: currentDayNumber,
+                slotsList: slotsList));
+            currentDayNumber++;
+            if (currentDayNumber == 8) {
+              currentDayNumber = 1;
+            }
           }
         } else {
           int daysInFebruary =
               (year % 4 == 0) ? leapYearFebruaryDays : notLeapYearFebruaryDays;
 
           for (int dayNumber = 1; dayNumber <= daysInFebruary; dayNumber++) {
-            monthList.add(DaysListModel(dayNumber: dayNumber, list: []));
+            List<bool> slotsList = [];
+            for (int slot = 1; slot <= numberOfSlots; slot++) {
+              slotsList.add(false);
+            }
+            monthList.add(DaysListModel(
+                dayNumber: dayNumber,
+                dayName: currentDayNumber,
+                slotsList: slotsList));
+            currentDayNumber++;
+            if (currentDayNumber == 8) {
+              currentDayNumber = 1;
+            }
           }
         }
 
-        yearList.add(MonthListModel(monthNumber: month, list: monthList));
+        yearList.add(MonthListModel(monthNumber: month, daysList: monthList));
       }
 
-      calendar.add(YearsListModel(yearNumber: year, list: yearList));
+      calendar.add(YearsListModel(yearNumber: year, monthList: yearList));
     }
-
-    print(calendar);
   }
 }
 

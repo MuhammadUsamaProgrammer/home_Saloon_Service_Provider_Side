@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 
-import '../../../../localization/keys/codegen_loader.g.dart';
+import '../../../../utils/localization/keys/codegen_loader.g.dart';
 
 class EarningStatus extends StatelessWidget {
   @override
@@ -42,7 +42,7 @@ class EarningStatus extends StatelessWidget {
                                     context),
                               ),
                               Text(
-                                'SR 40.50',
+                                'PKR 40.50',
                                 style: MyTextStyle.earning_Status(context),
                               ),
                             ],
@@ -89,7 +89,7 @@ class EarningStatus extends StatelessWidget {
                                     context),
                               ),
                               Text(
-                                'SR 40.50',
+                                'PKR 40.50',
                                 style: MyTextStyle.earning_Status(context),
                               ),
                             ],

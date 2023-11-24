@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 import 'package:provider/provider.dart';
-import '../../../../../localization/keys/codegen_loader.g.dart';
+import '../../../../../utils/localization/keys/codegen_loader.g.dart';
 import '../../../../common/vibrate/vibrate.dart';
 import '../provider/check_Box_Provider.dart';
 

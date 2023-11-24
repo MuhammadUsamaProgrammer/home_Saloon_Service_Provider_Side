@@ -4,7 +4,7 @@ import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
 import 'package:home_saloon/resources/images/images_Path.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 
-import '../../../../localization/keys/codegen_loader.g.dart';
+import '../../../../utils/localization/keys/codegen_loader.g.dart';
 
 class CurrentBalanceContainer extends StatelessWidget {
   const CurrentBalanceContainer({super.key});
@@ -31,7 +31,7 @@ class CurrentBalanceContainer extends StatelessWidget {
               style: MyTextStyle.available_Balance_Heading(context),
             ),
             Text(
-              'AED 230.55',
+              'PKR 230.55',
               style: MyTextStyle.available_Balance(context),
             ),
           ],

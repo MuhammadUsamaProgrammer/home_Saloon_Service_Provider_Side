@@ -1,12 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:home_saloon/app/common/buttons/textButton.dart';
-import 'package:home_saloon/app/common/toast_message/toast_message.dart';
-import 'package:home_saloon/app/screens/feedback_Screen/components/feedBack_Options.dart';
+import 'package:home_saloon/app/screens/feedback_Screen/components/customDropDown.dart';
 import 'package:home_saloon/app/common/textField/feedbackTextField.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 import 'package:provider/provider.dart';
-import '../../../../localization/keys/codegen_loader.g.dart';
+import '../../../../utils/localization/keys/codegen_loader.g.dart';
 import '../../../common/coPagesAppBar/coPages_AppBar.dart';
 import '../../../common/cutomize_Sizedbox/CustomsizedBox.dart';
 import '../provider/feedback_Provider.dart';
@@ -30,7 +29,19 @@ class FeedbackScreen extends StatelessWidget {
             children: [
               heightC(57),
               // feedback options
-              FeedbackOptions(),
+              Consumer<FeedbackProvider>(
+                builder: (context, value, child) {
+                  return CustomDropDown(
+                      onTapTile: () {},
+                      list: value.dropdownMenuItem,
+                      onTap: () {
+                        value.toogleDropDown();
+                      },
+                      heading_Text: value.heading_Text,
+                      isOpen: value.isDropDownOpen,
+                      dropdown_main_Text: LocaleKeys.Select_a_Option.tr());
+                },
+              ),
               heightC(33),
               Text(
                 LocaleKeys.Write_a_message.tr(),
@@ -49,13 +60,7 @@ class FeedbackScreen extends StatelessWidget {
                   return Button1(
                       text: 'Submit',
                       onTap: () {
-                        if (value.index == 0) {
-                          showToastMessage('Please select any option first!');
-                        } else {
-                          value.feedbackTextController.clear();
-                          value.changeIndex(0);
-                          Navigator.pop(context);
-                        }
+                        value.submit(context);
                       });
                 },
               ),

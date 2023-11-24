@@ -13,4 +13,5 @@ class MySvgPath {
   static const String file_Icon = 'assets/svg/file_Icon.svg';
   static const String dropDown_Icon = 'assets/svg/dropDown_Icon.svg';
   static const String camera_Icon = 'assets/svg/camera.svg';
+  static const String my_Services = 'assets/svg/my_Services.svg';
 }

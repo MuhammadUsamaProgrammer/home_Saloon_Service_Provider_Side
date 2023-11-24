@@ -4,7 +4,7 @@ import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
 import 'package:home_saloon/app/screens/home_Screen/components/orders_Container.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
-import '../../../../localization/keys/codegen_loader.g.dart';
+import '../../../../utils/localization/keys/codegen_loader.g.dart';
 import '../components/app_Bar_Of_Home_Page.dart';
 import '../components/circular_Percent_Indicator/percent_Indicators_Tile.dart';
 import '../components/earning_Status.dart';
@@ -25,7 +25,9 @@ class HomePage extends StatelessWidget {
             // app bar of home
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: CustomAppBar(),
+              child: CustomAppBar(
+                text: '',
+              ),
             ),
             Expanded(
               child: SingleChildScrollView(

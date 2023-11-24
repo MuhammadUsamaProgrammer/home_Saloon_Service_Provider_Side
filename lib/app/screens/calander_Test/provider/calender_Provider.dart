@@ -1,13 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:home_saloon/app/screens/calander_Test/provider/testg.dart';
 
 class CalenderProvider extends ChangeNotifier {
-  static const int startYear = 2020;
-  static const int lastYear = 2030;
-  static const int totalMonth = 12;
-  static const int thirtyOneDays = 31;
-  static const int thirtyDays = 30;
-  static const int leapYearFebruaryDays = 29;
-  static const int notLeapYearFebruaryDays = 28;
+  int _startYear = 00;
+  int _lastYear = 50;
+  int _year = 23;
+  int _month = 11;
+  int _currentDayIndex = 18;
+  int get year => _year;
+  int get month => _month;
+  int get currentDayIndex => _currentDayIndex;
+
+  void nextMonth() {
+    if (_month == 12) {
+      if (_year < _lastYear) {
+        _year++;
+        _month = 1;
+      } else if (_year == _lastYear) {}
+    } else
+      _month++;
+    notifyListeners();
+  }
+
+  void previousMonth() {
+    if (_month == 1) {
+      if (_year > _startYear) {
+        _year--;
+        _month = 12;
+      } else if (_year == _startYear) {}
+    } else
+      _month--;
+    notifyListeners();
+  }
+
+  void changeCurrentDay(int newCurrentDay) {
+    _currentDayIndex = newCurrentDay;
+    notifyListeners();
+  }
+
+  void bookSlot(int index) {
+    calendar[_year]
+        .monthList[_month - 1]
+        .daysList[_currentDayIndex]
+        .slotsList[index] = true;
+    notifyListeners();
+  }
 
 //   List<Widget> daysList = [];
 //   List<List<Widget>> monthList = [

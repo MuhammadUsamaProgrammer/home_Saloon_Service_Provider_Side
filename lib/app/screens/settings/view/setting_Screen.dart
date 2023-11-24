@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:home_saloon/app/common/coPagesAppBar/coPages_AppBar.dart';
 import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
-import '../../../../localization/keys/codegen_loader.g.dart';
+import '../../../../utils/localization/keys/codegen_loader.g.dart';
 import '../../../common/cutomize_Sizedbox/CustomsizedBox.dart';
 import '../components/deleteAccount_DialogPopUp.dart';
 import '../components/languageDialogPopUp.dart';

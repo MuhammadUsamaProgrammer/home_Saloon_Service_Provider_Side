@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 import 'package:provider/provider.dart';
-import '../../common/coPagesAppBar/coPages_AppBar.dart';
-import '../../common/vibrate/vibrate.dart';
-import '../home_Screen/provider/notification_Provider.dart';
-import 'models/notifications_Models.dart';
+import '../../../common/vibrate/vibrate.dart';
+import '../provider/notification_Provider.dart';
+import '../models/notifications_Models.dart';
 
 class NotificationsScreen extends StatelessWidget {
   const NotificationsScreen({super.key});
@@ -24,11 +24,6 @@ class NotificationsScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CoPagesAppBarContent(
-                    heading: '',
-                    padding: 20,
-                    icon: Icons.arrow_downward_rounded,
-                  ),
                   // notification
                   AnimatedContainer(
                     duration: Duration(milliseconds: 200),
@@ -48,11 +43,36 @@ class NotificationsScreen extends StatelessWidget {
                                 color: MyColors.text_field_color,
                                 offset: Offset(-0.3, 0.3)),
                           ]),
-                      child: Center(
-                        child: Text(
-                          'Notification',
-                          style: MyTextStyle.notification_Page_Heading(context),
-                        ),
+                      child: Row(
+                        children: [
+                          widthW(20),
+                          Material(
+                            color: Colors.transparent,
+                            borderRadius: BorderRadius.circular(15),
+                            child: InkWell(
+                              onTap: () {
+                                vibrate();
+                                context.pop();
+                              },
+                              borderRadius: BorderRadius.circular(15),
+                              child: Container(
+                                height: 50,
+                                width: 50,
+                                child: Icon(
+                                  Icons.arrow_downward_rounded,
+                                ),
+                              ),
+                            ),
+                          ),
+                          widthW(20),
+                          Center(
+                            child: Text(
+                              'Notification',
+                              style: MyTextStyle.notification_Page_Heading(
+                                  context),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),

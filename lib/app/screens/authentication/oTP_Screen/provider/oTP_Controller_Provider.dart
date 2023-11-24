@@ -19,4 +19,11 @@ class OTPControllerProvider extends ChangeNotifier {
         : true;
     notifyListeners();
   }
+
+  void clearAllOtp() {
+    pin1.clear();
+    pin2.clear();
+    pin3.clear();
+    pin4.clear();
+  }
 }

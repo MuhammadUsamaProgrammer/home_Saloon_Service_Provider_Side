@@ -6,7 +6,7 @@ class OTPTimerProvider extends ChangeNotifier {
   late Timer _timer;
   int _seconds = 0;
   int get seconds => _seconds;
-  late Timer _canceltimer;
+  // late Timer _canceltimer;
 
   void startTimer() {
     _seconds = 30;
@@ -32,12 +32,12 @@ class OTPTimerProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void dispose() {
-    _canceltimer = Timer.periodic(Duration(seconds: 5), (timer) {
-      _timer.cancel();
-      _canceltimer.cancel();
-      super.dispose();
-      notifyListeners();
-    });
-  }
+  // void dispose() {
+  //   _canceltimer = Timer.periodic(Duration(seconds: 5), (timer) {
+  //     _timer.cancel();
+  //     _canceltimer.cancel();
+  //     super.dispose();
+  //     notifyListeners();
+  //   });
+  // }
 }

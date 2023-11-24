@@ -9,7 +9,7 @@ import '../../../../resources/icons/app_Icons.dart';
 import '../../../../utils/theme/colors_theme_data.dart';
 import '../../../common/toast_message/toast_message.dart';
 import '../../../common/vibrate/vibrate.dart';
-import '../provider/notification_Provider.dart';
+import '../../notifications_Screen/provider/notification_Provider.dart';
 
 class NotificationButton extends StatelessWidget {
   const NotificationButton({super.key});

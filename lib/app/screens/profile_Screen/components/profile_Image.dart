@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:home_saloon/app/common/vibrate/vibrate.dart';
-import '../../../../localization/keys/codegen_loader.g.dart';
+import '../../../../utils/localization/keys/codegen_loader.g.dart';
 import '../../../../resources/images/images_Path.dart';
 import '../../../../utils/routes/app_route_const.dart';
 import '../../../../utils/theme/colors_theme_data.dart';

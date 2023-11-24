@@ -5,7 +5,7 @@ import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
 import 'package:home_saloon/resources/images/images_Path.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
-import '../../../../../localization/keys/codegen_loader.g.dart';
+import '../../../../../utils/localization/keys/codegen_loader.g.dart';
 import '../../../../common/coPagesAppBar/coPages_AppBar.dart';
 
 class ContactUs extends StatelessWidget {

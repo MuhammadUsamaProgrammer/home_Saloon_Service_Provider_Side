@@ -1,4 +1,4 @@
-import '../../../../localization/keys/codegen_loader.g.dart';
+import '../../../../utils/localization/keys/codegen_loader.g.dart';
 
 class ProfileTileModel {
   final String text;

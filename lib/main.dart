@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:home_saloon/app/screens/main_Page/provider/main_Page_Provider.dart';
+import 'package:home_saloon/app/screens/my_Services/provider/my_services_provider.dart';
 import 'package:home_saloon/utils/routes/app_route_config.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:provider/provider.dart';
@@ -12,15 +13,15 @@ import 'app/screens/authentication/short_Code_Screen/provider/shortCode_Controll
 import 'app/screens/editProfile_Screen/provider/edit_Profile_Details_Provider.dart';
 import 'app/screens/editProfile_Screen/provider/imageProvider.dart';
 import 'app/screens/feedback_Screen/provider/feedback_Provider.dart';
-import 'app/screens/home_Screen/provider/notification_Provider.dart';
+import 'app/screens/notifications_Screen/provider/notification_Provider.dart';
 import 'app/screens/map/provider/map_Provider.dart';
 import 'app/screens/myWallet/provider/heightControlProvider.dart';
 import 'app/screens/onBoarding/provider/onBoarding_Provider.dart';
 import 'app/screens/orders_Screen/provider/order_Screen_Provider.dart';
 import 'app/screens/test_Screens/bottomSheet/provider/sliderProvider.dart';
-import 'app/screens/test_Screens/calander_Test/provider/calender_Provider.dart';
-import 'app/screens/test_Screens/calander_Test/provider/testg.dart';
-import 'localization/codegen_loader.g.dart';
+import 'app/screens/calander_Test/provider/calender_Provider.dart';
+import 'app/screens/calander_Test/provider/testg.dart';
+import 'utils/localization/codegen_loader.g.dart';
 
 Future<void> main() async {
   YourClass().initializeCalendar();
@@ -69,7 +70,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => EditProfileDetailsProvider()),
         ChangeNotifierProvider(create: (_) => MapProvider()),
         ChangeNotifierProvider(create: (_) => CalenderProvider()),
-        // ChangeNotifierProvider(create: (_) => BounceState()),
+        ChangeNotifierProvider(create: (_) => MyServicesProvider()),
         // ChangeNotifierProvider(create: (_) => BounceState()),
         // ChangeNotifierProvider(create: (_) => BounceState()),
         // ChangeNotifierProvider(create: (_) => BounceState()),
@@ -129,5 +130,7 @@ class CustomBehavior extends ScrollBehavior {
 // flutter pub run easy_localization:generate --source-dir ./assets/localization --output-dir ./lib/keys -f keys
 
 // flutter pub run easy_localization:generate -h
+
+// D:\flutter d\home_saloon\build\app\outputs\flutter-apk
 
 // flutter build apk --split-per-abi

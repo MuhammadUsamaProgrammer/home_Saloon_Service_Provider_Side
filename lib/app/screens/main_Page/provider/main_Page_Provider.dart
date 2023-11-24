@@ -8,9 +8,10 @@ class MainPageProvider with ChangeNotifier {
   PageController get controller => _controller;
 
   void changePage(int index) {
-    controller.animateToPage(index,
-        duration: Duration(milliseconds: 1200),
-        curve: Curves.fastEaseInToSlowEaseOut);
+    controller.jumpToPage(index);
+    // controller.animateToPage(index,
+    //     duration: Duration(milliseconds: 1200),
+    // curve: Curves.fastEaseInToSlowEaseOut);
     _currentIndex = index;
     notifyListeners();
   }

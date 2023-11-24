@@ -4,13 +4,11 @@ import 'package:go_router/go_router.dart';
 import 'package:home_saloon/app/common/buttons/textButton.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
-import 'package:home_saloon/app/screens/authentication/oTP_Screen/provider/oTP_timer_Provider.dart';
-
 import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
 import 'package:provider/provider.dart';
-import '../../../../../localization/keys/codegen_loader.g.dart';
+import '../../../../../utils/localization/keys/codegen_loader.g.dart';
 import '../components/back_Ground_Image.dart';
 import '../components/oTP_Field.dart';
 import '../components/oTP_Timer.dart';
@@ -67,16 +65,12 @@ class OTPScreen extends StatelessWidget {
                           Consumer<OTPControllerProvider>(
                             builder: (context, value, child) {
                               return value.isAllOTPFilled
-                                  ? Consumer<OTPTimerProvider>(
-                                      builder: (context, value, child) {
-                                        return Button1(
-                                          text: LocaleKeys.login.tr(),
-                                          onTap: () {
-                                            GoRouter.of(context)
-                                                .goNamed(MyRoutes.mainPage);
-                                            value.dispose();
-                                          },
-                                        );
+                                  ? Button1(
+                                      text: LocaleKeys.login.tr(),
+                                      onTap: () {
+                                        value.clearAllOtp;
+                                        GoRouter.of(context)
+                                            .goNamed(MyRoutes.mainPage);
                                       },
                                     )
                                   : Button1(

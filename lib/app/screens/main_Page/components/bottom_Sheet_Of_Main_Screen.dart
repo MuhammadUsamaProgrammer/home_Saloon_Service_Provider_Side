@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:home_saloon/app/screens/main_Page/components/main_bottom_Sheet_Icons.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 
-import '../../../../localization/keys/codegen_loader.g.dart';
+import '../../../../utils/localization/keys/codegen_loader.g.dart';
 import '../../../../resources/icons/app_Icons.dart';
 
 class BottomSheetOfMainScreen extends StatelessWidget {
@@ -41,9 +41,15 @@ class BottomSheetOfMainScreen extends StatelessWidget {
             ),
             SizedBox(),
             MainBottomSheetsIcons(
+              svg: MySvgPath.my_Services,
+              name: 'My Services',
+              index: 2,
+            ),
+            SizedBox(),
+            MainBottomSheetsIcons(
               svg: MySvgPath.profile_Svg,
               name: LocaleKeys.Profile.tr(),
-              index: 2,
+              index: 3,
             ),
           ],
         ),

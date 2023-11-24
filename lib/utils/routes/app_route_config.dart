@@ -15,14 +15,13 @@ import '../../app/screens/feedback_Screen/view/feedback_Screen.dart';
 import '../../app/screens/map/view/google_Map.dart';
 import '../../app/screens/map/view/search_Places_GoogleMap.dart';
 import '../../app/screens/myWallet/view/walletScreen.dart';
-import '../../app/screens/notifications_Screen/detailed_Notification.dart';
-import '../../app/screens/notifications_Screen/notifications_Screen.dart';
+import '../../app/screens/notifications_Screen/view/notifications_Screen.dart';
 import '../../app/screens/searchScreen/search_Screen.dart';
 import '../../app/screens/settings/view/about_Terms_Contactus_Screens/aboutUs_screen.dart';
 import '../../app/screens/settings/view/about_Terms_Contactus_Screens/contact_Us.dart';
 import '../../app/screens/settings/view/about_Terms_Contactus_Screens/terms_And_Policies.dart';
 import '../../app/screens/settings/view/setting_Screen.dart';
-import '../../app/screens/test_Screens/calander_Test/view/homeScreen.dart';
+import '../../app/screens/calander_Test/view/homeScreen.dart';
 import '../../app/screens/test_Screens/error_Page.dart';
 import '../../app/screens/test_Screens/profile.dart';
 
@@ -30,7 +29,7 @@ GoRouter router = GoRouter(
   routes: [
     // GoRoute(
     //   path: '/',
-    //   pageBuilder: (context, state) => MaterialPage(child: MainPage()),
+    //   pageBuilder: (context, state) => MaterialPage(child: Home()),
     // ),
     GoRoute(
       path: '/',
@@ -64,8 +63,8 @@ GoRouter router = GoRouter(
         myRoutes: MyRoutes.mapScreen, screen: MapScreen()),
     transitionsdownToUpPage(
         myRoutes: MyRoutes.searchPlaces, screen: SearchPlaces()),
-    transitionsleftToRightPage(
-        myRoutes: MyRoutes.detailNotification, screen: DetailNotification()),
+    // transitionsleftToRightPage(
+    //     myRoutes: MyRoutes.detailNotification, screen: DetailNotification()),
   ],
   errorPageBuilder: (context, state) {
     return MaterialPage(child: ErrorPage());
