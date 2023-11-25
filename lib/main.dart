@@ -34,16 +34,21 @@ Future<void> main() async {
   );
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  runApp(EasyLocalization(
-      path: 'assets/localization',
-      supportedLocales: [
-        Locale('en'),
-        Locale('ar'),
-        Locale('ur'),
-      ],
-      fallbackLocale: Locale('en'),
-      assetLoader: CodegenLoader(),
-      child: MyApp()));
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]).then((_) {
+    runApp(EasyLocalization(
+        path: 'assets/localization',
+        supportedLocales: [
+          Locale('en'),
+          Locale('ar'),
+          Locale('ur'),
+        ],
+        fallbackLocale: Locale('en'),
+        assetLoader: CodegenLoader(),
+        child: MyApp()));
+  });
   // SystemChannels.platform
   //     .setMethodCallHandler((MethodCall methodCall) async {});
 }
