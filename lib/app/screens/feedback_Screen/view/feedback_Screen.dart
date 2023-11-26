@@ -32,14 +32,16 @@ class FeedbackScreen extends StatelessWidget {
               Consumer<FeedbackProvider>(
                 builder: (context, value, child) {
                   return CustomDropDown(
-                      onTapTile: () {},
-                      list: value.dropdownMenuItem,
-                      onTap: () {
-                        value.toogleDropDown();
-                      },
-                      heading_Text: value.heading_Text,
-                      isOpen: value.isDropDownOpen,
-                      dropdown_main_Text: LocaleKeys.Select_a_Option.tr());
+                    onTapTile: (index) {
+                      value.changeSelectedIndex(index);
+                    },
+                    list: value.dropdownMenuItem,
+                    onTap: () {
+                      value.toogleDropDown();
+                    },
+                    heading_Text: value.heading_Text,
+                    isOpen: value.isDropDownOpen,
+                  );
                 },
               ),
               heightC(33),
