@@ -22,7 +22,7 @@ class OTPFormField extends StatelessWidget {
               onChanged: (fieldValue) {
                 fieldValue.isNotEmpty
                     ? FocusScope.of(context).nextFocus()
-                    : null;
+                    : FocusScope.of(context).previousFocus();
                 value.toogleisAllOTPFilled();
               },
               inputFormatters: [
