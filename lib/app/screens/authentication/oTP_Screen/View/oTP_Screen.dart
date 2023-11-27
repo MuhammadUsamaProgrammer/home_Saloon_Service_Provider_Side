@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:home_saloon/app/common/buttons/textButton.dart';
 import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
+import 'package:home_saloon/app/screens/authentication/short_Code_Screen/provider/check_Box_Provider.dart';
 import 'package:home_saloon/utils/routes/app_route_const.dart';
 import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
@@ -48,13 +49,18 @@ class OTPScreen extends StatelessWidget {
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          heightC(50),
+                          heightC(44),
                           // Heading Text
                           Text(
                             LocaleKeys.enter_OTP.tr(),
                             style: MyTextStyle.enter_OTP(context),
                           ),
-                          heightC(44),
+                          // Heading Text
+                          Text(
+                            'An OTP is Sent to your Email. Enter a 4 Digit Code that is sent to your email.',
+                            style: MyTextStyle.Tile_Text_content(context),
+                          ),
+                          heightC(20),
                           // text field
                           OTPField(),
                           heightC(23),
@@ -64,21 +70,25 @@ class OTPScreen extends StatelessWidget {
                           // Button
                           Consumer<OTPControllerProvider>(
                             builder: (context, value, child) {
-                              return value.isAllOTPFilled
-                                  ? Button1(
-                                      text: LocaleKeys.login.tr(),
-                                      onTap: () {
-                                        value.clearAllOtp;
-                                        GoRouter.of(context)
-                                            .goNamed(MyRoutes.mainPage);
-                                      },
-                                    )
-                                  : Button1(
-                                      text: LocaleKeys.login.tr(),
-                                      isActive: false,
-                                      color: MyColors.text_field_color,
-                                      onTap: () {},
-                                    );
+                              return Consumer<CheckBoxProvider>(
+                                  builder: (context, checkBox, child) {
+                                return value.isAllOTPFilled
+                                    ? Button1(
+                                        text: LocaleKeys.login.tr(),
+                                        onTap: () {
+                                          checkBox.activateStayLogin();
+                                          value.clearAllOtp;
+                                          GoRouter.of(context)
+                                              .goNamed(MyRoutes.mainPage);
+                                        },
+                                      )
+                                    : Button1(
+                                        text: LocaleKeys.login.tr(),
+                                        isActive: false,
+                                        color: MyColors.text_field_color,
+                                        onTap: () {},
+                                      );
+                              });
                             },
                           ),
                           heightC(19),

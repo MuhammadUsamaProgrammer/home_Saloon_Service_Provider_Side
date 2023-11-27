@@ -9,12 +9,15 @@ class CheckBoxProvider extends ChangeNotifier {
   bool get isSelected => _isSelected;
   bool get showOnBoarding => _showOnBoarding;
   void toogleStayLoggedIn() async {
-    var prefs = await SharedPreferences.getInstance();
     _stayLoggedIn = !_stayLoggedIn;
+    notifyListeners();
+  }
+
+  void activateStayLogin() async {
+    var prefs = await SharedPreferences.getInstance();
     _stayLoggedIn
         ? await prefs.setBool('stayLoggedIn', true)
         : await prefs.setBool('stayLoggedIn', false);
-    notifyListeners();
   }
 
   void checkFunction() async {
