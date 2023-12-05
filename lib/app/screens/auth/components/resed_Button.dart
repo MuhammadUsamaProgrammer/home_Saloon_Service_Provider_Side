@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home_saloon/app/core/theme/text_Theme_Data.dart';
 import 'package:home_saloon/app/screens/auth/provider/auth_provider.dart';
+import 'package:home_saloon/app/widgets/vibrate/vibrate.dart';
 import 'package:provider/provider.dart';
 
 class ResendButton extends StatelessWidget {
@@ -16,6 +17,7 @@ class ResendButton extends StatelessWidget {
             return GestureDetector(
               onTap: () {
                 if (value.resend == true) {
+                  vibrate();
                   value.login();
                 }
                 ;
