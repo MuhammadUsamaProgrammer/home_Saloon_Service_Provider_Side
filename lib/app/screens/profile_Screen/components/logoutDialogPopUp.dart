@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
-import 'package:home_saloon/app/common/vibrate/vibrate.dart';
+import 'package:home_saloon/app/core/cache/set_shared_pref.dart';
+import 'package:home_saloon/app/widgets/cutomize_Sizedbox/CustomsizedBox.dart';
+import 'package:home_saloon/app/widgets/vibrate/vibrate.dart';
 import 'package:home_saloon/app/screens/main_Page/provider/main_Page_Provider.dart';
-import 'package:home_saloon/resources/images/images_Path.dart';
-import 'package:home_saloon/utils/routes/app_route_const.dart';
-import 'package:home_saloon/utils/theme/colors_theme_data.dart';
-import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
+import 'package:home_saloon/app/core/resources/images/images_Path.dart';
+import 'package:home_saloon/app/core/routes/app_route_const.dart';
+import 'package:home_saloon/app/core/theme/colors_theme_data.dart';
+import 'package:home_saloon/app/core/theme/text_Theme_Data.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-class LogoutDialogPopUp extends StatelessWidget {
+class LogoutDialogPopUp extends StatelessWidget with SharedPrefSet {
   LogoutDialogPopUp({
     super.key,
   });
@@ -103,8 +103,7 @@ class LogoutDialogPopUp extends StatelessWidget {
                       // this is 'yes' button
                       GestureDetector(
                         onTap: () async {
-                          var prefs = await SharedPreferences.getInstance();
-                          await prefs.setBool('stayLoggedIn', false);
+                          await setStayLogin(value: false);
                           vibrate();
                           value.changePage(0);
                           Navigator.pop(context);

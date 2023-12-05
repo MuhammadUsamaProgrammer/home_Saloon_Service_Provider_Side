@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:home_saloon/app/core/theme/colors_theme_data.dart';
 import 'package:provider/provider.dart';
-
-import '../../../../utils/theme/colors_theme_data.dart';
-import '../../../common/cutomize_Sizedbox/CustomsizedBox.dart';
+import '../../../widgets/cutomize_Sizedbox/CustomsizedBox.dart';
 import '../provider/onBoarding_Provider.dart';
 
 class DotIndicator extends StatelessWidget {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
-import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
-import 'package:home_saloon/resources/images/images_Path.dart';
-import 'package:home_saloon/utils/theme/colors_theme_data.dart';
-import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
+import 'package:home_saloon/app/widgets/cutomize_Sizedbox/CustomsizedBox.dart';
+import 'package:home_saloon/app/widgets/mediaQuery/dynamic_MediaQuery.dart';
+import 'package:home_saloon/app/core/resources/images/images_Path.dart';
+import 'package:home_saloon/app/core/theme/colors_theme_data.dart';
+import 'package:home_saloon/app/core/theme/text_Theme_Data.dart';
 import 'package:provider/provider.dart';
 
 import '../provider/heightControlProvider.dart';

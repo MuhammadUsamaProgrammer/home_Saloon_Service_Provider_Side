@@ -1,9 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
-import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
+import 'package:home_saloon/app/widgets/cutomize_Sizedbox/CustomsizedBox.dart';
+import 'package:home_saloon/app/core/theme/text_Theme_Data.dart';
 
-import '../../../../utils/localization/keys/codegen_loader.g.dart';
+import '../../../localization/keys/codegen_loader.g.dart';
 import '../model/onBoarding_Screens_Model.dart';
 
 class Screen extends StatelessWidget {

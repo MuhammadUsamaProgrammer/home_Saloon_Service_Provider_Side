@@ -1,15 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:home_saloon/app/material_app.dart';
 import 'package:home_saloon/app/screens/main_Page/provider/main_Page_Provider.dart';
 import 'package:home_saloon/app/screens/my_Services/provider/my_services_provider.dart';
-import 'package:home_saloon/utils/routes/app_route_config.dart';
-import 'package:home_saloon/utils/theme/colors_theme_data.dart';
 import 'package:provider/provider.dart';
-import 'app/screens/authentication/oTP_Screen/provider/oTP_Controller_Provider.dart';
-import 'app/screens/authentication/oTP_Screen/provider/oTP_timer_Provider.dart';
-import 'app/screens/authentication/short_Code_Screen/provider/check_Box_Provider.dart';
-import 'app/screens/authentication/short_Code_Screen/provider/shortCode_Controller_Provider.dart';
+import 'app/screens/auth/provider/auth_provider.dart';
 import 'app/screens/editProfile_Screen/provider/edit_Profile_Details_Provider.dart';
 import 'app/screens/editProfile_Screen/provider/imageProvider.dart';
 import 'app/screens/feedback_Screen/provider/feedback_Provider.dart';
@@ -21,7 +17,7 @@ import 'app/screens/orders_Screen/provider/order_Screen_Provider.dart';
 import 'app/screens/test_Screens/bottomSheet/provider/sliderProvider.dart';
 import 'app/screens/calander_Test/provider/calender_Provider.dart';
 import 'app/screens/calander_Test/provider/testg.dart';
-import 'utils/localization/codegen_loader.g.dart';
+import 'app/localization/codegen_loader.g.dart';
 
 Future<void> main() async {
   YourClass().initializeCalendar();
@@ -61,10 +57,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => OnBoardingProvider()),
-        ChangeNotifierProvider(create: (_) => CheckBoxProvider()),
-        ChangeNotifierProvider(create: (_) => ShortCodeControllerProvider()),
-        ChangeNotifierProvider(create: (_) => OTPControllerProvider()),
-        ChangeNotifierProvider(create: (_) => OTPTimerProvider()),
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
         ChangeNotifierProvider(create: (_) => MainPageProvider()),
         ChangeNotifierProvider(create: (_) => NotificationProvider()),
         ChangeNotifierProvider(create: (_) => OrderScreenProvider()),
@@ -80,50 +73,7 @@ class MyApp extends StatelessWidget {
         // ChangeNotifierProvider(create: (_) => BounceState()),
         // ChangeNotifierProvider(create: (_) => BounceState()),
       ],
-      child: MaterialApp.router(
-        builder: (_, child) {
-          return ScrollConfiguration(behavior: CustomBehavior(), child: child!);
-        },
-        supportedLocales: context.supportedLocales,
-        localizationsDelegates: context.localizationDelegates,
-        locale: context.locale,
-        routerConfig: router,
-        theme: ThemeData(
-          // useMaterial3: true,
-          primaryColor: MyColors.primaryMaterial,
-          scaffoldBackgroundColor: MyColors.backgroundColor,
-        ),
-      ),
-    );
-  }
-}
-
-// class CustomBehaviour extends ScrollBehavior {
-//   @override
-//   Widget buildOverscrollIndicator(
-//     BuildContext context,
-//     Widget child,
-//     ScrollableDetails details,
-//   ) {
-//     return GlowingOverscrollIndicator(
-//       child: child,
-//       showLeading: true,
-//       showTrailing: false,
-//       axisDirection: details.direction,
-//       color: MyColors.backgroundColor,
-//     );
-//   }
-// }
-class CustomBehavior extends ScrollBehavior {
-  @override
-  Widget buildOverscrollIndicator(
-    BuildContext context,
-    Widget child,
-    ScrollableDetails details,
-  ) {
-    return StretchingOverscrollIndicator(
-      axisDirection: AxisDirection.down,
-      child: child,
+      child: App(),
     );
   }
 }

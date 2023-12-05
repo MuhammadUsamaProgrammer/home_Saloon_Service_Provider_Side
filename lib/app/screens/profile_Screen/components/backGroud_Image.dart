@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../../resources/images/images_Path.dart';
+import '../../../core/resources/images/images_Path.dart';
 
 class BackGroundImageProfileScreen extends StatelessWidget {
   const BackGroundImageProfileScreen({super.key});

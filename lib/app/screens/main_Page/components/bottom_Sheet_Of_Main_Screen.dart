@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:home_saloon/app/screens/main_Page/components/main_bottom_Sheet_Icons.dart';
-import 'package:home_saloon/utils/theme/colors_theme_data.dart';
+import 'package:home_saloon/app/core/theme/colors_theme_data.dart';
 
-import '../../../../utils/localization/keys/codegen_loader.g.dart';
-import '../../../../resources/icons/app_Icons.dart';
+import '../../../localization/keys/codegen_loader.g.dart';
+import '../../../core/resources/icons/app_Icons.dart';
 
 class BottomSheetOfMainScreen extends StatelessWidget {
   const BottomSheetOfMainScreen({super.key});

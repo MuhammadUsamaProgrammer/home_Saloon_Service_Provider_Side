@@ -1,14 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
-import 'package:home_saloon/app/common/vibrate/vibrate.dart';
+import 'package:home_saloon/app/widgets/cutomize_Sizedbox/CustomsizedBox.dart';
+import 'package:home_saloon/app/widgets/vibrate/vibrate.dart';
 import 'package:home_saloon/app/screens/main_Page/provider/main_Page_Provider.dart';
-import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
+import 'package:home_saloon/app/core/theme/text_Theme_Data.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../utils/localization/keys/codegen_loader.g.dart';
-import '../../../../resources/icons/app_Icons.dart';
+import '../../../localization/keys/codegen_loader.g.dart';
+import '../../../core/resources/icons/app_Icons.dart';
 
 class SeeAllRow extends StatelessWidget {
   const SeeAllRow({super.key});

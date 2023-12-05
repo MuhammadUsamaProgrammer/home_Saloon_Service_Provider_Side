@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
-import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
-import 'package:home_saloon/app/common/vibrate/vibrate.dart';
+import 'package:home_saloon/app/widgets/cutomize_Sizedbox/CustomsizedBox.dart';
+import 'package:home_saloon/app/widgets/mediaQuery/dynamic_MediaQuery.dart';
+import 'package:home_saloon/app/widgets/vibrate/vibrate.dart';
 import 'package:home_saloon/app/screens/calander_Test/components/days_Switch_Case.dart';
 import 'package:home_saloon/app/screens/calander_Test/components/monts_Swithc_Case.dart';
 import 'package:home_saloon/app/screens/calander_Test/provider/calender_Provider.dart';
 import 'package:home_saloon/app/screens/calander_Test/provider/testg.dart';
-import 'package:home_saloon/utils/theme/colors_theme_data.dart';
-import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
+import 'package:home_saloon/app/core/theme/colors_theme_data.dart';
+import 'package:home_saloon/app/core/theme/text_Theme_Data.dart';
 import 'package:provider/provider.dart';
 
 class Home extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/vibrate/vibrate.dart';
-import '../../../../utils/Theme/colors_theme_data.dart';
-import '../../../../utils/Theme/text_Theme_Data.dart';
+import 'package:home_saloon/app/core/theme/colors_theme_data.dart';
+import 'package:home_saloon/app/core/theme/text_Theme_Data.dart';
+import 'package:home_saloon/app/widgets/vibrate/vibrate.dart';
 
 class CustomDropDown extends StatelessWidget {
   final bool isOpen;

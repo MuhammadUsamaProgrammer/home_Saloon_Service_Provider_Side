@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
-import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
-import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
+import 'package:home_saloon/app/widgets/cutomize_Sizedbox/CustomsizedBox.dart';
+import 'package:home_saloon/app/widgets/mediaQuery/dynamic_MediaQuery.dart';
+import 'package:home_saloon/app/core/theme/text_Theme_Data.dart';
 
-import '../../../common/vibrate/vibrate.dart';
+import '../../../widgets/vibrate/vibrate.dart';
 
 class SettingTile extends StatelessWidget {
   final String text;

@@ -1,13 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/buttons/textButton.dart';
+import 'package:home_saloon/app/widgets/buttons/textButton.dart';
 import 'package:home_saloon/app/screens/feedback_Screen/components/customDropDown.dart';
-import 'package:home_saloon/app/common/textField/feedbackTextField.dart';
-import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
+import 'package:home_saloon/app/widgets/textField/feedbackTextField.dart';
+import 'package:home_saloon/app/core/theme/text_Theme_Data.dart';
 import 'package:provider/provider.dart';
-import '../../../../utils/localization/keys/codegen_loader.g.dart';
-import '../../../common/coPagesAppBar/coPages_AppBar.dart';
-import '../../../common/cutomize_Sizedbox/CustomsizedBox.dart';
+import '../../../localization/keys/codegen_loader.g.dart';
+import '../../../widgets/coPagesAppBar/coPages_AppBar.dart';
+import '../../../widgets/cutomize_Sizedbox/CustomsizedBox.dart';
 import '../provider/feedback_Provider.dart';
 
 class FeedbackScreen extends StatelessWidget {

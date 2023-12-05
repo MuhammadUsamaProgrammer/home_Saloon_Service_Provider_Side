@@ -1,12 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
-import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
+import 'package:home_saloon/app/widgets/cutomize_Sizedbox/CustomsizedBox.dart';
+import 'package:home_saloon/app/widgets/mediaQuery/dynamic_MediaQuery.dart';
 import 'package:home_saloon/app/screens/myWallet/components/recent_Payments_List.dart';
-import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
+import 'package:home_saloon/app/core/theme/text_Theme_Data.dart';
 import 'package:provider/provider.dart';
-import '../../../../utils/localization/keys/codegen_loader.g.dart';
-import '../../../common/coPagesAppBar/coPages_AppBar.dart';
+import '../../../localization/keys/codegen_loader.g.dart';
+import '../../../widgets/coPagesAppBar/coPages_AppBar.dart';
 import '../components/current_Balance_Container.dart';
 import '../provider/heightControlProvider.dart';
 

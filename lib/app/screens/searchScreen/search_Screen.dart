@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:home_saloon/utils/theme/colors_theme_data.dart';
+import 'package:home_saloon/app/core/theme/colors_theme_data.dart';
 
 class SearchScreen extends StatelessWidget {
   @override

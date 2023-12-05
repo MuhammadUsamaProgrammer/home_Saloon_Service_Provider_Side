@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
-import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
+import 'package:home_saloon/app/widgets/cutomize_Sizedbox/CustomsizedBox.dart';
+import 'package:home_saloon/app/widgets/mediaQuery/dynamic_MediaQuery.dart';
 import 'package:home_saloon/app/screens/home_Screen/components/orders_Container.dart';
-import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
-import '../../../../utils/localization/keys/codegen_loader.g.dart';
+import 'package:home_saloon/app/core/theme/text_Theme_Data.dart';
+import '../../../localization/keys/codegen_loader.g.dart';
 import '../components/app_Bar_Of_Home_Page.dart';
 import '../components/circular_Percent_Indicator/percent_Indicators_Tile.dart';
 import '../components/earning_Status.dart';

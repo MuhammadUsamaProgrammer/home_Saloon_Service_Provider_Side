@@ -1,9 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:home_saloon/app/screens/orders_Screen/components/page_View_Headings_Tile_Of_Manage_Orders.dart';
-import 'package:home_saloon/utils/localization/keys/codegen_loader.g.dart';
+import 'package:home_saloon/app/localization/keys/codegen_loader.g.dart';
 import 'package:provider/provider.dart';
-import '../../../common/cutomize_Sizedbox/CustomsizedBox.dart';
+import '../../../widgets/cutomize_Sizedbox/CustomsizedBox.dart';
 import '../../home_Screen/components/app_Bar_Of_Home_Page.dart';
 import '../components/page_View_Screen.dart';
 import '../provider/order_Screen_Provider.dart';

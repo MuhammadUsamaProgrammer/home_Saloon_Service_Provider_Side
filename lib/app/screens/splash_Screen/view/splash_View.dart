@@ -2,13 +2,13 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
-import 'package:home_saloon/app/screens/authentication/short_Code_Screen/provider/check_Box_Provider.dart';
-import 'package:home_saloon/utils/routes/app_route_const.dart';
-import 'package:home_saloon/utils/theme/colors_theme_data.dart';
+import 'package:home_saloon/app/screens/auth/provider/auth_provider.dart';
+import 'package:home_saloon/app/widgets/mediaQuery/dynamic_MediaQuery.dart';
+import 'package:home_saloon/app/core/routes/app_route_const.dart';
+import 'package:home_saloon/app/core/theme/colors_theme_data.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../resources/images/images_Path.dart';
+import '../../../core/resources/images/images_Path.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -21,8 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    final checkBoxProvider =
-        Provider.of<CheckBoxProvider>(context, listen: false);
+    final checkBoxProvider = Provider.of<AuthProvider>(context, listen: false);
 
     checkBoxProvider.checkFunction();
     checkBoxProvider.firstTimeshowOnBoarding();

@@ -1,14 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/buttons/textButton.dart';
-import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
-import 'package:home_saloon/app/common/textField/edit_Profile_TextField.dart';
-import 'package:home_saloon/utils/theme/colors_theme_data.dart';
+import 'package:home_saloon/app/widgets/buttons/textButton.dart';
+import 'package:home_saloon/app/widgets/mediaQuery/dynamic_MediaQuery.dart';
+import 'package:home_saloon/app/widgets/textField/edit_Profile_TextField.dart';
+import 'package:home_saloon/app/core/theme/colors_theme_data.dart';
 import 'package:provider/provider.dart';
-import '../../../../utils/localization/keys/codegen_loader.g.dart';
-import '../../../../utils/theme/text_Theme_Data.dart';
-import '../../../common/coPagesAppBar/coPages_AppBar.dart';
-import '../../../common/cutomize_Sizedbox/CustomsizedBox.dart';
+import '../../../localization/keys/codegen_loader.g.dart';
+import '../../../core/theme/text_Theme_Data.dart';
+import '../../../widgets/coPagesAppBar/coPages_AppBar.dart';
+import '../../../widgets/cutomize_Sizedbox/CustomsizedBox.dart';
 import '../components/edit_Profile.dart';
 import '../provider/edit_Profile_Details_Provider.dart';
 

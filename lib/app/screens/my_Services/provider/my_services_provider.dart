@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_saloon/app/screens/my_Services/models/my_services_model.dart';
-import 'package:home_saloon/resources/images/images_Path.dart';
+import 'package:home_saloon/app/core/resources/images/images_Path.dart';
 
 class MyServicesProvider extends ChangeNotifier {
   List<MyServicesModel> myServicesModel = [

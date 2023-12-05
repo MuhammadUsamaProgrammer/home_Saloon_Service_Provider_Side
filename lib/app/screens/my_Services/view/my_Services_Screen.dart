@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
-import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
+import 'package:home_saloon/app/widgets/cutomize_Sizedbox/CustomsizedBox.dart';
+import 'package:home_saloon/app/widgets/mediaQuery/dynamic_MediaQuery.dart';
 import 'package:home_saloon/app/screens/home_Screen/components/app_Bar_Of_Home_Page.dart';
 import 'package:home_saloon/app/screens/my_Services/components/service_tile.dart';
 import 'package:home_saloon/app/screens/my_Services/provider/my_services_provider.dart';

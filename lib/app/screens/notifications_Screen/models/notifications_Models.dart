@@ -1,4 +1,4 @@
-import 'package:home_saloon/resources/images/images_Path.dart';
+import 'package:home_saloon/app/core/resources/images/images_Path.dart';
 
 class NotificationsModel {
   final String image;

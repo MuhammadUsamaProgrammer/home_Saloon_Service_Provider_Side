@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/toast_message/toast_message.dart';
+import 'package:home_saloon/app/widgets/toast_message/toast_message.dart';
 
 class EditProfileDetailsProvider extends ChangeNotifier {
   TextEditingController firstNameController = TextEditingController();

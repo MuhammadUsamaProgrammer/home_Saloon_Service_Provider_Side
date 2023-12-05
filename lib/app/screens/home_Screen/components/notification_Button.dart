@@ -2,13 +2,13 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:home_saloon/utils/routes/app_route_const.dart';
+import 'package:home_saloon/app/core/routes/app_route_const.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../../../resources/icons/app_Icons.dart';
-import '../../../../utils/theme/colors_theme_data.dart';
-import '../../../common/toast_message/toast_message.dart';
-import '../../../common/vibrate/vibrate.dart';
+import '../../../core/resources/icons/app_Icons.dart';
+import '../../../core/theme/colors_theme_data.dart';
+import '../../../widgets/toast_message/toast_message.dart';
+import '../../../widgets/vibrate/vibrate.dart';
 import '../../notifications_Screen/provider/notification_Provider.dart';
 
 class NotificationButton extends StatelessWidget {

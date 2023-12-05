@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:home_saloon/resources/map_Theme/map_Theme_String.dart';
+import 'package:home_saloon/app/core/theme/map_Theme/map_Theme_String.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'dart:async';

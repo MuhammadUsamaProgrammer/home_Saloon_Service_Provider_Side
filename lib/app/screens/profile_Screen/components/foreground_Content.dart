@@ -1,16 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
-import 'package:home_saloon/app/common/mediaQuery/dynamic_MediaQuery.dart';
-import 'package:home_saloon/app/common/vibrate/vibrate.dart';
+import 'package:home_saloon/app/widgets/cutomize_Sizedbox/CustomsizedBox.dart';
+import 'package:home_saloon/app/widgets/mediaQuery/dynamic_MediaQuery.dart';
+import 'package:home_saloon/app/widgets/vibrate/vibrate.dart';
 import 'package:home_saloon/app/screens/profile_Screen/components/profile_Image.dart';
 import 'package:home_saloon/app/screens/profile_Screen/components/profile_Items_Tile.dart';
-import 'package:home_saloon/utils/routes/app_route_const.dart';
-import 'package:home_saloon/utils/theme/colors_theme_data.dart';
-import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
+import 'package:home_saloon/app/core/routes/app_route_const.dart';
+import 'package:home_saloon/app/core/theme/colors_theme_data.dart';
+import 'package:home_saloon/app/core/theme/text_Theme_Data.dart';
 import 'package:provider/provider.dart';
-import '../../../../utils/localization/keys/codegen_loader.g.dart';
+import '../../../localization/keys/codegen_loader.g.dart';
 import '../../editProfile_Screen/provider/edit_Profile_Details_Provider.dart';
 import 'logoutDialogPopUp.dart';
 

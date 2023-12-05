@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
+import 'package:home_saloon/app/widgets/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/app/screens/settings/components/language_Popup_Tile.dart';
-import 'package:home_saloon/utils/theme/colors_theme_data.dart';
-import '../../../../utils/theme/text_Theme_Data.dart';
+import 'package:home_saloon/app/core/theme/colors_theme_data.dart';
+import 'package:home_saloon/app/core/theme/text_Theme_Data.dart';
 
 class LanguageDialogPopUp extends StatelessWidget {
   LanguageDialogPopUp({

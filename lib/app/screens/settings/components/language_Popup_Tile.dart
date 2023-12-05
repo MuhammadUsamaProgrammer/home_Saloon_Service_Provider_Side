@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:home_saloon/app/core/theme/text_Theme_Data.dart';
 
-import '../../../../utils/theme/text_Theme_Data.dart';
-import '../../../common/vibrate/vibrate.dart';
+import '../../../widgets/vibrate/vibrate.dart';
 
 class LanguagePopupTile extends StatelessWidget {
   final String languageCode;

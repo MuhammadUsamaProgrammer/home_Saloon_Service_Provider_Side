@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/vibrate/vibrate.dart';
+import 'package:home_saloon/app/widgets/vibrate/vibrate.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../resources/images/images_Path.dart';
-import '../../../../utils/theme/colors_theme_data.dart';
+import '../../../core/resources/images/images_Path.dart';
+import '../../../core/theme/colors_theme_data.dart';
 import '../provider/imageProvider.dart';
 import 'camera_Gallery_Popup.dart';
 import 'new_profile_Image.dart';

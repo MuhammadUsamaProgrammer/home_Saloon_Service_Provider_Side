@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/toast_message/toast_message.dart';
-import '../../../../utils/localization/keys/codegen_loader.g.dart';
+import 'package:home_saloon/app/widgets/toast_message/toast_message.dart';
+import '../../../localization/keys/codegen_loader.g.dart';
 
 class FeedbackProvider extends ChangeNotifier {
   TextEditingController feedbackTextController = TextEditingController();

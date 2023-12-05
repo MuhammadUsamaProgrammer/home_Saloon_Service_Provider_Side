@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/vibrate/vibrate.dart';
-import 'package:home_saloon/utils/theme/colors_theme_data.dart';
-import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
+import 'package:home_saloon/app/widgets/vibrate/vibrate.dart';
+import 'package:home_saloon/app/core/theme/colors_theme_data.dart';
+import 'package:home_saloon/app/core/theme/text_Theme_Data.dart';
 import 'package:provider/provider.dart';
 
 import '../models/service_Status_Model.dart';

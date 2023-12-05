@@ -1,9 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:home_saloon/utils/theme/colors_theme_data.dart';
-import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
-import '../../../../../utils/localization/keys/codegen_loader.g.dart';
-import '../../../../common/cutomize_Sizedbox/CustomsizedBox.dart';
+import 'package:home_saloon/app/core/theme/colors_theme_data.dart';
+import 'package:home_saloon/app/core/theme/text_Theme_Data.dart';
+import '../../../../localization/keys/codegen_loader.g.dart';
+import '../../../../widgets/cutomize_Sizedbox/CustomsizedBox.dart';
 
 class CircularPercentIndicator extends StatelessWidget {
   final String text;

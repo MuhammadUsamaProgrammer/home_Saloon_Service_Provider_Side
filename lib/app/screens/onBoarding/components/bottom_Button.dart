@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:home_saloon/utils/routes/app_route_const.dart';
+import 'package:home_saloon/app/core/routes/app_route_const.dart';
 import 'package:provider/provider.dart';
-import '../../../../utils/localization/keys/codegen_loader.g.dart';
-import '../../../common/buttons/textButton.dart';
+import '../../../localization/keys/codegen_loader.g.dart';
+import '../../../widgets/buttons/textButton.dart';
 import '../provider/onBoarding_Provider.dart';
 
 class OnBoardingScreenBottomButton extends StatelessWidget {

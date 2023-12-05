@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/cutomize_Sizedbox/CustomsizedBox.dart';
-import '../../../../../utils/localization/keys/codegen_loader.g.dart';
+import 'package:home_saloon/app/widgets/cutomize_Sizedbox/CustomsizedBox.dart';
+import '../../../../localization/keys/codegen_loader.g.dart';
 import 'circular_Indicator.dart';
 
 class CircleIndicators extends StatelessWidget {

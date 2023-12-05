@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 
-import '../../../../utils/localization/keys/codegen_loader.g.dart';
+import '../../../localization/keys/codegen_loader.g.dart';
 
 class ServiceStatusModel {
   final String status;

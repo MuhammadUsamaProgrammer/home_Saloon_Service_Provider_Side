@@ -1,4 +1,4 @@
-import '../../../../resources/images/images_Path.dart';
+import '../../../core/resources/images/images_Path.dart';
 
 class ActiveOrdersModel {
   final String image;

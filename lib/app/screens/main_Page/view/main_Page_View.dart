@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:home_saloon/app/common/toast_message/toast_message.dart';
+import 'package:home_saloon/app/widgets/toast_message/toast_message.dart';
 import 'package:home_saloon/app/screens/home_Screen/view/home_Screen.dart';
 import 'package:home_saloon/app/screens/orders_Screen/view/order_Screen.dart';
 import 'package:provider/provider.dart';

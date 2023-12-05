@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:home_saloon/utils/theme/text_Theme_Data.dart';
+import 'package:home_saloon/app/core/theme/text_Theme_Data.dart';
 import 'package:provider/provider.dart';
-import '../../../common/textField/map_Search_TextFiled.dart';
+import '../../../widgets/textField/map_Search_TextFiled.dart';
 import '../provider/map_Provider.dart';
 
 class SearchPlaces extends StatelessWidget {
