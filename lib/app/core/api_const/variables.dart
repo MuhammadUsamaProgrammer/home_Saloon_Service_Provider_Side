@@ -4,9 +4,12 @@ mixin Variables {
     return jsonBody;
   }
 
-  Map<String, String> variableOTP(
+  Map<String, dynamic> variableOTP(
       {required String shortCode, required String oTP}) {
-    Map<String, String> jsonBody = {"shortcode": shortCode, "OTP": oTP};
+    Map<String, dynamic> jsonBody = {
+      "shortcode": shortCode,
+      "OTP": int.parse(oTP)
+    };
     return jsonBody;
   }
 }

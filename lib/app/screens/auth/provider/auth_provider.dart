@@ -23,6 +23,7 @@ class AuthProvider extends ChangeNotifier
   bool get showOnBoarding => _showOnBoarding;
   void toogleStayLoggedIn() async {
     _stayLoggedIn = !_stayLoggedIn;
+    await getToken();
     notifyListeners();
   }
 
@@ -117,16 +118,23 @@ class AuthProvider extends ChangeNotifier
   bool isWaiting = false;
   Future<bool> login() async {
     isWaiting = true;
+    bool response = false;
     notifyListeners();
-    temporaryShortCode = shortCodeTextController.text;
+    if (shortCodeTextController.text.isNotEmpty) {
+      temporaryShortCode = shortCodeTextController.text;
+    } else
+      Null;
 
-    bool response = await shortCodeApi(
+    response = await shortCodeApi(
         variables: variableShortcode(shortCode: temporaryShortCode));
-    (response) {
-      shortCodeTextController.clear();
-    };
 
-    startTimer();
+    if (response == true) {
+      shortCodeTextController.clear();
+      clearAllOtp();
+
+      startTimer();
+    }
+    ;
 
     isWaiting = false;
     notifyListeners();
@@ -136,13 +144,14 @@ class AuthProvider extends ChangeNotifier
 
   Future<bool> oTPAPI() async {
     isWaiting = true;
+    String response = '';
     String oTP = '${pin1.text}${pin2.text}${pin3.text}${pin4.text}';
     print(oTP);
-    String response = await oTPApi(
+    response = await oTPApi(
         variables: variableOTP(shortCode: temporaryShortCode, oTP: oTP));
 
     if (response != '') {
-      setToken(token: response);
+      await setToken(token: response);
       clearAllOtp();
       isWaiting = false;
       temporaryShortCode = '';

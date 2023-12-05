@@ -32,7 +32,7 @@ mixin ShortCodeService {
     }
   }
 
-  Future<String> oTPApi({required Map<String, String> variables}) async {
+  Future<String> oTPApi({required Map<String, dynamic> variables}) async {
     String key = '';
     try {
       String url = ClientsApi.clientAPI + endpointsAPI.endpointOTP;

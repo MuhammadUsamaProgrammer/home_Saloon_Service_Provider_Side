@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:home_saloon/app/core/cache/get_shared_pref.dart';
 import 'package:home_saloon/app/widgets/vibrate/vibrate.dart';
 import 'package:home_saloon/app/core/routes/app_route_const.dart';
 import 'package:home_saloon/app/core/theme/colors_theme_data.dart';
@@ -7,7 +8,7 @@ import 'package:home_saloon/app/core/theme/text_Theme_Data.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../core/resources/icons/app_Icons.dart';
 
-class SearchAndFilter extends StatelessWidget {
+class SearchAndFilter extends StatelessWidget with SharedPrefGet {
   const SearchAndFilter({super.key});
 
   @override
@@ -20,7 +21,8 @@ class SearchAndFilter extends StatelessWidget {
           // search bar
           Expanded(
             child: InkWell(
-              onTap: () {
+              onTap: () async {
+                print(await getToken());
                 vibrate();
                 GoRouter.of(context).pushNamed(MyRoutes.searchScreen);
               },

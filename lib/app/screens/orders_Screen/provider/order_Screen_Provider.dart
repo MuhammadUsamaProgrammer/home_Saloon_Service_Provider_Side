@@ -14,7 +14,8 @@ class OrderScreenProvider extends ChangeNotifier {
   }
 
   void changePage(int index) {
-    controller.jumpToPage(index);
+    controller.animateToPage(index,
+        duration: Duration(milliseconds: 400), curve: Curves.fastOutSlowIn);
     notifyListeners();
   }
 

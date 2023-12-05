@@ -107,6 +107,7 @@ class DeleteAccountDialogPopUp extends StatelessWidget with SharedPrefSet {
                         builder: (context, value, child) {
                       return GestureDetector(
                         onTap: () async {
+                          await setToken(token: '');
                           await setStayLogin(value: false);
                           vibrate();
                           value.changePage(0);

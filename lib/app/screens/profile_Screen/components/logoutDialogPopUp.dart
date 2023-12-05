@@ -103,10 +103,11 @@ class LogoutDialogPopUp extends StatelessWidget with SharedPrefSet {
                       // this is 'yes' button
                       GestureDetector(
                         onTap: () async {
+                          await setToken(token: '');
                           await setStayLogin(value: false);
                           vibrate();
                           value.changePage(0);
-                          Navigator.pop(context);
+                          context.pop();
                           GoRouter.of(context)
                               .pushReplacementNamed(MyRoutes.shortCodeScreen);
                           // (MyRoutes.shortCodeScreen);
