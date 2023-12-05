@@ -40,7 +40,7 @@ class ProfileImage extends StatelessWidget {
                 border: Border.all(color: MyColors.backgroundColor, width: 4),
                 borderRadius: BorderRadius.circular(100),
                 image: DecorationImage(
-                    image: AssetImage(MyImagesPath.profile_Image),
+                    image: NetworkImage(MyImagesPath.profile_Image),
                     fit: BoxFit.cover),
                 boxShadow: [
                   BoxShadow(

@@ -46,7 +46,7 @@ class ForegroundContentProfileScreen extends StatelessWidget {
                         Consumer<EditProfileDetailsProvider>(
                           builder: (context, value, child) {
                             return Text(
-                              '${value.firstName} ${value.secondName}',
+                              '${value.firstName} ${value.lastName}',
                               style: MyTextStyle.profile_Name(context),
                             );
                           },

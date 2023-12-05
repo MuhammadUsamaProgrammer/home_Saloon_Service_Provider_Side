@@ -36,7 +36,7 @@ class EditProfileScreen extends StatelessWidget {
               Consumer<EditProfileDetailsProvider>(
                 builder: (context, value, child) {
                   return Text(
-                    '${value.firstName} ${value.secondName}',
+                    '${value.firstName} ${value.lastName}',
                     style: MyTextStyle.profile_Name(context),
                   );
                 },
@@ -62,8 +62,8 @@ class EditProfileScreen extends StatelessWidget {
               Consumer<EditProfileDetailsProvider>(
                 builder: (context, value, child) {
                   return EditProfileTextField(
-                      controller: value.secondNameController,
-                      hintText: value.secondName);
+                      controller: value.lastNameController,
+                      hintText: value.lastName);
                 },
               ),
               heightC(40),

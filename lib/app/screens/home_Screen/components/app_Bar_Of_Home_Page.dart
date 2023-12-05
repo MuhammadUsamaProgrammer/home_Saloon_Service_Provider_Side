@@ -79,7 +79,7 @@ class CustomAppBar extends StatelessWidget {
                           ),
                         ],
                         image: DecorationImage(
-                            image: AssetImage(MyImagesPath.profile_Image),
+                            image: NetworkImage(MyImagesPath.profile_Image),
                             fit: BoxFit.cover)),
                     child: NewProfileImage(),
                   ),

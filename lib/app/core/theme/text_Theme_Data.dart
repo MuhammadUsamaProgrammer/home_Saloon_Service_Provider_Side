@@ -85,11 +85,20 @@ class MyTextStyle {
     );
   }
 
-  static TextStyle timer_OTP(BuildContext context) {
+  static TextStyle timer_OTP_Active(BuildContext context) {
     return TextStyle(
       fontFamily: font,
       fontSize: 18,
       color: MyColors.primaryColor,
+      fontWeight: FontWeight.w500,
+    );
+  }
+
+  static TextStyle timer_OTP_Inactive(BuildContext context) {
+    return TextStyle(
+      fontFamily: font,
+      fontSize: 18,
+      color: MyColors.text_field_color,
       fontWeight: FontWeight.w500,
     );
   }

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:home_saloon/app/screens/auth/provider/auth_provider.dart';
+import 'package:home_saloon/app/screens/editProfile_Screen/provider/edit_Profile_Details_Provider.dart';
 import 'package:home_saloon/app/widgets/mediaQuery/dynamic_MediaQuery.dart';
 import 'package:home_saloon/app/core/routes/app_route_const.dart';
 import 'package:home_saloon/app/core/theme/colors_theme_data.dart';
@@ -22,12 +23,15 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     final checkBoxProvider = Provider.of<AuthProvider>(context, listen: false);
+    final profile =
+        Provider.of<EditProfileDetailsProvider>(context, listen: false);
 
     checkBoxProvider.checkFunction();
     checkBoxProvider.firstTimeshowOnBoarding();
 
     Future.delayed(Duration(seconds: 3), () {
       if (checkBoxProvider.isSelected) {
+        profile.initProfile();
         context.goNamed(MyRoutes.mainPage);
       } else {
         checkBoxProvider.showOnBoarding

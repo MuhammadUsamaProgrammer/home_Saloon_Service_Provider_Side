@@ -18,4 +18,34 @@ mixin SharedPrefGet {
     String value = await prefs.getString('token') ?? '';
     return value;
   }
+
+  Future<String> getProfilePic() async {
+    var prefs = await SharedPreferences.getInstance();
+    String value = await prefs.getString('profilePic') ?? '';
+    return value;
+  }
+
+  Future<String> getFirstName() async {
+    var prefs = await SharedPreferences.getInstance();
+    String value = await prefs.getString('firstName') ?? '';
+    return value;
+  }
+
+  Future<String> getLastName() async {
+    var prefs = await SharedPreferences.getInstance();
+    String value = await prefs.getString('lastName') ?? '';
+    return value;
+  }
+
+  Future<String> getEmail() async {
+    var prefs = await SharedPreferences.getInstance();
+    String value = await prefs.getString('mail') ?? '';
+    return value;
+  }
+
+  Future<String> getPhoneNumber() async {
+    var prefs = await SharedPreferences.getInstance();
+    String value = await prefs.getString('phoneNumber') ?? '';
+    return value;
+  }
 }

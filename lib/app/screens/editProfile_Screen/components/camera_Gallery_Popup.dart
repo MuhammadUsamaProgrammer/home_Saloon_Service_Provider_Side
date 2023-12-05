@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:home_saloon/app/screens/editProfile_Screen/provider/edit_Profile_Details_Provider.dart';
 import 'package:home_saloon/app/widgets/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/app/widgets/mediaQuery/dynamic_MediaQuery.dart';
 import 'package:home_saloon/app/core/theme/colors_theme_data.dart';
 import 'package:home_saloon/app/core/theme/text_Theme_Data.dart';
+import 'package:home_saloon/app/widgets/vibrate/vibrate.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
-
-import '../../../widgets/vibrate/vibrate.dart';
-import '../provider/imageProvider.dart';
 
 class CameraGalleryImagePopUP extends StatelessWidget {
   const CameraGalleryImagePopUP({
@@ -16,7 +15,7 @@ class CameraGalleryImagePopUP extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<PickImageProvider>(
+    return Consumer<EditProfileDetailsProvider>(
       builder: (context, value, child) {
         return Dialog(
           shape: RoundedRectangleBorder(

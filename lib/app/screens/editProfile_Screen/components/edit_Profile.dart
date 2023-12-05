@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:home_saloon/app/screens/editProfile_Screen/provider/edit_Profile_Details_Provider.dart';
 import 'package:home_saloon/app/widgets/vibrate/vibrate.dart';
 import 'package:provider/provider.dart';
 
 import '../../../core/resources/images/images_Path.dart';
 import '../../../core/theme/colors_theme_data.dart';
-import '../provider/imageProvider.dart';
 import 'camera_Gallery_Popup.dart';
 import 'new_profile_Image.dart';
 
@@ -13,7 +13,7 @@ class EditProfileImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<PickImageProvider>(
+    return Consumer<EditProfileDetailsProvider>(
       builder: (context, value, child) {
         return Stack(
           children: [
@@ -25,7 +25,7 @@ class EditProfileImage extends StatelessWidget {
                 border: Border.all(color: MyColors.backgroundColor, width: 4),
                 borderRadius: BorderRadius.circular(100),
                 image: DecorationImage(
-                    image: AssetImage(MyImagesPath.profile_Image),
+                    image: NetworkImage(MyImagesPath.profile_Image),
                     fit: BoxFit.cover),
                 boxShadow: [
                   BoxShadow(

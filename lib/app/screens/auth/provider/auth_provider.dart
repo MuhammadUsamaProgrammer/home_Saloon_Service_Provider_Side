@@ -83,8 +83,10 @@ class AuthProvider extends ChangeNotifier
   Timer _timer = Timer(Duration(seconds: 1), () {});
   int _seconds = 0;
   int get seconds => _seconds;
+  bool resend = true;
 
   void startTimer() {
+    resend = false;
     _timer.cancel();
     _seconds = 30;
     _startTimer();
@@ -94,6 +96,7 @@ class AuthProvider extends ChangeNotifier
   void _startTimer() {
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (_seconds == 0) {
+        resend = true;
         timer.cancel();
         notifyListeners();
       } else {
@@ -104,6 +107,7 @@ class AuthProvider extends ChangeNotifier
   }
 
   void resetTimer() {
+    resend = false;
     _timer.cancel();
     _startTimer();
     notifyListeners();
@@ -117,6 +121,7 @@ class AuthProvider extends ChangeNotifier
   String temporaryShortCode = '';
   bool isWaiting = false;
   Future<bool> login() async {
+    resend = false;
     isWaiting = true;
     bool response = false;
     notifyListeners();
@@ -131,10 +136,9 @@ class AuthProvider extends ChangeNotifier
     if (response == true) {
       shortCodeTextController.clear();
       clearAllOtp();
-
-      startTimer();
     }
     ;
+    startTimer();
 
     isWaiting = false;
     notifyListeners();
@@ -143,9 +147,12 @@ class AuthProvider extends ChangeNotifier
   }
 
   Future<bool> oTPAPI() async {
+    resend = false;
     isWaiting = true;
+    toogleisAllOTPFilled();
     String response = '';
     String oTP = '${pin1.text}${pin2.text}${pin3.text}${pin4.text}';
+    notifyListeners();
     print(oTP);
     response = await oTPApi(
         variables: variableOTP(shortCode: temporaryShortCode, oTP: oTP));
@@ -155,10 +162,14 @@ class AuthProvider extends ChangeNotifier
       clearAllOtp();
       isWaiting = false;
       temporaryShortCode = '';
+      toogleisAllOTPFilled();
+      notifyListeners();
       return true;
     } else {
       clearAllOtp();
       isWaiting = false;
+      toogleisAllOTPFilled();
+      notifyListeners();
       return false;
     }
   }

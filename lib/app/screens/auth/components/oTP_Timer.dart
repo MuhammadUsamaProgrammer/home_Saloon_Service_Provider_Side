@@ -17,7 +17,9 @@ class OTPTimer extends StatelessWidget {
               value.seconds > 9
                   ? '00:' + value.seconds.toString()
                   : '00:0' + value.seconds.toString(),
-              style: MyTextStyle.timer_OTP(context),
+              style: value.seconds != 0
+                  ? MyTextStyle.timer_OTP_Active(context)
+                  : MyTextStyle.timer_OTP_Inactive(context),
             );
           },
         )

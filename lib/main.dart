@@ -7,7 +7,6 @@ import 'package:home_saloon/app/screens/my_Services/provider/my_services_provide
 import 'package:provider/provider.dart';
 import 'app/screens/auth/provider/auth_provider.dart';
 import 'app/screens/editProfile_Screen/provider/edit_Profile_Details_Provider.dart';
-import 'app/screens/editProfile_Screen/provider/imageProvider.dart';
 import 'app/screens/feedback_Screen/provider/feedback_Provider.dart';
 import 'app/screens/notifications_Screen/provider/notification_Provider.dart';
 import 'app/screens/map/provider/map_Provider.dart';
@@ -64,7 +63,6 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => FeedbackProvider()),
         ChangeNotifierProvider(create: (_) => HeightControlProvider()),
         ChangeNotifierProvider(create: (_) => CustomSliderProvider()),
-        ChangeNotifierProvider(create: (_) => PickImageProvider()),
         ChangeNotifierProvider(create: (_) => EditProfileDetailsProvider()),
         ChangeNotifierProvider(create: (_) => MapProvider()),
         ChangeNotifierProvider(create: (_) => CalenderProvider()),

@@ -1,8 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:home_saloon/app/core/cache/get_shared_pref.dart';
 import 'package:home_saloon/app/core/routes/app_route_const.dart';
 import 'package:home_saloon/app/screens/auth/provider/auth_provider.dart';
+import 'package:home_saloon/app/screens/editProfile_Screen/provider/edit_Profile_Details_Provider.dart';
 import 'package:home_saloon/app/widgets/buttons/textButton.dart';
 import 'package:home_saloon/app/widgets/cutomize_Sizedbox/CustomsizedBox.dart';
 import 'package:home_saloon/app/widgets/mediaQuery/dynamic_MediaQuery.dart';
@@ -15,7 +17,7 @@ import '../components/oTP_Field.dart';
 import '../components/oTP_Timer.dart';
 import '../components/resed_Button.dart';
 
-class OTPScreen extends StatelessWidget {
+class OTPScreen extends StatelessWidget with SharedPrefGet {
   const OTPScreen({super.key});
 
   // OTPTimerProvider myModel = OTPTimerProvider();
@@ -68,9 +70,11 @@ class OTPScreen extends StatelessWidget {
                           ResendButton(),
                           heightC(54),
                           // Button
-                          Consumer<AuthProvider>(
-                            builder: (context, value, child) {
-                              if (value.isWaiting) {
+                          Consumer2<AuthProvider, EditProfileDetailsProvider>(
+                            builder:
+                                (context, authProvider, profileDetails, child) {
+                              if (authProvider.isWaiting == true ||
+                                  profileDetails.isWaiting == true) {
                                 return Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -80,12 +84,14 @@ class OTPScreen extends StatelessWidget {
                                   ],
                                 );
                               } else {
-                                return value.isAllOTPFilled
+                                return authProvider.isAllOTPFilled
                                     ? Button1(
                                         text: LocaleKeys.login.tr(),
                                         onTap: () async {
-                                          if (await value.oTPAPI()) {
-                                            value.activateStayLogin();
+                                          if (await authProvider.oTPAPI() &&
+                                              await profileDetails
+                                                  .getUserData()) {
+                                            authProvider.activateStayLogin();
                                             context.goNamed(MyRoutes.mainPage);
                                           }
                                           ;

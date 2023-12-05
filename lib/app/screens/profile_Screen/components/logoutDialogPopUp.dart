@@ -103,7 +103,7 @@ class LogoutDialogPopUp extends StatelessWidget with SharedPrefSet {
                       // this is 'yes' button
                       GestureDetector(
                         onTap: () async {
-                          await setToken(token: '');
+                          await setClearData();
                           await setStayLogin(value: false);
                           vibrate();
                           value.changePage(0);

@@ -15,13 +15,13 @@ class ResendButton extends StatelessWidget {
           builder: (context, value, child) {
             return GestureDetector(
               onTap: () {
-                if (value.seconds == 0) {
+                if (value.resend == true) {
                   value.login();
                 }
                 ;
               },
               child: Text('RESEND',
-                  style: value.seconds == 0
+                  style: value.resend == true
                       ? MyTextStyle.resend_OTP_Active(context)
                       : MyTextStyle.resend_OTP_InActive(context)),
             );
