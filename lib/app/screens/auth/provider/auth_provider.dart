@@ -119,10 +119,11 @@ class AuthProvider extends ChangeNotifier
   //
 // login api hitting
   String temporaryShortCode = '';
-  bool isWaiting = false;
-  Future<bool> login() async {
+  bool isShortcodeWaiting = false;
+  bool isOtpWaiting = false;
+  Future<bool> shortCodeApiFun() async {
     resend = false;
-    isWaiting = true;
+    isShortcodeWaiting = true;
     bool response = false;
     notifyListeners();
     if (shortCodeTextController.text.isNotEmpty) {
@@ -136,19 +137,20 @@ class AuthProvider extends ChangeNotifier
     if (response == true) {
       shortCodeTextController.clear();
       clearAllOtp();
+      isOtpWaiting = false;
     }
     ;
     startTimer();
 
-    isWaiting = false;
+    isShortcodeWaiting = false;
     notifyListeners();
 
     return response;
   }
 
-  Future<bool> oTPAPI() async {
+  Future<bool> oTPAPIFun() async {
     resend = false;
-    isWaiting = true;
+    isOtpWaiting = true;
     toogleisAllOTPFilled();
     String response = '';
     String oTP = '${pin1.text}${pin2.text}${pin3.text}${pin4.text}';
@@ -159,18 +161,22 @@ class AuthProvider extends ChangeNotifier
 
     if (response != '') {
       await setToken(token: response);
-      clearAllOtp();
-      isWaiting = false;
-      temporaryShortCode = '';
-      toogleisAllOTPFilled();
       notifyListeners();
       return true;
     } else {
       clearAllOtp();
-      isWaiting = false;
+      isOtpWaiting = false;
       toogleisAllOTPFilled();
       notifyListeners();
       return false;
     }
+  }
+
+  void onSuccessLogin() {
+    clearAllOtp();
+    isOtpWaiting = false;
+    temporaryShortCode = '';
+    toogleisAllOTPFilled();
+    notifyListeners();
   }
 }

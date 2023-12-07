@@ -96,13 +96,8 @@ class EditProfileDetailsProvider extends ChangeNotifier
     }
   }
 
-  bool isWaiting = false;
-
   Future<bool> getUserData() async {
     bool success = false;
-    isWaiting = true;
-    showToastMessage('Fetching your data');
-    notifyListeners();
     if (_firstName == '') {
       ProfileData profileData = await profileDataGet();
       if (profileData.success == true) {
@@ -110,12 +105,13 @@ class EditProfileDetailsProvider extends ChangeNotifier
         _lastName = profileData.data.lastname;
         _email = profileData.data.email;
         _phNumber = profileData.data.phoneNumber;
+        _profilePic = profileData.data.profilepic;
 
         await setFirstName(firstName: _firstName);
         await setLirstName(lastName: _lastName);
         await setEmail(mail: _email);
         await setPhoneNumber(phoneNumber: _phNumber);
-        isWaiting = false;
+        await setProfilePic(profilePic: _profilePic);
         notifyListeners();
         success = true;
       }
@@ -125,7 +121,6 @@ class EditProfileDetailsProvider extends ChangeNotifier
       _email = await getEmail();
       _phNumber = await getPhoneNumber();
       _profilePic = await getProfilePic();
-      isWaiting = false;
       success = false;
       notifyListeners();
     }

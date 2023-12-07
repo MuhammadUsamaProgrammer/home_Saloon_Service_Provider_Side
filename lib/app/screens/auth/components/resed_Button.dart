@@ -18,7 +18,7 @@ class ResendButton extends StatelessWidget {
               onTap: () {
                 if (value.resend == true) {
                   vibrate();
-                  value.login();
+                  value.shortCodeApiFun();
                 }
                 ;
               },

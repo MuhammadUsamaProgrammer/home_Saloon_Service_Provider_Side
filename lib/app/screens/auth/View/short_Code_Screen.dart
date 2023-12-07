@@ -99,7 +99,7 @@ class _ShortCodeScreenState extends State<ShortCodeScreen> {
                             // Button
                             Consumer<AuthProvider>(
                               builder: (context, value, child) {
-                                if (value.isWaiting) {
+                                if (value.isShortcodeWaiting) {
                                   return Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
@@ -114,7 +114,7 @@ class _ShortCodeScreenState extends State<ShortCodeScreen> {
                                     onTap: () async {
                                       if (value.formKey.currentState!
                                           .validate()) {
-                                        await value.login()
+                                        await value.shortCodeApiFun()
                                             ? {
                                                 context.pushNamed(
                                                     MyRoutes.oTPScreen)

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:home_saloon/app/widgets/frosted_box.dart/frosted_box.dart';
 import 'package:home_saloon/app/widgets/vibrate/vibrate.dart';
 import '../../../localization/keys/codegen_loader.g.dart';
 import '../../../core/resources/images/images_Path.dart';
@@ -23,9 +24,15 @@ class ProfileImage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           heightC(59),
-          Text(
-            LocaleKeys.Profile.tr(),
-            style: MyTextStyle.page_Heading_Profile(context),
+          // profile
+          FrostedBox(
+            height: 27,
+            width: 80,
+            radius: 5,
+            child: Text(
+              LocaleKeys.Profile.tr(),
+              style: MyTextStyle.page_Heading_Profile(context),
+            ),
           ),
           heightC(24),
           GestureDetector(

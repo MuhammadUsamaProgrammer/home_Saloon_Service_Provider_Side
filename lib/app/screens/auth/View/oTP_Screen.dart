@@ -73,8 +73,7 @@ class OTPScreen extends StatelessWidget with SharedPrefGet {
                           Consumer2<AuthProvider, EditProfileDetailsProvider>(
                             builder:
                                 (context, authProvider, profileDetails, child) {
-                              if (authProvider.isWaiting == true ||
-                                  profileDetails.isWaiting == true) {
+                              if (authProvider.isOtpWaiting == true) {
                                 return Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -88,13 +87,17 @@ class OTPScreen extends StatelessWidget with SharedPrefGet {
                                     ? Button1(
                                         text: LocaleKeys.login.tr(),
                                         onTap: () async {
-                                          if (await authProvider.oTPAPI() &&
-                                              await profileDetails
-                                                  .getUserData()) {
-                                            authProvider.activateStayLogin();
-                                            context.goNamed(MyRoutes.mainPage);
-                                          }
-                                          ;
+                                          await authProvider
+                                              .oTPAPIFun()
+                                              .then((value) async {
+                                            await profileDetails
+                                                .getUserData()
+                                                .then((value) {
+                                              authProvider.onSuccessLogin();
+                                              context
+                                                  .goNamed(MyRoutes.mainPage);
+                                            });
+                                          });
                                         },
                                       )
                                     : Button1(

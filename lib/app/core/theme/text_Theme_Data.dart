@@ -369,7 +369,7 @@ class MyTextStyle {
     return TextStyle(
       fontFamily: font,
       fontSize: 18,
-      color: MyColors.backgroundColor,
+      color: MyColors.textColor_primary,
       fontWeight: FontWeight.w600,
     );
   }

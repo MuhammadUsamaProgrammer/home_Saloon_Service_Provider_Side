@@ -44,7 +44,9 @@ mixin ShortCodeService {
       var responseData = jsonDecode(response.body.toString());
       if (response.statusCode >= 200 && response.statusCode < 300) {
         print(responseData["message"].toString());
-        showToastMessage(responseData["message"].toString());
+        print('key');
+        print(responseData["data"].toString());
+        // showToastMessage(responseData["message"].toString());
         key = responseData["data"].toString();
         return key;
       } else {
