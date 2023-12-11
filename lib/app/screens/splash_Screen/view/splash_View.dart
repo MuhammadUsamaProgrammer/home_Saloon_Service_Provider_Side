@@ -1,14 +1,13 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:home_saloon/app/screens/auth/provider/auth_provider.dart';
+import 'package:home_saloon/app/core/cache/get_shared_pref.dart';
+import 'package:home_saloon/app/core/cache/set_shared_pref.dart';
 import 'package:home_saloon/app/screens/editProfile_Screen/provider/edit_Profile_Details_Provider.dart';
 import 'package:home_saloon/app/widgets/mediaQuery/dynamic_MediaQuery.dart';
 import 'package:home_saloon/app/core/routes/app_route_const.dart';
 import 'package:home_saloon/app/core/theme/colors_theme_data.dart';
 import 'package:provider/provider.dart';
-
 import '../../../core/resources/images/images_Path.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -18,26 +17,27 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen>
+    with SharedPrefGet, SharedPrefSet {
   @override
   void initState() {
     super.initState();
-    final checkBoxProvider = Provider.of<AuthProvider>(context, listen: false);
     final profile =
         Provider.of<EditProfileDetailsProvider>(context, listen: false);
 
-    checkBoxProvider.checkFunction();
-    checkBoxProvider.firstTimeshowOnBoarding();
-
-    Future.delayed(Duration(seconds: 3), () {
-      if (checkBoxProvider.isSelected) {
-        profile.initProfile();
-        context.goNamed(MyRoutes.mainPage);
+    Future.delayed(Duration(seconds: 1), () async {
+      bool showOnboarding = await getShowOnboarding();
+      await getStayLogin() == false ? await setClearData() : null;
+      if (showOnboarding == false) {
+        if (await getToken() != '') {
+          await profile.initProfile();
+          print(await getToken());
+          context.goNamed(MyRoutes.mainPage);
+        } else {
+          context.goNamed(MyRoutes.shortCodeScreen);
+        }
       } else {
-        checkBoxProvider.showOnBoarding
-            ? context.goNamed(MyRoutes.onBoardingPage)
-            : context.goNamed(MyRoutes.shortCodeScreen);
-        checkBoxProvider.offshowOnBoarding();
+        context.goNamed(MyRoutes.onBoardingPage);
       }
     });
   }

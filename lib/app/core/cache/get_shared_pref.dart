@@ -9,7 +9,7 @@ mixin SharedPrefGet {
 
   Future<bool> getShowOnboarding() async {
     var prefs = await SharedPreferences.getInstance();
-    bool value = await prefs.getBool('showOnBoarding') ?? false;
+    bool value = await prefs.getBool('showOnBoarding') ?? true;
     return value;
   }
 

@@ -12,4 +12,21 @@ mixin Variables {
     };
     return jsonBody;
   }
+
+  Map<String, dynamic> variableUpdateProfile({
+    required String profilePic,
+    required String firstName,
+    required String lastName,
+    required String email,
+    required String phoneNumber,
+  }) {
+    Map<String, dynamic> jsonBody = {
+      "profilepic": profilePic,
+      "firstname": firstName,
+      "lastname": lastName,
+      "email": email,
+      "phoneNumber": phoneNumber
+    };
+    return jsonBody;
+  }
 }

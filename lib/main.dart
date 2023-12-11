@@ -19,6 +19,8 @@ import 'app/screens/calander_Test/provider/testg.dart';
 import 'app/localization/codegen_loader.g.dart';
 
 Future<void> main() async {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();
   YourClass().initializeCalendar();
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(

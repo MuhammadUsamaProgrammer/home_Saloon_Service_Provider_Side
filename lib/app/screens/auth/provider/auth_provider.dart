@@ -15,35 +15,20 @@ class AuthProvider extends ChangeNotifier
   //
   //
 
-  bool _showOnBoarding = true;
   bool _stayLoggedIn = false;
-  bool _isSelected = false;
   bool get stayLoggedIn => _stayLoggedIn;
-  bool get isSelected => _isSelected;
-  bool get showOnBoarding => _showOnBoarding;
-  void toogleStayLoggedIn() async {
+
+  void toogleStayLoggedIn() {
     _stayLoggedIn = !_stayLoggedIn;
-    await getToken();
     notifyListeners();
   }
 
-  void activateStayLogin() async {
+  Future<void> activateStayLogin() async {
     _stayLoggedIn
         ? await setStayLogin(value: true)
         : await setStayLogin(value: false);
-  }
-
-  void checkFunction() async {
-    _isSelected = await getStayLogin();
-    notifyListeners();
-  }
-
-  void firstTimeshowOnBoarding() async {
-    _showOnBoarding = await getShowOnboarding();
-  }
-
-  void offshowOnBoarding() async {
-    await setShowOnboarding(value: false);
+    // _stayLoggedIn = false;
+    // notifyListeners();
   }
   //
   //
@@ -161,6 +146,7 @@ class AuthProvider extends ChangeNotifier
 
     if (response != '') {
       await setToken(token: response);
+      await activateStayLogin();
       notifyListeners();
       return true;
     } else {
@@ -173,7 +159,7 @@ class AuthProvider extends ChangeNotifier
   }
 
   void onSuccessLogin() {
-    clearAllOtp();
+    // clearAllOtp();
     isOtpWaiting = false;
     temporaryShortCode = '';
     toogleisAllOTPFilled();

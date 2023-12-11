@@ -31,6 +31,41 @@ mixin EditProfileService {
       throw Exception('Failed to load data');
     }
   }
+
+  Future<ProfileData> editProfileApi(
+      {required Map<String, dynamic> jsonbody}) async {
+    print(jsonbody);
+    jsonbody = {
+      "profilepic": "profilePic",
+      "firstname": "firstName",
+      "lastname": "lastName",
+      "email": "email",
+      "phoneNumber": "phoneNumber"
+    };
+    try {
+      String url = ClientsApi.clientAPI + endpointsAPI.endpointEditProfileData;
+      Map<String, String>? headers = await HeadersAPI().headerAPI();
+
+      var response = await http.patch(Uri.parse(url),
+          headers: headers, body: jsonEncode(jsonbody));
+      var data = jsonDecode(response.body.toString());
+
+      if (response.statusCode == 200) {
+        final profileData = ProfileData.fromJson(data);
+
+        print(data["message"].toString());
+        showToastMessage('Data fetched successfully');
+        return profileData;
+      } else {
+        print('Request failed with status: ${response.statusCode}');
+        print('Response body: ${response.body}');
+        throw Exception('Failed to load data');
+      }
+    } catch (e) {
+      print('Exception during profile data retrieval: $e');
+      throw Exception('Failed to load data');
+    }
+  }
 }
 
 

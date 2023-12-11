@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:home_saloon/app/core/api_const/variables.dart';
 import 'package:home_saloon/app/core/cache/get_shared_pref.dart';
@@ -24,7 +27,7 @@ class EditProfileDetailsProvider extends ChangeNotifier
   String get phNumber => _phNumber;
   String get imagePath => _profilePic;
 
-  void initProfile() async {
+  Future<void> initProfile() async {
     _firstName = await getFirstName();
     _lastName = await getLastName();
     _email = await getEmail();
@@ -33,15 +36,24 @@ class EditProfileDetailsProvider extends ChangeNotifier
     notifyListeners();
   }
 
-  void newImagePath(String pickedImagePath) async {
+  void newImagePath(String pickedImagePath, String pathName) async {
     _profilePic = pickedImagePath;
-    await setProfilePic(profilePic: pickedImagePath);
-    notifyListeners();
+    final ref = FirebaseStorage.instance.ref().child('files/$pathName');
+    var uploadTask = ref.putFile(File(pickedImagePath));
+    final snapShot = await uploadTask.whenComplete(() {});
+    final uRLDownload = await snapShot.ref.getDownloadURL();
+    print('download url ---------> ${uRLDownload}');
+    // await setProfilePic(profilePic: pickedImagePath);
+
+    // await updateProfileAPI();
+    // notifyListeners();
   }
 
   void removeImage() async {
     _profilePic = '';
     await setProfilePic(profilePic: '');
+
+    await updateProfileAPI();
     notifyListeners();
   }
 
@@ -94,6 +106,8 @@ class EditProfileDetailsProvider extends ChangeNotifier
         notifyListeners();
       }
     }
+
+    await updateProfileAPI();
   }
 
   Future<bool> getUserData() async {
@@ -125,5 +139,23 @@ class EditProfileDetailsProvider extends ChangeNotifier
       notifyListeners();
     }
     return success;
+  }
+
+  Future<void> updateProfileAPI() async {
+    print('hitted-------------.');
+    ProfileData response = await editProfileApi(
+        jsonbody: variableUpdateProfile(
+            profilePic: _profilePic,
+            firstName: _firstName,
+            lastName: _lastName,
+            email: _email,
+            phoneNumber: _phNumber));
+    if (response.success) {
+      showToastMessage('Profile updated successfuly');
+      print(response.message);
+    } else {
+      showToastMessage('Faild to update Profile');
+      print(response.message);
+    }
   }
 }

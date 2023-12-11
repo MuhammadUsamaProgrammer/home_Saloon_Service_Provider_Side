@@ -33,7 +33,7 @@ class CameraGalleryImagePopUP extends StatelessWidget {
                     final XFile? image =
                         await picker.pickImage(source: ImageSource.gallery);
                     if (image != null) {
-                      value.newImagePath(image.path);
+                      value.newImagePath(image.path, image.name);
                     }
                     Navigator.pop(context);
                   },
@@ -46,7 +46,7 @@ class CameraGalleryImagePopUP extends StatelessWidget {
                       final XFile? image =
                           await picker.pickImage(source: ImageSource.camera);
                       if (image != null) {
-                        value.newImagePath(image.path);
+                        value.newImagePath(image.path, image.name);
                       }
                       Navigator.pop(context);
                     },
