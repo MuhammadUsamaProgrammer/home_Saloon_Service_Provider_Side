@@ -60,5 +60,13 @@
     "Terms_and_Condition": "Terms and Condition",
     "Terms_and_Condition_paragraph": "Lorem Ipsum is simply placeholder text used in the printing and typesetting industry. Lorem Ipsum has been the standard placeholder text of the industry since the 1500s when an unidentified printer took a collection of type and jumbled it to create a sample book. It has endured not only for five centuries but also made the transition to electronic typesetting, remaining essentially unaltered",
     "Privacy_Policy_Paragraph": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and changed",
-    "My_Services": "My Services"
+    "My_Services": "My Services",
+    "create_new_service": "Create a new service",
+    "create": "Create",
+    "by_creating_new_service": "By Creating a new service, your service will be visible to thousand of Users. Lets Make a New one for you now!",
+    "edit": "Edit",
+    "delete": "Delete",
+    "Are_you_Sure_you_want_to_Delete_this_Service": "Are you Sure you want to Delete this Service?",
+    "yes": "Yes",
+    "cancel": "Cancel"
 }

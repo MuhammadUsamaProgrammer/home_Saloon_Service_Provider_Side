@@ -82,7 +82,7 @@ class MyApp extends StatelessWidget {
 
 // flutter pub run easy_localization:generate --source-dir ./assets/localization --output-dir ./lib/localization
 
-// flutter pub run easy_localization:generate --source-dir ./assets/localization --output-dir ./lib/keys -f keys
+// flutter pub run easy_localization:generate --source-dir ./assets/localization --output-dir ./lib/localization -f keys
 
 // flutter pub run easy_localization:generate -h
 

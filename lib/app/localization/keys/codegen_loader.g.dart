@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-abstract class  LocaleKeys {
+abstract class LocaleKeys {
   static const I_am_Usama = 'I_am_Usama';
   static const I_am_Developer = 'I_am_Developer';
   static const Onboarding_Screen_heading = 'Onboarding_Screen_heading';
@@ -15,7 +15,8 @@ abstract class  LocaleKeys {
   static const send = 'send';
   static const Search_here = 'Search_here';
   static const Filter = 'Filter';
-  static const Your_Stats_are_Good_Keep_it_up = 'Your_Stats_are_Good_Keep_it_up';
+  static const Your_Stats_are_Good_Keep_it_up =
+      'Your_Stats_are_Good_Keep_it_up';
   static const Total_Orders = 'Total_Orders';
   static const Order_Completion = 'Order_Completion';
   static const On_Time_Delivery = 'On_Time_Delivery';
@@ -63,5 +64,14 @@ abstract class  LocaleKeys {
   static const Terms_and_Condition_paragraph = 'Terms_and_Condition_paragraph';
   static const Privacy_Policy_Paragraph = 'Privacy_Policy_Paragraph';
   static const My_Services = 'My_Services';
-
+  static const create_new_service = 'create_new_service';
+  static const create = 'create';
+  static const by_creating_new_service = 'by_creating_new_service';
+  static const edit = 'edit';
+  static const delete = 'delete';
+  static const Are_you_Sure_you_want_to_Delete_this_Service =
+      'Are_you_Sure_you_want_to_Delete_this_Service';
+  static const yes = 'yes';
+  static const cancel = 'cancel';
+  static const hloo = 'hloo';
 }
