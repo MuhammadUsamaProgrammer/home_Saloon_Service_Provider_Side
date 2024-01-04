@@ -35,7 +35,7 @@ class ProfileItemsTile extends StatelessWidget {
                       text,
                       style: MyTextStyle.lists_Text(context),
                     ),
-                    SvgPicture.asset(MySvgPath.next_Arrow_Round)
+                    SvgPicture.asset(MySvgPath.next_Arrow_Round,)
                   ],
                 ),
               ),
